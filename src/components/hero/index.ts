@@ -1,0 +1,1 @@
+export { HeroSplit } from "./HeroSplit";

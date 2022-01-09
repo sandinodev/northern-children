@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Alpina";
+  src: url("/fonts/GTAlpina-Light.woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics-ExtraBold.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ModernEra";
+  src: url("/fonts/ModernEra-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ModernEra";
+  src: url("/fonts/ModernEra-Medium.otf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ModernEra";
+  src: url("/fonts/ModernEra-Bold.otf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ModernEraMono";
+  src: url("/fonts/ModernEraMono-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ModernEraMono";
+  src: url("/fonts/ModernEraMono-Medium.otf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
