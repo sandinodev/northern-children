@@ -1,6 +1,6 @@
 import tw from "twin.macro";
 
-import { BaseContainer, BaseWrapper } from "~/components/base";
+import { BaseSection } from "~/components/base";
 import { Pills } from "~/components/pills";
 
 import { PillFragment } from "~/types";
@@ -11,18 +11,14 @@ interface Props {
   title?: string;
 }
 
-const Texts = tw.div`col-span-full lg:col-span-6`;
+const Text = tw.div`col-span-full lg:col-span-6 text-md mb-100`;
 
 export const TeamEffort = ({ pills, text, title }: Props) => {
   return (
-    <BaseWrapper>
-      <BaseContainer>
-        <Texts>
-          {title}
-        </Texts>
+    <BaseSection title={title}>
+      <Text>{text}</Text>
 
-        {!!pills?.length && <Pills pills={pills} />}
-      </BaseContainer>
-    </BaseWrapper>
+      {!!pills?.length && <Pills pills={pills} />}
+    </BaseSection>
   );
 };
