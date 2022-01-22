@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import { PILL_FRAGMENT } from "~/components/pills";
 import { QUOTE_FRAGMENT } from "~/components/quote";
 import { SEO_FRAGMENT } from "~/components/seo";
+import { SLIDER_VERTICAL_SLIDE_FRAGMENT } from "~/components/slider";
 import { TEXT_MESSAGE_FRAGMENT } from "~/components/text";
 
 import { ASSET_FRAGMENT } from "./Fragments.fragment";
@@ -19,6 +20,7 @@ export const MISSION_VISION_QUERY = gql`
             text
           }
         }
+        historyTitle
         message {
           ...TextMessage
         }
@@ -31,6 +33,9 @@ export const MISSION_VISION_QUERY = gql`
         seo {
           ...Seo
         }
+        sliderVertical {
+          ...SliderVerticalSlide
+        }
         text: textWithLineBreaks
         teamEffortTitle: text
         teamEffortText: textAdditional
@@ -42,5 +47,6 @@ export const MISSION_VISION_QUERY = gql`
   ${PILL_FRAGMENT}
   ${QUOTE_FRAGMENT}
   ${SEO_FRAGMENT}
+  ${SLIDER_VERTICAL_SLIDE_FRAGMENT}
   ${TEXT_MESSAGE_FRAGMENT}
 `;
