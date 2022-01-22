@@ -10,13 +10,13 @@ interface Props {
   pills?: PillFragment[];
 }
 
-const Wrapper = tw(BaseContainer)`col-span-full gap-y-50 w-full`;
+const Wrapper = tw(BaseContainer)`col-span-full gap-y-50 w-full mb-240`;
 
 export const Pills = ({ pills }: Props) => {
   if (!pills?.length) return null;
 
   return (
-    <Wrapper>
+    <Wrapper as="ul">
       {pills.map((pill, i) => (
         <Pill key={i} {...pill} />
       ))}
