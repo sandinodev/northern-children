@@ -12,6 +12,7 @@ interface StylesExternalProps {
 interface Props extends StylesExternalProps {
   as?: string;
   gapY?: boolean;
+  mb?: boolean;
   title?: string;
 }
 
