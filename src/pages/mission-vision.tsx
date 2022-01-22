@@ -1,6 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
 
 import { HeroSplit } from "~/components/hero";
+import { History } from "~/components/history";
 import { Quote } from "~/components/quote";
 import { Seo } from "~/components/seo";
 import { TeamEffort } from "~/components/teamEffort";
@@ -37,6 +38,8 @@ const Page: NextPage<Props> = ({ footer, mission, socials }) => {
         {!!mission?.message?.length && <TextMessage {...mission.message[0]} />}
 
         <TeamEffort pills={mission?.pills} title={mission?.teamEffortTitle} text={mission?.teamEffortText} />
+
+        <History slides={mission?.sliderVertical} title={mission?.historyTitle} />
       </DefaultPage>
     </>
   );
