@@ -14,9 +14,13 @@ export const Variables = createGlobalStyle`
     --color-violet: #6d6db2;
 
     ${up("lg")} {
-      --font-max-size: 56px;
+      --font-max-size: 60px;
       --font-max-line: 1.2;
       --font-max-letter: 0;
+
+      --font-2xl-size: 56px;
+      --font-2xl-line: 1.2;
+      --font-2xl-letter: 0;
 
       --font-xl-size: 50px;
       --font-xl-line: 1.15;

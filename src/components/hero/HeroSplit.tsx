@@ -33,7 +33,7 @@ const Wrapper = styled(BaseWrapper)<StylesExternalProps>`
 
 const Container = tw(BaseContainer)`h-full`;
 
-const Text = tw.h1`col-span-7 flex items-center text-max font-athletics uppercase`;
+const Text = tw.h1`col-span-7 flex items-center text-2xl font-athletics uppercase`;
 
 const Image = styled.div`
   ${tw`col-span-5 border-l`}

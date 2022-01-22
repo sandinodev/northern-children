@@ -84,6 +84,13 @@ module.exports = {
           letterSpacing: "var(--font-xl-letter)",
         },
       ],
+      "2xl": [
+        "var(--font-2xl-size)",
+        {
+          lineHeight: "var(--font-2xl-line)",
+          letterSpacing: "var(--font-2xl-letter)",
+        },
+      ],
       max: [
         "var(--font-max-size)",
         {
