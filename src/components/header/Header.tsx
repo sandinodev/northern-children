@@ -16,9 +16,9 @@ const GROUPS = [
   {
     title: "What we do",
     links: [
-      { href: "/residential", text: "Residential" },
-      { href: "/behavioral-health", text: "Behavioral Health" },
-      { href: "/child-welfare", text: "Child Welfare" },
+      { href: "/services/residential", text: "Residential" },
+      { href: "/services/behavioral-health", text: "Behavioral Health" },
+      { href: "/services/child-welfare", text: "Child Welfare" },
     ],
   },
   {
