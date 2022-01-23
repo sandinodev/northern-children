@@ -4,10 +4,6 @@ import { devtools } from "zustand/middleware";
 export interface Store {
   areFontsLoaded: boolean;
   setAreFontsLoaded: (v: boolean) => void;
-  hasFooter: boolean;
-  setHasFooter: (v: boolean) => void;
-  hasFooterCTA: boolean;
-  setHasFooterCTA: (v: boolean) => void;
   isIntro: boolean;
   setIsIntro: (v: boolean) => void;
   isMenuOpen: boolean;
@@ -23,10 +19,6 @@ export const useStore = create<Store>(
     return {
       areFontsLoaded: false,
       setAreFontsLoaded: (v) => set({ areFontsLoaded: v }),
-      hasFooter: true,
-      setHasFooter: (v) => set({ hasFooter: v }),
-      hasFooterCTA: true,
-      setHasFooterCTA: (v) => set({ hasFooterCTA: v }),
       isIntro: true,
       setIsIntro: (v) => set({ isIntro: v }),
       isMenuOpen: false,

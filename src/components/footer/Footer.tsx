@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+import { useMemo } from "react";
 import tw from "twin.macro";
 
 import FacebookSVG from "~/assets/svg/icons/socials/facebook.svg";
@@ -6,7 +8,8 @@ import InstagramSVG from "~/assets/svg/icons/socials/instagram.svg";
 import { BaseContainer, BaseLink, BaseWrapper } from "~/components/base";
 import { Cta } from "~/components/cta";
 
-import { Store, useStore } from "~/store";
+import { PAGES_WITHOUT_FOOTER, PAGES_WITHOUT_FOOTER_CTA } from "~/constants";
+
 import { DataStore, useDataStore } from "~/store/data";
 
 const Wrapper = tw.footer`border-t border-black`;
@@ -26,11 +29,15 @@ const SocialLink = tw(BaseLink)`mr-20 last:mr-0`;
 const Credit = tw.div`col-span-2 text-right`;
 
 const dataStoreSelector = ({ footer, socials }: DataStore) => ({ footer, socials });
-const storeSelector = ({ hasFooter, hasFooterCTA }: Store) => ({ hasFooter, hasFooterCTA });
 
 export const Footer = () => {
+  const router = useRouter();
   const { footer, socials } = useDataStore(dataStoreSelector);
-  const { hasFooter, hasFooterCTA } = useStore(storeSelector);
+
+  const hasFooter = useMemo(() => !PAGES_WITHOUT_FOOTER.includes(router.pathname), [router.pathname]);
+  const hasFooterCTA = useMemo(() => !PAGES_WITHOUT_FOOTER_CTA.includes(router.pathname), [router.pathname]);
+
+  if (!hasFooter) return null;
 
   return (
     <Wrapper>
