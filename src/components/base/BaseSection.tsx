@@ -6,6 +6,7 @@ import { BaseContainer } from "./BaseContainer";
 import { BaseWrapper } from "./BaseWrapper";
 
 interface StylesExternalProps {
+  noMt?: boolean;
   titleStyles?: TwStyle | FlattenSimpleInterpolation;
 }
 
@@ -17,16 +18,22 @@ interface Props extends StylesExternalProps {
 }
 
 const Title = styled.h2<StylesExternalProps>`
-  ${tw`col-span-full mt-100 mb-68 text-xl font-alpina`}
+  ${tw`col-span-full mb-68 text-xl font-alpina`}
+
+  ${({ noMt }) => !noMt && tw`mt-100`}
 
   ${({ titleStyles }) => titleStyles}
 `;
 
-export const BaseSection = ({ as, children, title, titleStyles, ...rest }: PropsWithChildren<Props>) => {
+export const BaseSection = ({ as, children, noMt, title, titleStyles, ...rest }: PropsWithChildren<Props>) => {
   return (
     <BaseWrapper {...rest}>
       <BaseContainer as={as as never}>
-        {!!title?.length && <Title titleStyles={titleStyles}>{title}</Title>}
+        {!!title?.length && (
+          <Title noMt={noMt} titleStyles={titleStyles}>
+            {title}
+          </Title>
+        )}
 
         {children}
       </BaseContainer>

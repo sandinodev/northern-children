@@ -14,7 +14,7 @@ const Person = tw.li`lg:col-span-4`;
 
 export const People = ({ people, title }: Props) => {
   return (
-    <BaseSection title={title}>
+    <BaseSection title={title} noMt>
       <Container as="ul" fullW gapY>
         {people.map(({ education, name, role, slug, ...rest }, i) => (
           <Person key={i}>
