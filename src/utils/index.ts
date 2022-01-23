@@ -8,7 +8,7 @@ export const isProd = process.env.NODE_ENV === "production";
 export const isLinkExternal = (url?: string) => {
   if (url?.includes(process.env.NEXT_PUBLIC_URL!)) return false;
 
-  return url?.includes("http://") || url?.includes("https://") || url?.includes("www.");
+  return ["http://", "https://", "www.", "mailto:", "tel:"].some((v) => url?.includes(v));
 };
 
 export const parsePublicToLocalHref = (href?: string) => {
@@ -20,7 +20,7 @@ export const parsePublicToLocalHref = (href?: string) => {
   }
 
   // For client side routes pointing to the homepage
-  if (url && url.includes("index")) url = "/";
+  if (url && url.includes("home")) url = "/";
 
   return url;
 };
