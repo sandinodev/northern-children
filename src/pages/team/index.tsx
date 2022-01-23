@@ -25,7 +25,7 @@ const Page: NextPage<Props> = ({ footer, socials, team }) => {
     <>
       <Seo seo={team?.seo?.[0]} />
 
-      <DefaultPage>
+      <DefaultPage mt>
         {!!team?.people?.length && <People people={team.people} title={team.teamTitle} />}
         {!!team?.trustees?.length && <Trustees title={team.trusteesTitle} trustees={team.trustees} />}
       </DefaultPage>

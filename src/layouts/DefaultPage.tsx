@@ -1,11 +1,32 @@
 import React from "react";
+import tw, { css, styled } from "twin.macro";
+import { MAIN_PADDING_TOP } from "~/constants";
+import { up } from "~/utils/screens";
 
-interface Props {}
+interface StylesExternalProps {
+  mt?: boolean;
+}
 
-export const DefaultPage: React.FC<Props> = ({ children }) => {
+interface Props extends StylesExternalProps {}
+
+const Main = styled.main<StylesExternalProps>`
+  ${tw`flex-1`}
+
+  ${({ mt }) =>
+    mt &&
+    css`
+      padding-top: ${MAIN_PADDING_TOP.min}px;
+
+      ${up("lg")} {
+        padding-top: ${MAIN_PADDING_TOP.max}px;
+      }
+    `}
+`;
+
+export const DefaultPage: React.FC<Props> = ({ children, ...rest }) => {
   return (
     <>
-      <main tw="flex-1">{children}</main>
+      <Main {...rest}>{children}</Main>
     </>
   );
 };
