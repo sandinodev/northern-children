@@ -4305,6 +4305,7 @@ export type People_Person_Entry = ElementInterface & EntryInterface & {
   prev?: Maybe<EntryInterface>;
   /** Returns the next element relative to this one, from a given set of criteria. */
   next?: Maybe<EntryInterface>;
+  seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
   image?: Maybe<Array<Maybe<AssetInterface>>>;
   textAdditional?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
@@ -4783,6 +4784,41 @@ export type People_Person_EntryNextArgs = {
   before?: Maybe<Scalars['String']>;
   after?: Maybe<Scalars['String']>;
   expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type People_Person_EntrySeoArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  fieldId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ownerId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 
@@ -7484,6 +7520,18 @@ export type MissionVisionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type MissionVisionQuery = { mission?: Maybe<{ historyTitle?: Maybe<string>, text?: Maybe<string>, teamEffortTitle?: Maybe<string>, teamEffortText?: Maybe<string>, hero?: Maybe<Array<Maybe<{ text?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>> }>>>, message?: Maybe<Array<Maybe<TextMessageFragment>>>, pills?: Maybe<Array<Maybe<PillFragment>>>, quote?: Maybe<Array<Maybe<QuoteFragment>>>, seo?: Maybe<Array<Maybe<SeoFragment>>>, sliderVertical?: Maybe<Array<Maybe<SliderVerticalSlideFragment>>> }> };
+
+export type PeopleSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PeopleSlugsQuery = { people?: Maybe<Array<Maybe<{ slug?: Maybe<string> }>>> };
+
+export type PersonQueryVariables = Exact<{
+  slug?: Maybe<Array<Scalars['String']> | Scalars['String']>;
+}>;
+
+
+export type PersonQuery = { person?: Maybe<{ description?: Maybe<string>, education?: Maybe<string>, name?: Maybe<string>, role?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>>, seo?: Maybe<Array<Maybe<SeoFragment>>> }> };
 
 export type TeamQueryVariables = Exact<{ [key: string]: never; }>;
 
