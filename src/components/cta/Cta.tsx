@@ -4,7 +4,10 @@ import { BaseButton, BaseContainer, BaseWrapper } from "~/components/base";
 
 import { CtaFragment } from "~/types";
 
+import { parsePublicToLocalHref } from "~/utils";
+
 interface StylesExternalProps {
+  noBorder?: boolean;
   yellow?: boolean;
 }
 
@@ -13,7 +16,9 @@ interface Props extends CtaFragment, StylesExternalProps {
 }
 
 const Wrapper = styled(BaseWrapper)<StylesExternalProps>`
-  ${tw`py-144 border-b border-black`}
+  ${tw`py-144`}
+
+  ${({ noBorder }) => !noBorder && tw`border-b border-black`}
 
   ${({ yellow }) => yellow && tw`bg-yellow`}
 `;
@@ -22,16 +27,29 @@ const Content = tw.div`col-span-6 col-start-4 flex flex-col items-center text-ce
 
 const Text = tw.p`mb-64`;
 
-export const Cta = ({ ariaLabel, link, text, turquoise, ...rest }: Props) => {
+const Links = tw.div`grid grid-flow-col auto-cols-fr gap-x-40`;
+
+export const Cta = ({ links, text, turquoise, ...rest }: Props) => {
   return (
     <Wrapper {...rest}>
       <BaseContainer>
         <Content>
           <Text>{text}</Text>
 
-          <BaseButton ariaLabel={ariaLabel} turquoise={turquoise}>
-            {link?.text}
-          </BaseButton>
+          {!!links?.length && (
+            <Links>
+              {links.map(({ ariaLabel, link }, i) => (
+                <BaseButton
+                  key={i}
+                  ariaLabel={ariaLabel}
+                  href={parsePublicToLocalHref(link?.url)}
+                  turquoise={turquoise}
+                >
+                  {link?.text}
+                </BaseButton>
+              ))}
+            </Links>
+          )}
         </Content>
       </BaseContainer>
     </Wrapper>

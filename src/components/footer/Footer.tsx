@@ -41,7 +41,7 @@ export const Footer = () => {
 
   return (
     <Wrapper>
-      {hasFooterCTA && <Cta link={{ text: "Contact us", url: "/contact" }} text={footer?.cta} turquoise />}
+      {hasFooterCTA && <Cta turquoise {...footer?.cta?.[0]} />}
 
       <Main>
         <MainContainer>
