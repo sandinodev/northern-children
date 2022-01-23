@@ -585,6 +585,9 @@ export type EntryCriteriaInput = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   /** Whether to only return entries that the user has permission to edit. */
   editable?: Maybe<Scalars['Boolean']>;
   /** Narrows the query results based on the section handles the entries belong to. */
@@ -773,6 +776,9 @@ export type EntryInterfaceChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -841,6 +847,9 @@ export type EntryInterfaceDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -909,6 +918,9 @@ export type EntryInterfaceParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -977,6 +989,9 @@ export type EntryInterfaceAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -1045,6 +1060,9 @@ export type EntryInterfaceLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -1113,6 +1131,9 @@ export type EntryInterfacePrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -1181,6 +1202,9 @@ export type EntryInterfaceNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -1297,6 +1321,58 @@ export type Mutation = {
   ping?: Maybe<Scalars['String']>;
 };
 
+/** This is the interface implemented by all neo blocks. */
+export type NeoBlockInterface = {
+  /** The id of the entity */
+  id?: Maybe<Scalars['ID']>;
+  /** The uid of the entity */
+  uid?: Maybe<Scalars['String']>;
+  /** Return a number of related elements for a field. */
+  _count?: Maybe<Scalars['Int']>;
+  /** The element’s title. */
+  title?: Maybe<Scalars['String']>;
+  /** The element’s slug. */
+  slug?: Maybe<Scalars['String']>;
+  /** The element’s URI. */
+  uri?: Maybe<Scalars['String']>;
+  /** Whether the element is enabled or not. */
+  enabled?: Maybe<Scalars['Boolean']>;
+  /** Whether the element is archived or not. */
+  archived?: Maybe<Scalars['Boolean']>;
+  /** The ID of the site the element is associated with. */
+  siteId?: Maybe<Scalars['Int']>;
+  /** The unique identifier for an element-site relation. */
+  siteSettingsId?: Maybe<Scalars['ID']>;
+  /** The language of the site element is associated with. */
+  language?: Maybe<Scalars['String']>;
+  /** The element’s search score, if the `search` parameter was used when querying for the element. */
+  searchScore?: Maybe<Scalars['String']>;
+  /** Whether the element has been soft-deleted or not. */
+  trashed?: Maybe<Scalars['Boolean']>;
+  /** The element's status. */
+  status?: Maybe<Scalars['String']>;
+  /** The date the element was created. */
+  dateCreated?: Maybe<Scalars['DateTime']>;
+  /** The date the element was last updated. */
+  dateUpdated?: Maybe<Scalars['DateTime']>;
+  /** The ID of the field that owns the neo block. */
+  fieldId?: Maybe<Scalars['Int']>;
+  /** The Neo block's level. */
+  level?: Maybe<Scalars['Int']>;
+  /** The ID of the element that owns the neo block. */
+  ownerId?: Maybe<Scalars['Int']>;
+  /** The ID of the neo block's type. */
+  typeId?: Maybe<Scalars['Int']>;
+  /** The handle of the neo block's type. */
+  typeHandle?: Maybe<Scalars['String']>;
+};
+
+
+/** This is the interface implemented by all neo blocks. */
+export type NeoBlockInterface_CountArgs = {
+  field: Scalars['String'];
+};
+
 
 export type Query = {
   ping?: Maybe<Scalars['String']>;
@@ -1371,6 +1447,9 @@ export type QueryEntriesArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -1438,6 +1517,9 @@ export type QueryEntryCountArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -1505,6 +1587,9 @@ export type QueryEntryArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -1677,7 +1762,6 @@ export type QueryGlobalSetsArgs = {
   limit?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<Scalars['String']>;
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
-  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   handle?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
@@ -1711,7 +1795,6 @@ export type QueryGlobalSetArgs = {
   limit?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<Scalars['String']>;
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
-  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   handle?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
@@ -2272,9 +2355,9 @@ export type Cards_Card_BlockTypeImageArgs = {
   uploader?: Maybe<Scalars['QueryArgument']>;
 };
 
-export type Cta_MatrixField = Cta_Cta_BlockType;
+export type Cta_NeoField = Cta_Cta_BlockType | Cta_Link_BlockType;
 
-export type Cta_Cta_BlockType = ElementInterface & MatrixBlockInterface & {
+export type Cta_Cta_BlockType = NeoBlockInterface & ElementInterface & {
   /** The id of the entity */
   id?: Maybe<Scalars['ID']>;
   /** The uid of the entity */
@@ -2307,23 +2390,75 @@ export type Cta_Cta_BlockType = ElementInterface & MatrixBlockInterface & {
   dateCreated?: Maybe<Scalars['DateTime']>;
   /** The date the element was last updated. */
   dateUpdated?: Maybe<Scalars['DateTime']>;
-  /** The ID of the field that owns the matrix block. */
+  /** The ID of the field that owns the neo block. */
   fieldId?: Maybe<Scalars['Int']>;
-  /** The ID of the element that owns the matrix block. */
+  /** The Neo block's level. */
+  level?: Maybe<Scalars['Int']>;
+  /** The ID of the element that owns the neo block. */
   ownerId?: Maybe<Scalars['Int']>;
-  /** The ID of the matrix block's type. */
+  /** The ID of the neo block's type. */
   typeId?: Maybe<Scalars['Int']>;
-  /** The handle of the matrix block's type. */
+  /** The handle of the neo block's type. */
   typeHandle?: Maybe<Scalars['String']>;
-  /** The sort order of the matrix block within the owner element field. */
-  sortOrder?: Maybe<Scalars['Int']>;
   text?: Maybe<Scalars['String']>;
-  ctaLink?: Maybe<LinkField_Link>;
-  ariaLabel?: Maybe<Scalars['String']>;
+  /** The children block types for this block */
+  children?: Maybe<Array<Maybe<NeoBlockInterface>>>;
 };
 
 
 export type Cta_Cta_BlockType_CountArgs = {
+  field: Scalars['String'];
+};
+
+export type Cta_Link_BlockType = NeoBlockInterface & ElementInterface & {
+  /** The id of the entity */
+  id?: Maybe<Scalars['ID']>;
+  /** The uid of the entity */
+  uid?: Maybe<Scalars['String']>;
+  /** Return a number of related elements for a field. */
+  _count?: Maybe<Scalars['Int']>;
+  /** The element’s title. */
+  title?: Maybe<Scalars['String']>;
+  /** The element’s slug. */
+  slug?: Maybe<Scalars['String']>;
+  /** The element’s URI. */
+  uri?: Maybe<Scalars['String']>;
+  /** Whether the element is enabled or not. */
+  enabled?: Maybe<Scalars['Boolean']>;
+  /** Whether the element is archived or not. */
+  archived?: Maybe<Scalars['Boolean']>;
+  /** The ID of the site the element is associated with. */
+  siteId?: Maybe<Scalars['Int']>;
+  /** The unique identifier for an element-site relation. */
+  siteSettingsId?: Maybe<Scalars['ID']>;
+  /** The language of the site element is associated with. */
+  language?: Maybe<Scalars['String']>;
+  /** The element’s search score, if the `search` parameter was used when querying for the element. */
+  searchScore?: Maybe<Scalars['String']>;
+  /** Whether the element has been soft-deleted or not. */
+  trashed?: Maybe<Scalars['Boolean']>;
+  /** The element's status. */
+  status?: Maybe<Scalars['String']>;
+  /** The date the element was created. */
+  dateCreated?: Maybe<Scalars['DateTime']>;
+  /** The date the element was last updated. */
+  dateUpdated?: Maybe<Scalars['DateTime']>;
+  /** The ID of the field that owns the neo block. */
+  fieldId?: Maybe<Scalars['Int']>;
+  /** The Neo block's level. */
+  level?: Maybe<Scalars['Int']>;
+  /** The ID of the element that owns the neo block. */
+  ownerId?: Maybe<Scalars['Int']>;
+  /** The ID of the neo block's type. */
+  typeId?: Maybe<Scalars['Int']>;
+  /** The handle of the neo block's type. */
+  typeHandle?: Maybe<Scalars['String']>;
+  baseLink?: Maybe<LinkField_Link>;
+  text?: Maybe<Scalars['String']>;
+};
+
+
+export type Cta_Link_BlockType_CountArgs = {
   field: Scalars['String'];
 };
 
@@ -2364,13 +2499,49 @@ export type Footer_GlobalSet = ElementInterface & GlobalSetInterface & {
   name?: Maybe<Scalars['String']>;
   /** The handle of the global set. */
   handle?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
+  cta?: Maybe<Array<Maybe<Cta_NeoField>>>;
   textWithLineBreaks?: Maybe<Scalars['String']>;
 };
 
 
 export type Footer_GlobalSet_CountArgs = {
   field: Scalars['String'];
+};
+
+
+export type Footer_GlobalSetCtaArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  fieldId?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  ownerId?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  level?: Maybe<Scalars['Int']>;
 };
 
 export type Hero_MatrixField = Hero_Hero_BlockType;
@@ -2572,7 +2743,7 @@ export type Home_Home_Entry = ElementInterface & EntryInterface & {
   seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
   slides?: Maybe<Array<Maybe<Slides_MatrixField>>>;
   interval?: Maybe<Scalars['Number']>;
-  cta?: Maybe<Array<Maybe<Cta_MatrixField>>>;
+  cta?: Maybe<Array<Maybe<Cta_NeoField>>>;
   newsStoriesFeatured?: Maybe<Array<Maybe<EntryInterface>>>;
   newsStoriesLatest?: Maybe<Array<Maybe<EntryInterface>>>;
 };
@@ -2635,6 +2806,9 @@ export type Home_Home_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -2702,6 +2876,9 @@ export type Home_Home_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -2769,6 +2946,9 @@ export type Home_Home_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -2836,6 +3016,9 @@ export type Home_Home_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -2903,6 +3086,9 @@ export type Home_Home_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -2970,6 +3156,9 @@ export type Home_Home_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3037,6 +3226,9 @@ export type Home_Home_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3150,10 +3342,11 @@ export type Home_Home_EntryCtaArgs = {
   limit?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<Scalars['String']>;
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
-  fieldId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
-  ownerId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
-  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  fieldId?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  ownerId?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['Int']>>>;
   type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  level?: Maybe<Scalars['Int']>;
 };
 
 
@@ -3209,6 +3402,9 @@ export type Home_Home_EntryNewsStoriesFeaturedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3276,6 +3472,9 @@ export type Home_Home_EntryNewsStoriesLatestArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3288,6 +3487,759 @@ export type Home_Home_EntryNewsStoriesLatestArgs = {
   before?: Maybe<Scalars['String']>;
   after?: Maybe<Scalars['String']>;
   expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type Join_Join_Entry = ElementInterface & EntryInterface & {
+  /** The id of the entity */
+  id?: Maybe<Scalars['ID']>;
+  /** The uid of the entity */
+  uid?: Maybe<Scalars['String']>;
+  /** Return a number of related elements for a field. */
+  _count?: Maybe<Scalars['Int']>;
+  /** The element’s title. */
+  title?: Maybe<Scalars['String']>;
+  /** The element’s slug. */
+  slug?: Maybe<Scalars['String']>;
+  /** The element’s URI. */
+  uri?: Maybe<Scalars['String']>;
+  /** Whether the element is enabled or not. */
+  enabled?: Maybe<Scalars['Boolean']>;
+  /** Whether the element is archived or not. */
+  archived?: Maybe<Scalars['Boolean']>;
+  /** The ID of the site the element is associated with. */
+  siteId?: Maybe<Scalars['Int']>;
+  /** The unique identifier for an element-site relation. */
+  siteSettingsId?: Maybe<Scalars['ID']>;
+  /** The language of the site element is associated with. */
+  language?: Maybe<Scalars['String']>;
+  /** The element’s search score, if the `search` parameter was used when querying for the element. */
+  searchScore?: Maybe<Scalars['String']>;
+  /** Whether the element has been soft-deleted or not. */
+  trashed?: Maybe<Scalars['Boolean']>;
+  /** The element's status. */
+  status?: Maybe<Scalars['String']>;
+  /** The date the element was created. */
+  dateCreated?: Maybe<Scalars['DateTime']>;
+  /** The date the element was last updated. */
+  dateUpdated?: Maybe<Scalars['DateTime']>;
+  /** The element’s left position within its structure. */
+  lft?: Maybe<Scalars['Int']>;
+  /** The element’s right position within its structure. */
+  rgt?: Maybe<Scalars['Int']>;
+  /** The element’s level within its structure */
+  level?: Maybe<Scalars['Int']>;
+  /** The element’s structure’s root ID */
+  root?: Maybe<Scalars['Int']>;
+  /** The element’s structure ID. */
+  structureId?: Maybe<Scalars['Int']>;
+  /** Returns whether this is a draft. */
+  isDraft?: Maybe<Scalars['Boolean']>;
+  /** Returns whether this is a revision. */
+  isRevision?: Maybe<Scalars['Boolean']>;
+  /** The ID of the draft to return (from the `drafts` table) */
+  draftId?: Maybe<Scalars['Int']>;
+  /** Returns whether this is an unpublished draft. */
+  isUnpublishedDraft?: Maybe<Scalars['Boolean']>;
+  /** Returns whether this is an unpublished draft. **This field is deprecated.** `isUnpublishedDraft` should be used instead. */
+  isUnsavedDraft?: Maybe<Scalars['Boolean']>;
+  /** The name of the draft. */
+  draftName?: Maybe<Scalars['String']>;
+  /** The notes for the draft. */
+  draftNotes?: Maybe<Scalars['String']>;
+  /** Returns the entry’s canonical ID. */
+  canonicalId?: Maybe<Scalars['Int']>;
+  /** Returns the entry’s canonical UUID. */
+  canonicalUid?: Maybe<Scalars['String']>;
+  /**
+   * Returns the entry’s canonical ID.
+   * @deprecated this field has been deprecated since Craft 3.7.7. Use `canonicalId` instead.
+   */
+  sourceId?: Maybe<Scalars['Int']>;
+  /**
+   * Returns the entry’s canonical UUID.
+   * @deprecated this field has been deprecated since Craft 3.7.7. Use `canonicalUid` instead.
+   */
+  sourceUid?: Maybe<Scalars['String']>;
+  /** The ID of the section that contains the entry. */
+  sectionId?: Maybe<Scalars['Int']>;
+  /** The handle of the section that contains the entry. */
+  sectionHandle?: Maybe<Scalars['String']>;
+  /** The ID of the entry type that contains the entry. */
+  typeId?: Maybe<Scalars['Int']>;
+  /** The handle of the entry type that contains the entry. */
+  typeHandle?: Maybe<Scalars['String']>;
+  /** The entry's post date. */
+  postDate?: Maybe<Scalars['DateTime']>;
+  /** The expiry date of the entry. */
+  expiryDate?: Maybe<Scalars['DateTime']>;
+  /** The entry’s children, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  children?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The entry’s descendants, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  descendants?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The entry’s parent, if the section is a structure. */
+  parent?: Maybe<EntryInterface>;
+  /** The entry’s ancestors, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  ancestors?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The element’s full URL */
+  url?: Maybe<Scalars['String']>;
+  /** The same element in other locales. */
+  localized?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** Returns the previous element relative to this one, from a given set of criteria. */
+  prev?: Maybe<EntryInterface>;
+  /** Returns the next element relative to this one, from a given set of criteria. */
+  next?: Maybe<EntryInterface>;
+  seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
+  text?: Maybe<Scalars['String']>;
+  image?: Maybe<Array<Maybe<AssetInterface>>>;
+  textAdditional?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
+  textWithLineBreaks?: Maybe<Scalars['String']>;
+  quote?: Maybe<Array<Maybe<Quote_MatrixField>>>;
+  cta?: Maybe<Array<Maybe<Cta_NeoField>>>;
+};
+
+
+export type Join_Join_Entry_CountArgs = {
+  field: Scalars['String'];
+};
+
+
+export type Join_Join_EntryChildrenArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntryDescendantsArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntryParentArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntryAncestorsArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntryLocalizedArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntryPrevArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntryNextArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntrySeoArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  fieldId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ownerId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntryImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volume?: Maybe<Array<Maybe<Scalars['String']>>>;
+  folderId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  filename?: Maybe<Array<Maybe<Scalars['String']>>>;
+  kind?: Maybe<Array<Maybe<Scalars['String']>>>;
+  height?: Maybe<Array<Maybe<Scalars['String']>>>;
+  width?: Maybe<Array<Maybe<Scalars['String']>>>;
+  size?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateModified?: Maybe<Scalars['String']>;
+  includeSubfolders?: Maybe<Scalars['Boolean']>;
+  withTransforms?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uploader?: Maybe<Scalars['QueryArgument']>;
+};
+
+
+export type Join_Join_EntryQuoteArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  fieldId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ownerId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Join_Join_EntryCtaArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  fieldId?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  ownerId?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  level?: Maybe<Scalars['Int']>;
 };
 
 /** This is the interface implemented by all links. */
@@ -3580,6 +4532,9 @@ export type MissionVision_MissionVision_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3647,6 +4602,9 @@ export type MissionVision_MissionVision_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3714,6 +4672,9 @@ export type MissionVision_MissionVision_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3781,6 +4742,9 @@ export type MissionVision_MissionVision_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3848,6 +4812,9 @@ export type MissionVision_MissionVision_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3915,6 +4882,9 @@ export type MissionVision_MissionVision_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -3982,6 +4952,9 @@ export type MissionVision_MissionVision_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -4370,6 +5343,9 @@ export type People_Person_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -4437,6 +5413,9 @@ export type People_Person_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -4504,6 +5483,9 @@ export type People_Person_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -4571,6 +5553,9 @@ export type People_Person_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -4638,6 +5623,9 @@ export type People_Person_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -4705,6 +5693,9 @@ export type People_Person_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -4772,6 +5763,9 @@ export type People_Person_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5081,6 +6075,9 @@ export type Posts_News_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5148,6 +6145,9 @@ export type Posts_News_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5215,6 +6215,9 @@ export type Posts_News_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5282,6 +6285,9 @@ export type Posts_News_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5349,6 +6355,9 @@ export type Posts_News_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5416,6 +6425,9 @@ export type Posts_News_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5483,6 +6495,9 @@ export type Posts_News_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5780,6 +6795,9 @@ export type Posts_Story_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5847,6 +6865,9 @@ export type Posts_Story_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5914,6 +6935,9 @@ export type Posts_Story_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -5981,6 +7005,9 @@ export type Posts_Story_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -6048,6 +7075,9 @@ export type Posts_Story_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -6115,6 +7145,9 @@ export type Posts_Story_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -6182,6 +7215,9 @@ export type Posts_Story_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -6276,6 +7312,649 @@ export type Posts_Story_EntryImageArgs = {
 
 
 export type Posts_Story_EntryThumbnailArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volume?: Maybe<Array<Maybe<Scalars['String']>>>;
+  folderId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  filename?: Maybe<Array<Maybe<Scalars['String']>>>;
+  kind?: Maybe<Array<Maybe<Scalars['String']>>>;
+  height?: Maybe<Array<Maybe<Scalars['String']>>>;
+  width?: Maybe<Array<Maybe<Scalars['String']>>>;
+  size?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateModified?: Maybe<Scalars['String']>;
+  includeSubfolders?: Maybe<Scalars['Boolean']>;
+  withTransforms?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uploader?: Maybe<Scalars['QueryArgument']>;
+};
+
+export type Programs_Program_Entry = ElementInterface & EntryInterface & {
+  /** The id of the entity */
+  id?: Maybe<Scalars['ID']>;
+  /** The uid of the entity */
+  uid?: Maybe<Scalars['String']>;
+  /** Return a number of related elements for a field. */
+  _count?: Maybe<Scalars['Int']>;
+  /** The element’s title. */
+  title?: Maybe<Scalars['String']>;
+  /** The element’s slug. */
+  slug?: Maybe<Scalars['String']>;
+  /** The element’s URI. */
+  uri?: Maybe<Scalars['String']>;
+  /** Whether the element is enabled or not. */
+  enabled?: Maybe<Scalars['Boolean']>;
+  /** Whether the element is archived or not. */
+  archived?: Maybe<Scalars['Boolean']>;
+  /** The ID of the site the element is associated with. */
+  siteId?: Maybe<Scalars['Int']>;
+  /** The unique identifier for an element-site relation. */
+  siteSettingsId?: Maybe<Scalars['ID']>;
+  /** The language of the site element is associated with. */
+  language?: Maybe<Scalars['String']>;
+  /** The element’s search score, if the `search` parameter was used when querying for the element. */
+  searchScore?: Maybe<Scalars['String']>;
+  /** Whether the element has been soft-deleted or not. */
+  trashed?: Maybe<Scalars['Boolean']>;
+  /** The element's status. */
+  status?: Maybe<Scalars['String']>;
+  /** The date the element was created. */
+  dateCreated?: Maybe<Scalars['DateTime']>;
+  /** The date the element was last updated. */
+  dateUpdated?: Maybe<Scalars['DateTime']>;
+  /** The element’s left position within its structure. */
+  lft?: Maybe<Scalars['Int']>;
+  /** The element’s right position within its structure. */
+  rgt?: Maybe<Scalars['Int']>;
+  /** The element’s level within its structure */
+  level?: Maybe<Scalars['Int']>;
+  /** The element’s structure’s root ID */
+  root?: Maybe<Scalars['Int']>;
+  /** The element’s structure ID. */
+  structureId?: Maybe<Scalars['Int']>;
+  /** Returns whether this is a draft. */
+  isDraft?: Maybe<Scalars['Boolean']>;
+  /** Returns whether this is a revision. */
+  isRevision?: Maybe<Scalars['Boolean']>;
+  /** The ID of the draft to return (from the `drafts` table) */
+  draftId?: Maybe<Scalars['Int']>;
+  /** Returns whether this is an unpublished draft. */
+  isUnpublishedDraft?: Maybe<Scalars['Boolean']>;
+  /** Returns whether this is an unpublished draft. **This field is deprecated.** `isUnpublishedDraft` should be used instead. */
+  isUnsavedDraft?: Maybe<Scalars['Boolean']>;
+  /** The name of the draft. */
+  draftName?: Maybe<Scalars['String']>;
+  /** The notes for the draft. */
+  draftNotes?: Maybe<Scalars['String']>;
+  /** Returns the entry’s canonical ID. */
+  canonicalId?: Maybe<Scalars['Int']>;
+  /** Returns the entry’s canonical UUID. */
+  canonicalUid?: Maybe<Scalars['String']>;
+  /**
+   * Returns the entry’s canonical ID.
+   * @deprecated this field has been deprecated since Craft 3.7.7. Use `canonicalId` instead.
+   */
+  sourceId?: Maybe<Scalars['Int']>;
+  /**
+   * Returns the entry’s canonical UUID.
+   * @deprecated this field has been deprecated since Craft 3.7.7. Use `canonicalUid` instead.
+   */
+  sourceUid?: Maybe<Scalars['String']>;
+  /** The ID of the section that contains the entry. */
+  sectionId?: Maybe<Scalars['Int']>;
+  /** The handle of the section that contains the entry. */
+  sectionHandle?: Maybe<Scalars['String']>;
+  /** The ID of the entry type that contains the entry. */
+  typeId?: Maybe<Scalars['Int']>;
+  /** The handle of the entry type that contains the entry. */
+  typeHandle?: Maybe<Scalars['String']>;
+  /** The entry's post date. */
+  postDate?: Maybe<Scalars['DateTime']>;
+  /** The expiry date of the entry. */
+  expiryDate?: Maybe<Scalars['DateTime']>;
+  /** The entry’s children, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  children?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The entry’s descendants, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  descendants?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The entry’s parent, if the section is a structure. */
+  parent?: Maybe<EntryInterface>;
+  /** The entry’s ancestors, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  ancestors?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The element’s full URL */
+  url?: Maybe<Scalars['String']>;
+  /** The same element in other locales. */
+  localized?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** Returns the previous element relative to this one, from a given set of criteria. */
+  prev?: Maybe<EntryInterface>;
+  /** Returns the next element relative to this one, from a given set of criteria. */
+  next?: Maybe<EntryInterface>;
+  image?: Maybe<Array<Maybe<AssetInterface>>>;
+  text?: Maybe<Scalars['String']>;
+  textWithLineBreaks?: Maybe<Scalars['String']>;
+  contactLink?: Maybe<LinkField_Link>;
+};
+
+
+export type Programs_Program_Entry_CountArgs = {
+  field: Scalars['String'];
+};
+
+
+export type Programs_Program_EntryChildrenArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Programs_Program_EntryDescendantsArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Programs_Program_EntryParentArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Programs_Program_EntryAncestorsArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Programs_Program_EntryLocalizedArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Programs_Program_EntryPrevArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Programs_Program_EntryNextArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Programs_Program_EntryImageArgs = {
   id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   uid?: Maybe<Array<Maybe<Scalars['String']>>>;
   site?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -6511,6 +8190,755 @@ export type Seo_Seo_BlockTypeImageArgs = {
   includeSubfolders?: Maybe<Scalars['Boolean']>;
   withTransforms?: Maybe<Array<Maybe<Scalars['String']>>>;
   uploader?: Maybe<Scalars['QueryArgument']>;
+};
+
+export type Services_Service_Entry = ElementInterface & EntryInterface & {
+  /** The id of the entity */
+  id?: Maybe<Scalars['ID']>;
+  /** The uid of the entity */
+  uid?: Maybe<Scalars['String']>;
+  /** Return a number of related elements for a field. */
+  _count?: Maybe<Scalars['Int']>;
+  /** The element’s title. */
+  title?: Maybe<Scalars['String']>;
+  /** The element’s slug. */
+  slug?: Maybe<Scalars['String']>;
+  /** The element’s URI. */
+  uri?: Maybe<Scalars['String']>;
+  /** Whether the element is enabled or not. */
+  enabled?: Maybe<Scalars['Boolean']>;
+  /** Whether the element is archived or not. */
+  archived?: Maybe<Scalars['Boolean']>;
+  /** The ID of the site the element is associated with. */
+  siteId?: Maybe<Scalars['Int']>;
+  /** The unique identifier for an element-site relation. */
+  siteSettingsId?: Maybe<Scalars['ID']>;
+  /** The language of the site element is associated with. */
+  language?: Maybe<Scalars['String']>;
+  /** The element’s search score, if the `search` parameter was used when querying for the element. */
+  searchScore?: Maybe<Scalars['String']>;
+  /** Whether the element has been soft-deleted or not. */
+  trashed?: Maybe<Scalars['Boolean']>;
+  /** The element's status. */
+  status?: Maybe<Scalars['String']>;
+  /** The date the element was created. */
+  dateCreated?: Maybe<Scalars['DateTime']>;
+  /** The date the element was last updated. */
+  dateUpdated?: Maybe<Scalars['DateTime']>;
+  /** The element’s left position within its structure. */
+  lft?: Maybe<Scalars['Int']>;
+  /** The element’s right position within its structure. */
+  rgt?: Maybe<Scalars['Int']>;
+  /** The element’s level within its structure */
+  level?: Maybe<Scalars['Int']>;
+  /** The element’s structure’s root ID */
+  root?: Maybe<Scalars['Int']>;
+  /** The element’s structure ID. */
+  structureId?: Maybe<Scalars['Int']>;
+  /** Returns whether this is a draft. */
+  isDraft?: Maybe<Scalars['Boolean']>;
+  /** Returns whether this is a revision. */
+  isRevision?: Maybe<Scalars['Boolean']>;
+  /** The ID of the draft to return (from the `drafts` table) */
+  draftId?: Maybe<Scalars['Int']>;
+  /** Returns whether this is an unpublished draft. */
+  isUnpublishedDraft?: Maybe<Scalars['Boolean']>;
+  /** Returns whether this is an unpublished draft. **This field is deprecated.** `isUnpublishedDraft` should be used instead. */
+  isUnsavedDraft?: Maybe<Scalars['Boolean']>;
+  /** The name of the draft. */
+  draftName?: Maybe<Scalars['String']>;
+  /** The notes for the draft. */
+  draftNotes?: Maybe<Scalars['String']>;
+  /** Returns the entry’s canonical ID. */
+  canonicalId?: Maybe<Scalars['Int']>;
+  /** Returns the entry’s canonical UUID. */
+  canonicalUid?: Maybe<Scalars['String']>;
+  /**
+   * Returns the entry’s canonical ID.
+   * @deprecated this field has been deprecated since Craft 3.7.7. Use `canonicalId` instead.
+   */
+  sourceId?: Maybe<Scalars['Int']>;
+  /**
+   * Returns the entry’s canonical UUID.
+   * @deprecated this field has been deprecated since Craft 3.7.7. Use `canonicalUid` instead.
+   */
+  sourceUid?: Maybe<Scalars['String']>;
+  /** The ID of the section that contains the entry. */
+  sectionId?: Maybe<Scalars['Int']>;
+  /** The handle of the section that contains the entry. */
+  sectionHandle?: Maybe<Scalars['String']>;
+  /** The ID of the entry type that contains the entry. */
+  typeId?: Maybe<Scalars['Int']>;
+  /** The handle of the entry type that contains the entry. */
+  typeHandle?: Maybe<Scalars['String']>;
+  /** The entry's post date. */
+  postDate?: Maybe<Scalars['DateTime']>;
+  /** The expiry date of the entry. */
+  expiryDate?: Maybe<Scalars['DateTime']>;
+  /** The entry’s children, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  children?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The entry’s descendants, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  descendants?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The entry’s parent, if the section is a structure. */
+  parent?: Maybe<EntryInterface>;
+  /** The entry’s ancestors, if the section is a structure. Accepts the same arguments as the `entries` query. */
+  ancestors?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** The element’s full URL */
+  url?: Maybe<Scalars['String']>;
+  /** The same element in other locales. */
+  localized?: Maybe<Array<Maybe<EntryInterface>>>;
+  /** Returns the previous element relative to this one, from a given set of criteria. */
+  prev?: Maybe<EntryInterface>;
+  /** Returns the next element relative to this one, from a given set of criteria. */
+  next?: Maybe<EntryInterface>;
+  seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
+  color?: Maybe<Scalars['String']>;
+  image?: Maybe<Array<Maybe<AssetInterface>>>;
+  textWithLineBreaks?: Maybe<Scalars['String']>;
+  programs?: Maybe<Array<Maybe<EntryInterface>>>;
+};
+
+
+export type Services_Service_Entry_CountArgs = {
+  field: Scalars['String'];
+};
+
+
+export type Services_Service_EntryChildrenArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Services_Service_EntryDescendantsArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Services_Service_EntryParentArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Services_Service_EntryAncestorsArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Services_Service_EntryLocalizedArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Services_Service_EntryPrevArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Services_Service_EntryNextArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Services_Service_EntrySeoArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  fieldId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ownerId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+
+export type Services_Service_EntryImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volume?: Maybe<Array<Maybe<Scalars['String']>>>;
+  folderId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  filename?: Maybe<Array<Maybe<Scalars['String']>>>;
+  kind?: Maybe<Array<Maybe<Scalars['String']>>>;
+  height?: Maybe<Array<Maybe<Scalars['String']>>>;
+  width?: Maybe<Array<Maybe<Scalars['String']>>>;
+  size?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateModified?: Maybe<Scalars['String']>;
+  includeSubfolders?: Maybe<Scalars['Boolean']>;
+  withTransforms?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uploader?: Maybe<Scalars['QueryArgument']>;
+};
+
+
+export type Services_Service_EntryProgramsArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type SliderVertical_MatrixField = SliderVertical_Slide_BlockType;
@@ -6953,6 +9381,9 @@ export type Team_Team_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -7020,6 +9451,9 @@ export type Team_Team_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -7087,6 +9521,9 @@ export type Team_Team_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -7154,6 +9591,9 @@ export type Team_Team_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -7221,6 +9661,9 @@ export type Team_Team_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -7288,6 +9731,9 @@ export type Team_Team_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -7355,6 +9801,9 @@ export type Team_Team_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -7457,6 +9906,9 @@ export type Team_Team_EntryPeopleArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   editable?: Maybe<Scalars['Boolean']>;
   section?: Maybe<Array<Maybe<Scalars['String']>>>;
   sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
@@ -7480,7 +9932,7 @@ export type Trustees_TableRow = {
   description?: Maybe<Scalars['String']>;
 };
 
-export type CtaFragment = { ariaLabel?: Maybe<string>, text?: Maybe<string>, link?: Maybe<LinkFragment> };
+export type CtaFragment = { text?: Maybe<string>, links?: Maybe<Array<Maybe<{ ariaLabel?: Maybe<string>, link?: Maybe<LinkFragment> }>>> };
 
 export type NewsCardFragment = { slug?: Maybe<string>, title?: Maybe<string>, type?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>>, thumbnail?: Maybe<Array<Maybe<AssetFragment>>> };
 
@@ -7489,6 +9941,8 @@ export type StoryCardFragment = { slug?: Maybe<string>, title?: Maybe<string>, t
 export type PeoplePersonFragment = { slug?: Maybe<string>, education?: Maybe<string>, name?: Maybe<string>, role?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>> };
 
 export type PillFragment = { bg?: Maybe<string>, description?: Maybe<string>, title?: Maybe<string> };
+
+export type ProgramFragment = { title?: Maybe<string>, description?: Maybe<string>, subtitle?: Maybe<string>, contactLink?: Maybe<LinkFragment>, image?: Maybe<Array<Maybe<AssetFragment>>> };
 
 export type QuoteFragment = { caption?: Maybe<string>, quote?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>> };
 
@@ -7509,12 +9963,17 @@ export type LinkFragment = { text?: Maybe<string>, type?: Maybe<string>, url?: M
 export type GlobalsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GlobalsQuery = { footer?: Maybe<{ cta?: Maybe<string>, address?: Maybe<string> }>, socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>, url?: Maybe<string> }> }>>> }> };
+export type GlobalsQuery = { footer?: Maybe<{ address?: Maybe<string>, cta?: Maybe<Array<Maybe<CtaFragment>>> }>, socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>, url?: Maybe<string> }> }>>> }> };
 
 export type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type HomeQuery = { home?: Maybe<{ interval?: Maybe<any>, cta?: Maybe<Array<Maybe<CtaFragment>>>, newsStoriesFeatured?: Maybe<Array<Maybe<NewsCardFragment | StoryCardFragment>>>, newsStoriesLatest?: Maybe<Array<Maybe<NewsCardFragment | StoryCardFragment>>>, slides?: Maybe<Array<Maybe<SlideFragment>>>, seo?: Maybe<Array<Maybe<SeoFragment>>> }> };
+
+export type JoinQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type JoinQuery = { join?: Maybe<{ description?: Maybe<string>, descriptionBg?: Maybe<string>, heroText?: Maybe<string>, text?: Maybe<string>, cta?: Maybe<Array<Maybe<CtaFragment>>>, image?: Maybe<Array<Maybe<AssetFragment>>>, quote?: Maybe<Array<Maybe<QuoteFragment>>>, seo?: Maybe<Array<Maybe<SeoFragment>>> }> };
 
 export type MissionVisionQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -7532,6 +9991,18 @@ export type PersonQueryVariables = Exact<{
 
 
 export type PersonQuery = { person?: Maybe<{ description?: Maybe<string>, education?: Maybe<string>, name?: Maybe<string>, role?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>>, seo?: Maybe<Array<Maybe<SeoFragment>>> }> };
+
+export type ServiceQueryVariables = Exact<{
+  slug?: Maybe<Array<Scalars['String']> | Scalars['String']>;
+}>;
+
+
+export type ServiceQuery = { service?: Maybe<{ color?: Maybe<string>, title?: Maybe<string>, description?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>>, programs?: Maybe<Array<Maybe<{ title?: Maybe<string>, description?: Maybe<string>, subtitle?: Maybe<string>, contactLink?: Maybe<LinkFragment>, image?: Maybe<Array<Maybe<AssetFragment>>> }>>>, seo?: Maybe<Array<Maybe<SeoFragment>>> }> };
+
+export type ServicesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ServicesSlugsQuery = { services?: Maybe<Array<Maybe<{ slug?: Maybe<string> }>>> };
 
 export type TeamQueryVariables = Exact<{ [key: string]: never; }>;
 
