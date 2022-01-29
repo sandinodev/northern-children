@@ -1,3 +1,4 @@
+export { CONTACT_QUERY } from "./Contact.query";
 export { FACTS_STATS_QUERY } from "./FactsStats.query";
 export { GLOBALS_QUERY } from "./Globals.query";
 export { HOME_QUERY } from "./Home.query";
