@@ -1,10 +1,11 @@
 import NextLink from "next/link";
-import tw, { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 
 import { isLinkExternal, parsePublicToLocalHref } from "~/utils";
 
 interface StylesProps {
   block?: boolean;
+  underline?: boolean;
 }
 
 interface Props extends StylesProps {
@@ -13,7 +14,13 @@ interface Props extends StylesProps {
 }
 
 const Wrapper = styled.a<StylesProps>`
-  ${({ block }) => (block ? tw`block` : tw`inline-flex`)}
+  ${({ block }) => (block ? tw`block w-min` : tw`inline-flex`)}
+
+  ${({ underline }) =>
+    underline &&
+    css`
+      ${tw`underline`}
+    `}
 `;
 
 export const BaseLink: React.FC<Props> = ({ children, href, ...rest }) => {
