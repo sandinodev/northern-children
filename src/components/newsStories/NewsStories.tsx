@@ -77,7 +77,7 @@ export const NewsStories = ({ amount, featured, list, loadMore }: Props) => {
       if (!res.ok) {
         throw new Error();
       }
-      console.log(posts);
+
       if (posts?.length) {
         setPostsList((prev) => [...prev, ...posts]);
       }
