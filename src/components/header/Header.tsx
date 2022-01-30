@@ -25,7 +25,7 @@ const GROUPS = [
     title: "Our Community",
     links: [
       { href: "/facts-stats", text: "Facts & Stats" },
-      { href: "/news", text: "News & Stories" },
+      { href: "/news-stories", text: "News & Stories" },
     ],
   },
 ];
