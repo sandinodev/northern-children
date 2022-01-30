@@ -11,7 +11,9 @@ interface ButtonStylesExternalProps {
 
 interface ButtonSharedProps extends ButtonStylesExternalProps {
   ariaLabel?: string;
+  disabled?: boolean;
   href?: string;
+  onClick?: () => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   type?: string;
