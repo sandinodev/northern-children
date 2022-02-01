@@ -14,15 +14,15 @@ import { DataStore, useDataStore } from "~/store/data";
 
 const Wrapper = tw.footer`border-t border-black`;
 
-const Main = tw(BaseWrapper)`py-20`;
+const Main = tw(BaseWrapper)`pt-40 pb-20 lg:py-20`;
 
 const MainContainer = tw(BaseContainer)`items-end`;
 
-const Address = tw.address`col-span-3 whitespace-pre-line`;
+const Address = tw.address`col-span-full lg:col-span-3 mb-10 lg:mb-0 whitespace-pre-line`;
 
-const Newsletter = tw.div`col-span-2`;
+const Newsletter = tw.div`col-span-full lg:col-span-2 mb-50 lg:mb-0`;
 
-const Socials = tw.div`col-span-2 col-start-9 flex items-end`;
+const Socials = tw.div`col-span-2 lg:col-start-9 flex lg:items-end`;
 
 const SocialLink = tw(BaseLink)`mr-20 last:mr-0`;
 

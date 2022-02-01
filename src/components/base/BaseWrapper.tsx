@@ -18,5 +18,5 @@ export const BaseWrapper = styled.section<Props>`
 
   ${({ border }) => border && tw`border-b`}
 
-  ${({ mb }) => mb && tw`mb-200`}
+  ${({ mb }) => mb && tw`mb-100 lg:mb-200`}
 `;

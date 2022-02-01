@@ -13,6 +13,37 @@ export const Variables = createGlobalStyle`
     --color-yellow: #f0b323;
     --color-violet: #6d6db2;
 
+    --font-max-size: 32px;
+    --font-max-line: 1.2;
+    --font-max-letter: 0;
+
+    --font-2xl-size: 32px;
+    --font-2xl-line: 1.2;
+    --font-2xl-letter: 0;
+
+    --font-xl-size: 26px;
+    --font-xl-line: 1.15;
+    --font-xl-letter: -0.02em;
+
+    --font-lg-size: 26px;
+    --font-lg-line: 1.2;
+    --font-lg-line-alpina: 1.15;
+    --font-lg-letter: 0;
+
+    --font-md-size: 22px;
+    --font-md-line: 1.2;
+    --font-md-letter: 0;
+
+    --font-base-size: 18px;
+    --font-base-line: 1.2;
+    --font-base-letter: 0;
+
+    --font-xs-size: 14px;
+    --font-xs-line: 1.25;
+    --font-xs-letter: 0;
+
+    --max-w-container: ${DEFAULT_WIDTH}px;
+
     ${up("lg")} {
       --font-max-size: 60px;
       --font-max-line: 1.2;
@@ -34,16 +65,6 @@ export const Variables = createGlobalStyle`
       --font-md-size: 24px;
       --font-md-line: 1.2;
       --font-md-letter: 0;
-
-      --font-base-size: 18px;
-      --font-base-line: 1.2;
-      --font-base-letter: 0;
-
-      --font-xs-size: 14px;
-      --font-xs-line: 1.25;
-      --font-xs-letter: 0;
-
-      --max-w-container: ${DEFAULT_WIDTH}px;
     }
   }
 `;

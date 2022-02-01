@@ -20,9 +20,6 @@ export const NEWS_CARD_FRAGMENT = gql`
 
 export const STORY_CARD_FRAGMENT = gql`
   fragment StoryCard on posts_story_Entry {
-    image {
-      ...Asset
-    }
     thumbnail {
       ...Asset
     }

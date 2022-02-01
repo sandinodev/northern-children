@@ -16,18 +16,18 @@ interface Props extends CtaFragment, StylesExternalProps {
 }
 
 const Wrapper = styled(BaseWrapper)<StylesExternalProps>`
-  ${tw`py-144`}
+  ${tw`py-100 lg:py-144`}
 
   ${({ noBorder }) => !noBorder && tw`border-b border-black`}
 
   ${({ yellow }) => yellow && tw`bg-yellow`}
 `;
 
-const Content = tw.div`col-span-6 col-start-4 flex flex-col items-center text-center text-lg-alpina font-alpina`;
+const Content = tw.div`col-span-full lg:col-span-6 lg:col-start-4 flex flex-col items-center text-center text-lg-alpina font-alpina`;
 
 const Text = tw.p`mb-64`;
 
-const Links = tw.div`grid grid-flow-col auto-cols-fr gap-x-40`;
+const Links = tw.div`grid grid-flow-row lg:grid-flow-col auto-cols-fr gap-x-10 lg:gap-x-40 gap-y-40`;
 
 export const Cta = ({ links, text, turquoise, ...rest }: Props) => {
   return (

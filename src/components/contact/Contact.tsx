@@ -12,9 +12,9 @@ interface Props {
   socials: GlobalsQuery["socials"];
 }
 
-const StyledBaseSection = tw(BaseSection)`lg:pb-100`;
+const StyledBaseSection = tw(BaseSection)`pb-100`;
 
-const Address = tw.address`text-md whitespace-pre`;
+const Address = tw.address`lg:text-md whitespace-pre`;
 
 const Socials = styled.div`
   margin-top: 1.5em;

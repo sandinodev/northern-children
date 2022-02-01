@@ -8,9 +8,9 @@ interface Props {
   directory: ContactDirectoryEntryFragment[];
 }
 
-const Wrapper = tw.ul`col-span-full text-md`;
+const Wrapper = tw.ul`col-span-full lg:text-md`;
 
-const Entry = tw.li`mb-60`;
+const Entry = tw.li`mb-60 last:mb-0`;
 
 const Title = tw.h3`font-bold`;
 

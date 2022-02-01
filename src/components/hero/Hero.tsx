@@ -17,7 +17,7 @@ const Wrapper = styled.section`
 
 const Overlay = tw.div`absolute flex items-center justify-center top-0 left-0 w-full h-full z-1`;
 
-const Text = tw.h1`text-2xl text-white font-athletics uppercase`;
+const Text = tw.h1`text-2xl text-white text-center font-athletics uppercase`;
 
 export const Hero = ({ image, text }: Props) => {
   return (

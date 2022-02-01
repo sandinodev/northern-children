@@ -31,7 +31,7 @@ const GROUPS = [
 ];
 
 const Wrapper = styled(BaseWrapper)<{ i: number }>`
-  ${tw`fixed top-0 left-0 w-full py-12 bg-white-greenish z-header`}
+  ${tw`fixed top-0 left-0 w-full py-20 lg:py-12 bg-white-greenish z-header`}
 
   &:before {
     ${tw`absolute top-full left-0 w-full bg-white-greenish -z-1`}
@@ -73,7 +73,7 @@ const StyledLogoSVG = styled(LogoSVG)`
 `;
 
 const Items = styled.ul`
-  ${tw`col-span-7 flex items-center justify-between pointer-events-none`}
+  ${tw`hidden lg:flex col-span-7 items-center justify-between pointer-events-none`}
 
   grid-column-end: -1;
 `;

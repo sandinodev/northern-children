@@ -30,11 +30,11 @@ const Image = styled.div`
   ${tw`absolute top-0 left-0 w-full h-full -z-1`}
 `;
 
-export const Quote = ({ caption, image, quote }: QuoteFragment) => {
+export const Quote = ({ caption, image, quote, ...rest }: QuoteFragment) => {
   if (!quote?.length) return null;
 
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       <Container>
         <Figure>
           <Blockquote>

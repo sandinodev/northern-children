@@ -1,9 +1,12 @@
 import { GetStaticProps, NextPage } from "next";
+import { styled } from "twin.macro";
 
 import { Cta } from "~/components/cta";
 import { NewsStories } from "~/components/newsStories";
 import { Seo } from "~/components/seo";
 import { Slider } from "~/components/slider";
+
+import { MAIN_PADDING_TOP } from "~/constants";
 
 import { GLOBALS_QUERY, HOME_QUERY } from "~/gql";
 
@@ -14,10 +17,17 @@ import { DefaultPage } from "~/layouts/DefaultPage";
 import { fetchData } from "~/lib/api";
 
 import { GlobalsQuery, HomeQuery } from "~/types";
+import { down } from "~/utils/screens";
 
 interface Props extends GlobalDataProps {
   home: HomeQuery["home"];
 }
+
+const StyledSlider = styled(Slider)`
+  ${down("lg")} {
+    height: calc(100vh - ${MAIN_PADDING_TOP.min}px);
+  }
+`;
 
 const Index: NextPage<Props> = ({ footer, home, socials }) => {
   useSetGlobalData({ footer, socials });
@@ -27,7 +37,7 @@ const Index: NextPage<Props> = ({ footer, home, socials }) => {
       <Seo seo={home?.seo?.[0]} />
 
       <DefaultPage>
-        {!!home?.slides?.length && <Slider interval={home.interval} slides={home.slides} hScreen />}
+        {!!home?.slides?.length && <StyledSlider interval={home.interval} slides={home.slides} hScreen />}
 
         {!!home?.cta?.length && <Cta yellow {...home.cta[0]} />}
 

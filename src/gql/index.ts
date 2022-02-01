@@ -2,6 +2,7 @@ export { CONTACT_QUERY } from "./Contact.query";
 export { FACTS_STATS_QUERY } from "./FactsStats.query";
 export { GLOBALS_QUERY } from "./Globals.query";
 export { HOME_QUERY } from "./Home.query";
+export { INTERNSHIPS_VOLUNTEER_QUERY } from "./InternshipsVolunteer.query";
 export { JOIN_QUERY } from "./Join.query";
 export { MISSION_VISION_QUERY } from "./MissionVision.query";
 export { NEWS_STORIES_QUERY } from "./NewsStories.query";

@@ -15,14 +15,14 @@ interface ListProps {
 interface Props {
   amount?: number;
   featured?: List;
-  list: List;
+  list?: List;
   loadMore?: boolean;
 }
 
 const Container = tw(BaseContainer)`col-span-full`;
 
 const More = styled.div<{ isHidden: boolean }>`
-  ${tw`col-span-full flex items-center justify-center mt-100`}
+  ${tw`col-span-full flex items-center justify-center mt-80 lg:mt-100`}
 
   transition: opacity 0.25s, display 0s 0.25s;
 
@@ -38,12 +38,13 @@ const Loading = styled.div<{ isVisible: boolean }>`
 `;
 
 const Item = styled.li<{ isFeatured?: boolean }>`
-  ${({ isFeatured }) => (isFeatured ? tw`col-span-6` : tw`col-span-3`)}
+  ${({ isFeatured }) => (isFeatured ? tw`col-span-full lg:col-span-6` : tw`col-span-full lg:col-span-3`)}
 `;
 
 const NewsStoriesList = ({ isFeatured, list }: ListProps) => {
   return (
     <>
+      {/* @ts-expect-error */}
       {list.map(({ image, thumbnail, slug, type, ...rest }) => (
         <Item key={slug} isFeatured={isFeatured}>
           <BaseCard
@@ -59,7 +60,7 @@ const NewsStoriesList = ({ isFeatured, list }: ListProps) => {
   );
 };
 
-export const NewsStories = ({ amount, featured, list, loadMore }: Props) => {
+export const NewsStories = ({ amount, featured, list = [], loadMore }: Props) => {
   const [isFetching, setIsFetching] = useState(false);
   const [postsList, setPostsList] = useState([...list]);
 

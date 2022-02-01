@@ -19,9 +19,9 @@ interface Props extends StylesExternalProps {
 }
 
 const Title = styled.h2<StylesExternalProps>`
-  ${tw`col-span-full mb-68 text-xl font-alpina`}
+  ${tw`col-span-full mb-44 lg:mb-68 text-xl font-alpina`}
 
-  ${({ noMt }) => !noMt && tw`mt-100`}
+  ${({ noMt }) => !noMt && tw`mt-80 lg:mt-100`}
 
   ${({ titleStyles }) => titleStyles}
 `;

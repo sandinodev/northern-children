@@ -33,10 +33,10 @@ const Title = styled.h3`
 `;
 
 const Subtitle = styled.h4<{ text?: string }>`
-  ${tw`col-span-full relative px-10 mb-20 text-xs font-era-mono`}
+  ${tw`col-span-full relative px-10 mb-18 lg:mb-20 text-xs font-era-mono`}
 
   &:before {
-    ${tw`absolute top-0 left-0 px-10 opacity-0`}
+    ${tw`hidden lg:block absolute top-0 left-0 px-10 opacity-0`}
 
     content: "${({ text }) => text}";
     transform: translateY(120%);
@@ -82,7 +82,7 @@ const Wrapper = styled(BaseLink)<StylesExternalProps>`
           ${tw`grid-cols-6`}
 
           ${Title} {
-            ${tw`col-span-4 pl-10 mb-60`}
+            ${tw`col-span-full lg:col-span-4 pl-10 mb-40 lg:mb-60`}
           }
         `
       : css`
