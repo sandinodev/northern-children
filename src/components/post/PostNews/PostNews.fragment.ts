@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
 
 import { SEO_FRAGMENT } from "~/components/seo";
+import { SHARE_FACEBOOK_FRAGMENT, SHARE_TWITTER_FRAGMENT } from "~/components/share";
 
 import { ASSET_FRAGMENT } from "~/gql/Fragments.fragment";
 
@@ -20,6 +21,10 @@ export const POST_NEWS_FRAGMENT = gql`
     seo {
       ...Seo
     }
+    share {
+      ...ShareFacebook
+      ...ShareTwitter
+    }
     title
     type: typeHandle
   }
@@ -28,4 +33,6 @@ export const POST_NEWS_FRAGMENT = gql`
   ${POST_NEWS_IMAGE_BLOCK_FRAGMENT}
   ${POST_NEWS_RICH_TEXT_BLOCK}
   ${SEO_FRAGMENT}
+  ${SHARE_FACEBOOK_FRAGMENT}
+  ${SHARE_TWITTER_FRAGMENT}
 `;

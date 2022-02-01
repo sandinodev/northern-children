@@ -64,7 +64,7 @@ export const PostNews = ({ bg, blocks, image, postDate, title }: PostNewsFragmen
   );
 
   return (
-    <article>
+    <>
       <BaseWrapper>
         <BaseContainer>
           <HeroText bg={bg}>
@@ -84,6 +84,6 @@ export const PostNews = ({ bg, blocks, image, postDate, title }: PostNewsFragmen
           <Blocks>{!!blocks?.length && blocks.map((block, i) => <PostNewsBlock key={i} block={block} />)}</Blocks>
         </BaseContainer>
       </BaseWrapper>
-    </article>
+    </>
   );
 };
