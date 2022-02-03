@@ -18,8 +18,8 @@ interface Props extends GlobalDataProps {
   facts: FactsStatsQuery["facts"];
 }
 
-const Page: NextPage<Props> = ({ facts, footer, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ facts, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>

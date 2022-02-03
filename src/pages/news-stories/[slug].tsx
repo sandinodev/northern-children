@@ -17,8 +17,8 @@ interface Props extends GlobalDataProps {
   post: PostQuery["post"];
 }
 
-const Page: NextPage<Props> = ({ footer, post, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ post, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>

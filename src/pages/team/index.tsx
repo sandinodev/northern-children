@@ -18,8 +18,8 @@ interface Props extends GlobalDataProps {
   team: TeamQuery["team"];
 }
 
-const Page: NextPage<Props> = ({ footer, socials, team }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ team, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>

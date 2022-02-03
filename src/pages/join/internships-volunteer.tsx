@@ -18,8 +18,8 @@ interface Props extends GlobalDataProps {
   internships: InternshipsVolunteerQuery["internships"];
 }
 
-const Page: NextPage<Props> = ({ footer, internships, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ internships, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>

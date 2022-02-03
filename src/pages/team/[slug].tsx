@@ -17,8 +17,8 @@ interface Props extends GlobalDataProps {
   person: PersonQuery["person"];
 }
 
-const Page: NextPage<Props> = ({ footer, person, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ person, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>

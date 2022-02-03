@@ -21,8 +21,8 @@ interface Props extends GlobalDataProps {
   mission: MissionVisionQuery["mission"];
 }
 
-const Page: NextPage<Props> = ({ footer, mission, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ mission, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>

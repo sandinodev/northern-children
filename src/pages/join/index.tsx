@@ -20,8 +20,8 @@ interface Props extends GlobalDataProps {
   join: JoinQuery["join"];
 }
 
-const Page: NextPage<Props> = ({ footer, join, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ join, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>

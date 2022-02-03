@@ -17,15 +17,15 @@ interface Props extends GlobalDataProps {
   contact: ContactQuery["contact"];
 }
 
-const Page: NextPage<Props> = ({ contact, footer, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ contact, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>
       <Seo seo={contact?.seo?.[0]} />
 
       <DefaultPage mt>
-        <Contact address={footer?.address} contact={contact} socials={socials} />
+        <Contact address={rest.footer?.address} contact={contact} socials={rest.socials} />
       </DefaultPage>
     </>
   );

@@ -29,8 +29,8 @@ const StyledSlider = styled(Slider)`
   }
 `;
 
-const Index: NextPage<Props> = ({ footer, home, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Index: NextPage<Props> = ({ home, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>

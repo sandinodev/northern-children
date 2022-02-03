@@ -19,8 +19,8 @@ interface Props extends GlobalDataProps {
   service: ServiceQuery["service"];
 }
 
-const Page: NextPage<Props> = ({ footer, service, socials }) => {
-  useSetGlobalData({ footer, socials });
+const Page: NextPage<Props> = ({ service, ...rest }) => {
+  useSetGlobalData(rest);
 
   return (
     <>
