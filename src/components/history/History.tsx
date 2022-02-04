@@ -9,8 +9,14 @@ interface Props {
   title?: string;
 }
 
-const Wrapper = tw(BaseSection)`bg-turquoise`;
+const Wrapper = tw.section`bg-turquoise`;
 
 export const History = ({ slides, title }: Props) => {
-  return <Wrapper title={title}>{!!slides?.length && <SliderVertical slides={slides} />}</Wrapper>;
+  return (
+    <Wrapper>
+      <BaseSection title={title} />
+
+      {!!slides?.length && <SliderVertical slides={slides} />}
+    </Wrapper>
+  );
 };
