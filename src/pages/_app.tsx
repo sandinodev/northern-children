@@ -12,6 +12,7 @@ import { Store, useStore } from "~/store";
 import { GlobalStyles } from "~/styles/GlobalStyles";
 import "~/styles/fonts.css";
 import { Footer } from "~/components/footer";
+import { Intro } from "~/components/intro";
 
 const defaultSeo: DefaultSeoProps = {
   title: "Title",
@@ -26,13 +27,14 @@ const defaultSeo: DefaultSeoProps = {
   },
 };
 
-const storeSelector = ({ setWH, setWW }: Store) => ({
+const storeSelector = ({ isIntro, setWH, setWW }: Store) => ({
+  isIntro,
   setWH,
   setWW,
 });
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const { setWH, setWW } = useStore(storeSelector);
+  const { isIntro, setWH, setWW } = useStore(storeSelector);
 
   useEffect(() => {
     const set = () => {
@@ -79,6 +81,8 @@ const App = ({ Component, pageProps }: AppProps) => {
       </TransitionPages>
 
       <Footer />
+
+      {isIntro && <Intro />}
     </>
   );
 };
