@@ -9,6 +9,7 @@ interface StylesProps {
   fullH?: boolean;
   fullW?: boolean;
   h?: number;
+  originalSize?: boolean;
   w?: number;
 }
 
@@ -18,6 +19,7 @@ interface Props extends StylesProps {
   customH?: number;
   kind?: string;
   layout?: ImageProps["layout"];
+  noPlaceholder?: boolean;
   objectFit?: ImageProps["objectFit"];
   placeholder?: string;
   priority?: boolean;
@@ -44,6 +46,13 @@ const Wrapper = styled.div<StylesProps>`
     `}
 
   ${({ fullW }) => fullW && tw`w-full`}
+
+  ${({ originalSize, h, w }) =>
+    originalSize &&
+    css`
+      width: ${w}px;
+      height: ${h}px;
+    `}
 
   @supports not (aspect-ratio: 1/1) {
     &:before {
@@ -81,6 +90,7 @@ export const BaseImage: React.FC<Props> = ({
   h = 0,
   kind: _,
   layout,
+  noPlaceholder,
   objectFit = "cover",
   placeholder,
   priority,
@@ -126,7 +136,7 @@ export const BaseImage: React.FC<Props> = ({
         {...dimensions}
       />
 
-      {placeholder && (
+      {!noPlaceholder && placeholder && (
         <Placeholder isHidden={isLoaded} objectFit={objectFit}>
           <img alt="" src={placeholder} />
         </Placeholder>
