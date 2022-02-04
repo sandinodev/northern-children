@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, EffectFade } from "swiper";
+import { useState } from "react";
 import tw, { styled } from "twin.macro";
 
 import "swiper/swiper.min.css";
@@ -30,7 +31,15 @@ const StyledSwiper = styled(Swiper)`
   ${tw`w-full h-full`}
 `;
 
+const StyledHeroSplit = styled(HeroSplit)<{ isHidden: boolean }>`
+  ${({ isHidden }) => isHidden && tw`opacity-0`}
+`;
+
 export const Slider = ({ interval = 5, slides, ...rest }: Props) => {
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  const onInit = () => setIsInitialized(true);
+
   if (!slides.length) return null;
 
   return (
@@ -39,13 +48,14 @@ export const Slider = ({ interval = 5, slides, ...rest }: Props) => {
         autoplay={{ delay: interval * 1000, disableOnInteraction: false }}
         effect="fade"
         followFinger={false}
+        onInit={onInit}
         slidesPerView={1}
         spaceBetween={0}
         loop
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
-            <HeroSplit {...slide} />
+            <StyledHeroSplit isHidden={!isInitialized && i !== 0} {...slide} />
           </SwiperSlide>
         ))}
       </StyledSwiper>
