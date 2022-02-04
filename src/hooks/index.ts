@@ -1,4 +1,5 @@
 export { useBodyScrollLock } from "./useBodyScrollLock";
+export { useBreakpoints } from "./useBreakpoints";
 export { useFontsLoaded } from "./useFontsLoaded";
 export { useInView } from "./useInView";
 export { useMediaQuery } from "./useMediaQuery";
