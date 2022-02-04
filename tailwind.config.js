@@ -17,7 +17,7 @@ module.exports = {
       red: "var(--color-red)",
       turquoise: "var(--color-turquoise)",
       yellow: "var(--color-yellow)",
-      violet: "var(--color-blue)",
+      violet: "var(--color-violet)",
     },
     extend: {
       maxWidth: {
