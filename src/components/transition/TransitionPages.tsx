@@ -15,7 +15,13 @@ export const TransitionPages: React.FC<Props> = ({ children }) => {
     root: useRef<HTMLDivElement>(null),
   };
 
-  const onExit = () => {};
+  const onEnter = () => {
+    gsap.fromTo(refs.root.current, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3, ease: "power2.out", delay: 0.15 });
+  };
+
+  const onExit = () => {
+    gsap.to(refs.root.current, { autoAlpha: 0, duration: 0.3, ease: "power2.out" });
+  };
 
   const onExited = () => {
     window.scrollTo(0, 0);
@@ -27,11 +33,12 @@ export const TransitionPages: React.FC<Props> = ({ children }) => {
         key={router.asPath}
         in={true}
         nodeRef={refs.root}
+        onEnter={onEnter}
         onExit={onExit}
         onExited={onExited}
         timeout={{
-          enter: 0,
-          exit: 1500,
+          enter: 450,
+          exit: 300,
         }}
         mountOnEnter
         unmountOnExit
