@@ -19,6 +19,7 @@ let nextConfig = {
 
   images: {
     domains: [process.env.ASSETS_DOMAIN],
+    minimumCacheTTL: 31536000,
   },
 
   webpack: (config, options) => {
