@@ -1785,6 +1785,7 @@ export type QueryGlobalSetsArgs = {
   orderBy?: Maybe<Scalars['String']>;
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  images?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   handle?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
@@ -1818,6 +1819,7 @@ export type QueryGlobalSetArgs = {
   orderBy?: Maybe<Scalars['String']>;
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  images?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   handle?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
@@ -5846,6 +5848,94 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntrySeoArgs = {
 
 
 export type InternshipsVolunteer_InternshipsVolunteer_EntryImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volume?: Maybe<Array<Maybe<Scalars['String']>>>;
+  folderId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  filename?: Maybe<Array<Maybe<Scalars['String']>>>;
+  kind?: Maybe<Array<Maybe<Scalars['String']>>>;
+  height?: Maybe<Array<Maybe<Scalars['String']>>>;
+  width?: Maybe<Array<Maybe<Scalars['String']>>>;
+  size?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateModified?: Maybe<Scalars['String']>;
+  includeSubfolders?: Maybe<Scalars['Boolean']>;
+  withTransforms?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uploader?: Maybe<Scalars['QueryArgument']>;
+};
+
+export type Intro_GlobalSet = ElementInterface & GlobalSetInterface & {
+  /** The id of the entity */
+  id?: Maybe<Scalars['ID']>;
+  /** The uid of the entity */
+  uid?: Maybe<Scalars['String']>;
+  /** Return a number of related elements for a field. */
+  _count?: Maybe<Scalars['Int']>;
+  /** The element’s title. */
+  title?: Maybe<Scalars['String']>;
+  /** The element’s slug. */
+  slug?: Maybe<Scalars['String']>;
+  /** The element’s URI. */
+  uri?: Maybe<Scalars['String']>;
+  /** Whether the element is enabled or not. */
+  enabled?: Maybe<Scalars['Boolean']>;
+  /** Whether the element is archived or not. */
+  archived?: Maybe<Scalars['Boolean']>;
+  /** The ID of the site the element is associated with. */
+  siteId?: Maybe<Scalars['Int']>;
+  /** The unique identifier for an element-site relation. */
+  siteSettingsId?: Maybe<Scalars['ID']>;
+  /** The language of the site element is associated with. */
+  language?: Maybe<Scalars['String']>;
+  /** The element’s search score, if the `search` parameter was used when querying for the element. */
+  searchScore?: Maybe<Scalars['String']>;
+  /** Whether the element has been soft-deleted or not. */
+  trashed?: Maybe<Scalars['Boolean']>;
+  /** The element's status. */
+  status?: Maybe<Scalars['String']>;
+  /** The date the element was created. */
+  dateCreated?: Maybe<Scalars['DateTime']>;
+  /** The date the element was last updated. */
+  dateUpdated?: Maybe<Scalars['DateTime']>;
+  /** The name of the global set. */
+  name?: Maybe<Scalars['String']>;
+  /** The handle of the global set. */
+  handle?: Maybe<Scalars['String']>;
+  images?: Maybe<Array<Maybe<AssetInterface>>>;
+};
+
+
+export type Intro_GlobalSet_CountArgs = {
+  field: Scalars['String'];
+};
+
+
+export type Intro_GlobalSetImagesArgs = {
   id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   uid?: Maybe<Array<Maybe<Scalars['String']>>>;
   site?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -13732,7 +13822,7 @@ export type ShareTwitterFragment = { type?: Maybe<string>, hashtags?: Maybe<Arra
 
 export type SlideFragment = { bg?: Maybe<string>, text?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>> };
 
-export type SliderVerticalSlideFragment = { text?: Maybe<string>, title?: Maybe<string> };
+export type SliderVerticalSlideFragment = { text?: Maybe<string>, title?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>> };
 
 export type TextMessageFragment = { caption?: Maybe<string>, subtitle?: Maybe<string>, text?: Maybe<string>, title?: Maybe<string> };
 
@@ -13755,7 +13845,7 @@ export type LinkFragment = { text?: Maybe<string>, type?: Maybe<string>, url?: M
 export type GlobalsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GlobalsQuery = { footer?: Maybe<{ address?: Maybe<string>, cta?: Maybe<Array<Maybe<CtaFragment>>> }>, socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>, url?: Maybe<string> }> }>>> }> };
+export type GlobalsQuery = { footer?: Maybe<{ address?: Maybe<string>, cta?: Maybe<Array<Maybe<CtaFragment>>> }>, intro?: Maybe<{ images?: Maybe<Array<Maybe<AssetFragment>>> }>, socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>, url?: Maybe<string> }> }>>> }> };
 
 export type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 
