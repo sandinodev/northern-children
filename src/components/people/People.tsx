@@ -10,7 +10,7 @@ interface Props {
 
 const Container = tw(BaseContainer)`col-span-full w-full`;
 
-const Person = tw.li`lg:col-span-4`;
+const Person = tw.li`col-span-full lg:col-span-4`;
 
 export const People = ({ people, title }: Props) => {
   return (

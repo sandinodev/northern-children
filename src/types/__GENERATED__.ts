@@ -1786,6 +1786,8 @@ export type QueryGlobalSetsArgs = {
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   images?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  pages?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   handle?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
@@ -1820,6 +1822,8 @@ export type QueryGlobalSetArgs = {
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   images?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  pages?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   handle?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
@@ -3226,6 +3230,124 @@ export type Cta_Link_BlockType = NeoBlockInterface & ElementInterface & {
 
 export type Cta_Link_BlockType_CountArgs = {
   field: Scalars['String'];
+};
+
+export type Donate_GlobalSet = ElementInterface & GlobalSetInterface & {
+  /** The id of the entity */
+  id?: Maybe<Scalars['ID']>;
+  /** The uid of the entity */
+  uid?: Maybe<Scalars['String']>;
+  /** Return a number of related elements for a field. */
+  _count?: Maybe<Scalars['Int']>;
+  /** The element’s title. */
+  title?: Maybe<Scalars['String']>;
+  /** The element’s slug. */
+  slug?: Maybe<Scalars['String']>;
+  /** The element’s URI. */
+  uri?: Maybe<Scalars['String']>;
+  /** Whether the element is enabled or not. */
+  enabled?: Maybe<Scalars['Boolean']>;
+  /** Whether the element is archived or not. */
+  archived?: Maybe<Scalars['Boolean']>;
+  /** The ID of the site the element is associated with. */
+  siteId?: Maybe<Scalars['Int']>;
+  /** The unique identifier for an element-site relation. */
+  siteSettingsId?: Maybe<Scalars['ID']>;
+  /** The language of the site element is associated with. */
+  language?: Maybe<Scalars['String']>;
+  /** The element’s search score, if the `search` parameter was used when querying for the element. */
+  searchScore?: Maybe<Scalars['String']>;
+  /** Whether the element has been soft-deleted or not. */
+  trashed?: Maybe<Scalars['Boolean']>;
+  /** The element's status. */
+  status?: Maybe<Scalars['String']>;
+  /** The date the element was created. */
+  dateCreated?: Maybe<Scalars['DateTime']>;
+  /** The date the element was last updated. */
+  dateUpdated?: Maybe<Scalars['DateTime']>;
+  /** The name of the global set. */
+  name?: Maybe<Scalars['String']>;
+  /** The handle of the global set. */
+  handle?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  pages?: Maybe<Array<Maybe<EntryInterface>>>;
+};
+
+
+export type Donate_GlobalSet_CountArgs = {
+  field: Scalars['String'];
+};
+
+
+export type Donate_GlobalSetPagesArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  withStructure?: Maybe<Scalars['Boolean']>;
+  structureId?: Maybe<Scalars['Int']>;
+  level?: Maybe<Scalars['Int']>;
+  hasDescendants?: Maybe<Scalars['Boolean']>;
+  ancestorOf?: Maybe<Scalars['Int']>;
+  ancestorDist?: Maybe<Scalars['Int']>;
+  descendantOf?: Maybe<Scalars['Int']>;
+  descendantDist?: Maybe<Scalars['Int']>;
+  leaves?: Maybe<Scalars['Boolean']>;
+  nextSiblingOf?: Maybe<Scalars['Int']>;
+  prevSiblingOf?: Maybe<Scalars['Int']>;
+  positionedAfter?: Maybe<Scalars['Int']>;
+  positionedBefore?: Maybe<Scalars['Int']>;
+  interval?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesFeatured?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  newsStoriesLatest?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  image?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  thumbnail?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  color?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  historyTitle?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  people?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  trustees?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  programs?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  contactLink?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  phone?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  email?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  editable?: Maybe<Scalars['Boolean']>;
+  section?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sectionId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  authorGroup?: Maybe<Array<Maybe<Scalars['String']>>>;
+  authorGroupId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  postDate?: Maybe<Array<Maybe<Scalars['String']>>>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type FactsStatsBlocks_NeoField = FactsStatsBlocks_Image_BlockType | FactsStatsBlocks_TextWithBackground_BlockType | FactsStatsBlocks_RichText_BlockType;
@@ -13845,7 +13967,7 @@ export type LinkFragment = { text?: Maybe<string>, type?: Maybe<string>, url?: M
 export type GlobalsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GlobalsQuery = { footer?: Maybe<{ address?: Maybe<string>, cta?: Maybe<Array<Maybe<CtaFragment>>> }>, intro?: Maybe<{ images?: Maybe<Array<Maybe<AssetFragment>>> }>, socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>, url?: Maybe<string> }> }>>> }> };
+export type GlobalsQuery = { donate?: Maybe<{ link?: Maybe<string>, pages?: Maybe<Array<Maybe<{ slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> }>>> }>, footer?: Maybe<{ address?: Maybe<string>, cta?: Maybe<Array<Maybe<CtaFragment>>> }>, intro?: Maybe<{ images?: Maybe<Array<Maybe<AssetFragment>>> }>, socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>, url?: Maybe<string> }> }>>> }> };
 
 export type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 

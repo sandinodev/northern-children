@@ -14,7 +14,7 @@ const components: { [key: string]: (props: Block) => JSX.Element | null } = {
   richTextImage: RichTextImageBlock,
 } as const;
 
-const Title = tw.h1`col-span-full lg:col-span-10 lg:col-start-2 lg:mt-200 lg:mb-224 text-center text-xl font-alpina`;
+const Title = tw.h1`col-span-full lg:col-span-10 lg:col-start-2 mt-60 lg:mt-200 mb-64 lg:mb-224 lg:text-center text-xl font-alpina`;
 
 const PostStoryBlock = ({ block }: { block: Block }) => {
   const Component = block?.type ? components[block.type] : undefined;

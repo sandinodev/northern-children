@@ -4,7 +4,7 @@ import { Quote } from "~/components/quote";
 
 import { PostStoryQuoteBlockFragment } from "~/types";
 
-const StyledQuote = tw(Quote)`mt-42 mb-100`;
+const StyledQuote = tw(Quote)`lg:mt-42 mb-60 lg:mb-100`;
 
 export const QuoteBlock = ({ quote }: PostStoryQuoteBlockFragment) => {
   if (!quote?.length) return null;

@@ -6,6 +6,15 @@ import { ASSET_FRAGMENT } from "./Fragments.fragment";
 
 export const GLOBALS_QUERY = gql`
   query Globals {
+    donate: globalSet(handle: "donate") {
+      ... on donate_GlobalSet {
+        link: text
+        pages {
+          slug
+        }
+      }
+    }
+
     footer: globalSet(handle: "footer") {
       ... on footer_GlobalSet {
         cta {

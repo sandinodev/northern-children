@@ -24,7 +24,7 @@ const Category = styled.div`
   margin-bottom: 1.5em;
 `;
 
-const StyledShare = tw(Share)`lg:mb-100`;
+const StyledShare = tw(Share)`mb-80 lg:mb-100`;
 
 export const Post = ({ post }: Props) => {
   const category = useMemo(() => (post?.type === "news" ? "News" : "Stories"), [post?.type]);

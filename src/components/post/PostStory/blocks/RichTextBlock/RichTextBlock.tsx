@@ -6,7 +6,7 @@ import { BaseContainer, BaseRichText, BaseWrapper } from "~/components/base";
 import { PostStoryRichTextBlockFragment } from "~/types";
 
 const StyledRichText = styled(BaseRichText)`
-  ${tw`col-span-full lg:col-span-5 mb-100`}
+  ${tw`col-span-full lg:col-span-5 mb-68 lg:mb-100`}
 
   h2 {
     ${tw`font-bold`}

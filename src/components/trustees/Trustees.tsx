@@ -10,11 +10,11 @@ interface Props {
 
 const List = tw.ul`col-span-full border-t border-b divide-y`;
 
-const Trustee = tw(BaseContainer)`py-12 text-xs font-era-mono`;
+const Trustee = tw(BaseContainer)`py-20 lg:py-12 text-xs font-era-mono`;
 
-const Name = tw.div`col-span-4`;
+const Name = tw.div`col-span-full lg:col-span-4 mb-20 lg:mb-0`;
 
-const Description = tw.div`col-span-8`;
+const Description = tw.div`col-span-full lg:col-span-8`;
 
 export const Trustees = ({ title, trustees }: Props) => {
   return (

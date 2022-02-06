@@ -5,15 +5,27 @@ import { DataStore, useDataStore } from "~/store/data";
 import { GlobalsQuery } from "~/types";
 
 export interface GlobalDataProps {
+  donate?: GlobalsQuery["donate"];
   footer?: GlobalsQuery["footer"];
   intro?: GlobalsQuery["intro"];
   socials?: GlobalsQuery["socials"];
 }
 
-const dataStoreSelector = ({ setFooter, setIntro, setSocials }: DataStore) => ({ setFooter, setIntro, setSocials });
+const dataStoreSelector = ({ setDonate, setFooter, setIntro, setSocials }: DataStore) => ({
+  setDonate,
+  setFooter,
+  setIntro,
+  setSocials,
+});
 
-export const useSetGlobalData = ({ footer, intro, socials }: GlobalDataProps) => {
-  const { setFooter, setIntro, setSocials } = useDataStore(dataStoreSelector);
+export const useSetGlobalData = ({ donate, footer, intro, socials }: GlobalDataProps) => {
+  const { setDonate, setFooter, setIntro, setSocials } = useDataStore(dataStoreSelector);
+
+  useEffect(() => {
+    const pages: string[] | undefined = donate?.pages?.flatMap(({ slug }) => slug as string).filter(Boolean);
+
+    setDonate({ pages, link: donate?.link });
+  }, [donate, setDonate]);
 
   useEffect(() => {
     setFooter(footer);

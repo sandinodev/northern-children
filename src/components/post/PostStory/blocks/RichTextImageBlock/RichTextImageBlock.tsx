@@ -5,7 +5,7 @@ import { PostStoryRichTextImageBlockFragment } from "~/types";
 
 import { RichTextBlock } from "../RichTextBlock";
 
-const Image = tw.div`col-span-full lg:col-span-6 lg:col-start-7`;
+const Image = tw.div`col-span-full lg:col-span-6 lg:col-start-7 order-first lg:order-last mb-60 lg:mb-0`;
 
 export const RichTextImageBlock = ({ image, text }: PostStoryRichTextImageBlockFragment) => {
   if (!text?.length) return null;

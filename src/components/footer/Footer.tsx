@@ -12,7 +12,7 @@ import { PAGES_WITHOUT_FOOTER, PAGES_WITHOUT_FOOTER_CTA } from "~/constants";
 
 import { DataStore, useDataStore } from "~/store/data";
 
-const Wrapper = tw.footer`border-t border-black`;
+const Wrapper = tw.footer`border-t border-black bg-white-greenish z-footer lg:z-0`;
 
 const Main = tw(BaseWrapper)`pt-40 pb-20 lg:py-20`;
 

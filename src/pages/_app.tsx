@@ -4,15 +4,16 @@ import { AppProps } from "next/app";
 import { DefaultSeo, DefaultSeoProps } from "next-seo";
 import { useEffect } from "react";
 
+import { Donate } from "~/components/donate";
+import { Footer } from "~/components/footer";
 import { Header } from "~/components/header";
+import { Intro } from "~/components/intro";
 import { TransitionPages } from "~/components/transition";
 
 import { Store, useStore } from "~/store";
 
 import { GlobalStyles } from "~/styles/GlobalStyles";
 import "~/styles/fonts.css";
-import { Footer } from "~/components/footer";
-import { Intro } from "~/components/intro";
 
 const defaultSeo: DefaultSeoProps = {
   title: "Title",
@@ -81,6 +82,8 @@ const App = ({ Component, pageProps }: AppProps) => {
       </TransitionPages>
 
       <Footer />
+
+      <Donate />
 
       {isIntro && <Intro />}
     </>
