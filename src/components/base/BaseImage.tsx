@@ -121,8 +121,6 @@ export const BaseImage: React.FC<Props> = ({
 
   if (!src) return null;
 
-  const x = src.split("https://");
-
   return (
     <Wrapper h={h} w={w} {...rest}>
       <Image
@@ -133,7 +131,7 @@ export const BaseImage: React.FC<Props> = ({
         onLoadingComplete={onLoadingComplete}
         priority={priority}
         sizes={sizes}
-        src={`https://${x[1]}`}
+        src={src}
         quality={quality}
         {...dimensions}
       />
