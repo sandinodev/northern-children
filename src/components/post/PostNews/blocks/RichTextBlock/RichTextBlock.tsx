@@ -13,7 +13,6 @@ const StyledRichText = styled(BaseRichText)`
     margin-bottom: calc(8rem - 1.5em);
   }
 
-
   h2 {
     ${tw`font-bold`}
 
