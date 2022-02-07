@@ -133,7 +133,6 @@ export const BaseImage: React.FC<Props> = ({
         onLoadingComplete={onLoadingComplete}
         priority={priority}
         sizes={sizes}
-        // src={src}
         src={`https://${x[1]}`}
         quality={quality}
         {...dimensions}
