@@ -2,33 +2,16 @@ import { useState } from "react";
 import tw, { css, styled } from "twin.macro";
 
 import LogoSVG from "~/assets/svg/logo.svg";
+import CloseSVG from "~/assets/svg/icons/close.svg";
+import MenuSVG from "~/assets/svg/icons/menu.svg";
 
 import { BaseContainer, BaseLink, BaseWrapper } from "~/components/base";
 
-const GROUPS = [
-  {
-    title: "Who are we",
-    links: [
-      { href: "/mission-vision", text: "Mission & Vision" },
-      { href: "/team", text: "Our Team" },
-    ],
-  },
-  {
-    title: "What we do",
-    links: [
-      { href: "/services/residential", text: "Residential" },
-      { href: "/services/behavioral-health", text: "Behavioral Health" },
-      { href: "/services/child-welfare", text: "Child Welfare" },
-    ],
-  },
-  {
-    title: "Our Community",
-    links: [
-      { href: "/facts-stats", text: "Facts & Stats" },
-      { href: "/news-stories", text: "News & Stories" },
-    ],
-  },
-];
+import { LINKS_GROUPS } from "~/constants";
+
+import { Store, useStore } from "~/store";
+
+import { eases } from "~/styles/eases";
 
 const Wrapper = styled(BaseWrapper)<{ i: number }>`
   ${tw`fixed top-0 left-0 w-full py-20 lg:py-12 bg-white-greenish z-header`}
@@ -65,6 +48,8 @@ const Wrapper = styled(BaseWrapper)<{ i: number }>`
       }
     `}
 `;
+
+const Container = tw(BaseContainer)`flex items-center justify-between lg:grid`;
 
 const Logo = tw.div`col-span-2`;
 
@@ -114,7 +99,37 @@ const Group = styled.li`
   }
 `;
 
+const Menu = styled.button`
+  ${tw`lg:hidden relative p-5`}
+`;
+
+const MenuIcon = styled.span<{ isAbsolute?: boolean; isVisible: boolean }>`
+  ${tw`inline-block`}
+
+  transition: opacity 0.35s 0.3s ${eases.sine.out};
+
+  ${({ isAbsolute }) =>
+    isAbsolute &&
+    css`
+      ${tw`absolute top-1/2 left-1/2`}
+
+      transform: translate(-50%, -50%);
+    `}
+
+  ${({ isVisible }) =>
+    !isVisible &&
+    css`
+      ${tw`opacity-0`}
+
+      transition-delay: 0s;
+    `}
+`;
+
+const storeSelector = ({ isMenuOpen, setIsMenuOpen }: Store) => ({ isMenuOpen, setIsMenuOpen });
+
 export const Header = () => {
+  const { isMenuOpen, setIsMenuOpen } = useStore(storeSelector);
+
   const [currI, setCurrI] = useState(-1);
 
   const onMouseEnter = (i: number) => {
@@ -125,9 +140,11 @@ export const Header = () => {
 
   const onMouseLeave = () => setCurrI(-1);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <Wrapper as="header" i={currI}>
-      <BaseContainer as="nav">
+      <Container as="nav">
         <Logo>
           <BaseLink href="/" block>
             <StyledLogoSVG />
@@ -135,7 +152,7 @@ export const Header = () => {
         </Logo>
 
         <Items>
-          {GROUPS.map(({ links, title }, i) => (
+          {LINKS_GROUPS.map(({ links, title }, i) => (
             <Group key={i} onMouseEnter={onMouseEnter(i)} onMouseLeave={onMouseLeave}>
               <Button aria-haspopup="true" aria-expanded={i === currI} aria-label="Show submenu">
                 {title}
@@ -153,7 +170,17 @@ export const Header = () => {
 
           <StyledBaseLink href="/join">Join our Team</StyledBaseLink>
         </Items>
-      </BaseContainer>
+
+        <Menu onClick={toggleMenu}>
+          <MenuIcon isVisible={!isMenuOpen}>
+            <MenuSVG />
+          </MenuIcon>
+
+          <MenuIcon isVisible={isMenuOpen} isAbsolute>
+            <CloseSVG />
+          </MenuIcon>
+        </Menu>
+      </Container>
     </Wrapper>
   );
 };

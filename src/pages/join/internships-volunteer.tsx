@@ -3,6 +3,7 @@ import { Hero } from "~/components/hero";
 
 import { Seo } from "~/components/seo";
 import { TextBlock } from "~/components/text";
+import { Tiles } from "~/components/tiles";
 
 import { GLOBALS_QUERY, INTERNSHIPS_VOLUNTEER_QUERY } from "~/gql";
 
@@ -30,7 +31,7 @@ const Page: NextPage<Props> = ({ internships, ...rest }) => {
 
         <TextBlock bg="blue" text={internships?.description} />
 
-        {/* {!!service?.programs?.length && <Programs color={service?.color} programs={service.programs} />} */}
+        {!!internships?.tiles?.length && <Tiles color="blue" items={internships.tiles} />}
       </DefaultPage>
     </>
   );

@@ -5422,6 +5422,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_Entry = ElementInterface &
   seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
   image?: Maybe<Array<Maybe<AssetInterface>>>;
   textWithLineBreaks?: Maybe<Scalars['String']>;
+  tiles?: Maybe<Array<Maybe<Tiles_MatrixField>>>;
 };
 
 
@@ -6009,6 +6010,41 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntryImageArgs = {
   includeSubfolders?: Maybe<Scalars['Boolean']>;
   withTransforms?: Maybe<Array<Maybe<Scalars['String']>>>;
   uploader?: Maybe<Scalars['QueryArgument']>;
+};
+
+
+export type InternshipsVolunteer_InternshipsVolunteer_EntryTilesArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  fieldId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ownerId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  typeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  type?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type Intro_GlobalSet = ElementInterface & GlobalSetInterface & {
@@ -13891,6 +13927,106 @@ export type Team_Team_EntryPeopleArgs = {
   expiryDate?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
+export type Tiles_MatrixField = Tiles_Tile_BlockType;
+
+export type Tiles_Tile_BlockType = ElementInterface & MatrixBlockInterface & {
+  /** The id of the entity */
+  id?: Maybe<Scalars['ID']>;
+  /** The uid of the entity */
+  uid?: Maybe<Scalars['String']>;
+  /** Return a number of related elements for a field. */
+  _count?: Maybe<Scalars['Int']>;
+  /** The element’s title. */
+  title?: Maybe<Scalars['String']>;
+  /** The element’s slug. */
+  slug?: Maybe<Scalars['String']>;
+  /** The element’s URI. */
+  uri?: Maybe<Scalars['String']>;
+  /** Whether the element is enabled or not. */
+  enabled?: Maybe<Scalars['Boolean']>;
+  /** Whether the element is archived or not. */
+  archived?: Maybe<Scalars['Boolean']>;
+  /** The ID of the site the element is associated with. */
+  siteId?: Maybe<Scalars['Int']>;
+  /** The unique identifier for an element-site relation. */
+  siteSettingsId?: Maybe<Scalars['ID']>;
+  /** The language of the site element is associated with. */
+  language?: Maybe<Scalars['String']>;
+  /** The element’s search score, if the `search` parameter was used when querying for the element. */
+  searchScore?: Maybe<Scalars['String']>;
+  /** Whether the element has been soft-deleted or not. */
+  trashed?: Maybe<Scalars['Boolean']>;
+  /** The element's status. */
+  status?: Maybe<Scalars['String']>;
+  /** The date the element was created. */
+  dateCreated?: Maybe<Scalars['DateTime']>;
+  /** The date the element was last updated. */
+  dateUpdated?: Maybe<Scalars['DateTime']>;
+  /** The ID of the field that owns the matrix block. */
+  fieldId?: Maybe<Scalars['Int']>;
+  /** The ID of the element that owns the matrix block. */
+  ownerId?: Maybe<Scalars['Int']>;
+  /** The ID of the matrix block's type. */
+  typeId?: Maybe<Scalars['Int']>;
+  /** The handle of the matrix block's type. */
+  typeHandle?: Maybe<Scalars['String']>;
+  /** The sort order of the matrix block within the owner element field. */
+  sortOrder?: Maybe<Scalars['Int']>;
+  tileTitle?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  contactLink?: Maybe<LinkField_Link>;
+  image?: Maybe<Array<Maybe<AssetInterface>>>;
+};
+
+
+export type Tiles_Tile_BlockType_CountArgs = {
+  field: Scalars['String'];
+};
+
+
+export type Tiles_Tile_BlockTypeImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  uid?: Maybe<Array<Maybe<Scalars['String']>>>;
+  site?: Maybe<Array<Maybe<Scalars['String']>>>;
+  siteId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  unique?: Maybe<Scalars['Boolean']>;
+  preferSites?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  enabledForSite?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uri?: Maybe<Array<Maybe<Scalars['String']>>>;
+  search?: Maybe<Scalars['String']>;
+  relatedTo?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  ref?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fixedOrder?: Maybe<Scalars['Boolean']>;
+  inReverse?: Maybe<Scalars['Boolean']>;
+  dateCreated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars['String']>>>;
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<Scalars['String']>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  volume?: Maybe<Array<Maybe<Scalars['String']>>>;
+  folderId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  filename?: Maybe<Array<Maybe<Scalars['String']>>>;
+  kind?: Maybe<Array<Maybe<Scalars['String']>>>;
+  height?: Maybe<Array<Maybe<Scalars['String']>>>;
+  width?: Maybe<Array<Maybe<Scalars['String']>>>;
+  size?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dateModified?: Maybe<Scalars['String']>;
+  includeSubfolders?: Maybe<Scalars['Boolean']>;
+  withTransforms?: Maybe<Array<Maybe<Scalars['String']>>>;
+  uploader?: Maybe<Scalars['QueryArgument']>;
+};
+
 export type Trustees_TableRow = {
   col1?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
@@ -13977,7 +14113,7 @@ export type HomeQuery = { home?: Maybe<{ interval?: Maybe<any>, cta?: Maybe<Arra
 export type InternshipsVolunteerQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type InternshipsVolunteerQuery = { internships?: Maybe<{ title?: Maybe<string>, description?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>>, seo?: Maybe<Array<Maybe<SeoFragment>>> }> };
+export type InternshipsVolunteerQuery = { internships?: Maybe<{ title?: Maybe<string>, description?: Maybe<string>, image?: Maybe<Array<Maybe<AssetFragment>>>, seo?: Maybe<Array<Maybe<SeoFragment>>>, tiles?: Maybe<Array<Maybe<{ description?: Maybe<string>, subtitle?: Maybe<string>, title?: Maybe<string>, contactLink?: Maybe<LinkFragment>, image?: Maybe<Array<Maybe<AssetFragment>>> }>>> }> };
 
 export type JoinQueryVariables = Exact<{ [key: string]: never; }>;
 

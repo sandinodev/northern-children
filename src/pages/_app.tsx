@@ -14,6 +14,7 @@ import { Store, useStore } from "~/store";
 
 import { GlobalStyles } from "~/styles/GlobalStyles";
 import "~/styles/fonts.css";
+import { Menu } from "~/components/menu";
 
 const defaultSeo: DefaultSeoProps = {
   title: "Title",
@@ -76,6 +77,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <GlobalStyles />
 
       <Header />
+      <Menu />
 
       <TransitionPages>
         <Component {...pageProps} />

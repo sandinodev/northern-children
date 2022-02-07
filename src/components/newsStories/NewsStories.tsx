@@ -97,7 +97,7 @@ export const NewsStories = ({ amount, featured, list = [], loadMore }: Props) =>
   );
 
   return (
-    <BaseSection title="News & Stories" mb>
+    <BaseSection noMt={loadMore} title="News & Stories" mb>
       <Container as="ul" gapY>
         {!!featured?.length && <NewsStoriesList list={featured} isFeatured />}
         {!!list?.length && <NewsStoriesList list={postsList} />}

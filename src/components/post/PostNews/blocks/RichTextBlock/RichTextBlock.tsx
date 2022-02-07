@@ -4,10 +4,15 @@ import { BaseRichText } from "~/components/base";
 
 import { PostNewsRichTextBlockFragment } from "~/types";
 
-const StyledRichText = styled(BaseRichText)`
-  ${tw`mt-80`}
+import { up } from "~/utils/screens";
 
-  margin-bottom: calc(8rem - 1.5em);
+const StyledRichText = styled(BaseRichText)`
+  ${tw`mt-60 lg:mt-80 mb-68`}
+
+  ${up("lg")} {
+    margin-bottom: calc(8rem - 1.5em);
+  }
+
 
   h2 {
     ${tw`font-bold`}

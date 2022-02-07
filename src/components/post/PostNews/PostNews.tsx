@@ -19,7 +19,7 @@ const components: { [key: string]: (props: Block) => JSX.Element | null } = {
 } as const;
 
 const HeroText = styled(BaseContainer)<{ bg?: string }>`
-  ${tw`relative col-span-full pt-200 z-0`}
+  ${tw`relative col-span-full pt-60 lg:pt-200 z-0`}
 
   ${({ bg }) =>
     bg &&
@@ -43,9 +43,9 @@ const HeroText = styled(BaseContainer)<{ bg?: string }>`
     `}
 `;
 
-const Title = tw.h1`col-span-full lg:col-span-7 mb-46 text-lg font-alpina`;
+const Title = tw.h1`col-span-full lg:col-span-7 mb-34 lg:mb-46 text-lg font-alpina`;
 
-const Date = tw.time`col-span-full mb-80`;
+const Date = tw.time`hidden lg:block col-span-full mb-80`;
 
 const Image = tw.div`col-span-full lg:col-span-6`;
 
