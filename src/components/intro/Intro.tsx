@@ -3,7 +3,8 @@ import { sampleSize } from "lodash";
 import { useEffect, useMemo, useRef, useState } from "react";
 import tw, { css, styled } from "twin.macro";
 
-import { BaseImage, BaseWrapper } from "~/components/base";
+import { BaseWrapper } from "~/components/base";
+
 import { useBodyScrollLock } from "~/hooks";
 
 import { Store, useStore } from "~/store";
@@ -15,8 +16,8 @@ const Wrapper = styled(BaseWrapper)`
   ${tw`fixed top-0 left-0 w-screen h-screen bg-white-greenish z-intro`}
 `;
 
-const StyledBaseImage = styled(BaseImage)<{ isVisible: boolean }>`
-  ${tw`top-1/2 left-1/2`}
+const Image = styled.div<{ isVisible: boolean }>`
+  ${tw`absolute top-1/2 left-1/2`}
 
   transform: translate(-50%, -50%);
   transition: opacity 0.45s 0.3s ${eases.sine.out};
@@ -73,7 +74,9 @@ export const Intro = () => {
   return (
     <Wrapper ref={refs.root}>
       {selectedImages.map((image, i) => (
-        <StyledBaseImage key={i} isVisible={i === currI} absolute noPlaceholder originalSize {...image} />
+        <Image key={i} isVisible={i === currI}>
+          <img alt="" {...image} />
+        </Image>
       ))}
     </Wrapper>
   );
