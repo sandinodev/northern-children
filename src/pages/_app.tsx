@@ -68,10 +68,41 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="preload" href="/fonts/Athletics-ExtraBold.otf" as="font" type="font/otf" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/GTAlpina-Light.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/ModernEra-Regular.otf" as="font" type="font/otf" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/ModernEraMono-Regular.otf" as="font" type="font/otf" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="/fonts/athletics/Athletics-ExtraBold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/gt-alpina/GT-Alpina-Standard-Light.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/modern-era/ModernEra-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/modern-era/ModernEra-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/modern-era-mono/ModernEraMono-Medium.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </NextHead>
 
       <GlobalStyles />
@@ -81,9 +112,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
       <TransitionPages>
         <Component {...pageProps} />
-      </TransitionPages>
 
-      <Footer />
+        <Footer />
+      </TransitionPages>
 
       <Donate />
 

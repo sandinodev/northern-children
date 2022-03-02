@@ -25,7 +25,12 @@ const Page: NextPage<Props> = ({ contact, ...rest }) => {
       <Seo seo={contact?.seo?.[0]} />
 
       <DefaultPage mt>
-        <Contact address={rest.footer?.address} contact={contact} socials={rest.socials} />
+        <Contact
+          address={rest.footer?.address}
+          addressLink={rest.footer?.addressLink}
+          contact={contact}
+          socials={rest.socials}
+        />
       </DefaultPage>
     </>
   );

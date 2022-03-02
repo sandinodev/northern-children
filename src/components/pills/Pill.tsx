@@ -5,12 +5,13 @@ import { eases } from "~/styles/eases";
 import { PillFragment } from "~/types";
 
 import { down, up } from "~/utils/screens";
+import { MaskOpacity } from "../mask";
 
-const Container = styled.div`
+const Content = styled.div`
   ${tw`lg:absolute flex items-center justify-center top-0 left-0 w-full h-full pointer-events-none z-1`}
 `;
 
-const Title = styled(Container)`
+const Title = styled(Content)`
   ${tw`absolute text-max font-athletics uppercase`}
 
   transition: all 0.2s 0.2s ${eases.sine.inOut};
@@ -29,9 +30,10 @@ const Description = styled.div`
     ${tw`m-0`}
   }
 `;
+const Wrapper = tw.li`col-span-full lg:col-span-6`;
 
-const Wrapper = styled.li<{ bg?: string }>`
-  ${tw`relative col-span-full lg:col-span-6`}
+const Container = styled.div<{ bg?: string }>`
+  ${tw`relative w-full`}
 
   border-radius: 11.2rem;
   transition: border-radius 0.4s ${eases.sine.inOut};
@@ -68,14 +70,18 @@ const Wrapper = styled.li<{ bg?: string }>`
 
 export const Pill = ({ description, title, ...rest }: PillFragment) => {
   return (
-    <Wrapper {...rest}>
-      <Container>
-        <Title as="h3">{title}</Title>
+    <Wrapper>
+      <MaskOpacity>
+        <Container {...rest}>
+          <Content>
+            <Title as="h3">{title}</Title>
 
-        <Description>
-          <p>{description}</p>
-        </Description>
-      </Container>
+            <Description>
+              <p>{description}</p>
+            </Description>
+          </Content>
+        </Container>
+      </MaskOpacity>
     </Wrapper>
   );
 };

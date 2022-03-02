@@ -1,6 +1,7 @@
 import tw from "twin.macro";
 
 import { BaseSection, BaseText } from "~/components/base";
+import { MaskOpacity } from "~/components/mask";
 
 import { TextMessageFragment } from "~/types";
 
@@ -18,14 +19,16 @@ export const TextMessage = ({ caption, subtitle, text, title }: TextMessageFragm
   return (
     <StyledBaseSection title={title} titleStyles={TitleStyles}>
       <Content>
-        <Subtitle>{subtitle}</Subtitle>
+        <MaskOpacity>
+          <Subtitle>{subtitle}</Subtitle>
+        </MaskOpacity>
 
         <figure>
           <blockquote>
             <StyledBaseText text={text} />
           </blockquote>
 
-          <figcaption>{caption}</figcaption>
+          <MaskOpacity as="figcaption">{caption}</MaskOpacity>
         </figure>
       </Content>
     </StyledBaseSection>

@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import { FlattenSimpleInterpolation } from "styled-components";
 import tw, { styled, TwStyle } from "twin.macro";
+import { MaskOpacity } from "../mask";
 
 import { BaseContainer } from "./BaseContainer";
 import { BaseWrapper } from "./BaseWrapper";
@@ -18,7 +19,7 @@ interface Props extends StylesExternalProps {
   title?: string;
 }
 
-const Title = styled.h2<StylesExternalProps>`
+const Title = styled.div<StylesExternalProps>`
   ${tw`col-span-full mb-44 lg:mb-68 text-xl font-alpina`}
 
   ${({ noMt }) => !noMt && tw`mt-80 lg:mt-100`}
@@ -32,7 +33,7 @@ export const BaseSection = ({ as, children, noMt, title, titleStyles, ...rest }:
       <BaseContainer as={as as never}>
         {!!title?.length && (
           <Title noMt={noMt} titleStyles={titleStyles}>
-            {title}
+            <MaskOpacity>{title}</MaskOpacity>
           </Title>
         )}
 

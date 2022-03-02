@@ -22,12 +22,6 @@ const Wrapper = styled(BaseWrapper)<StylesExternalProps>`
 
   height: calc(100vh - ${MAIN_PADDING_TOP.min}px);
 
-  &:before {
-    ${tw`absolute bottom-0 left-0 w-full h-1 bg-black z-1`}
-
-    content: "";
-  }
-
   ${({ bg }) =>
     bg &&
     css`
@@ -37,7 +31,17 @@ const Wrapper = styled(BaseWrapper)<StylesExternalProps>`
 
 const Container = tw(BaseContainer)`lg:h-screen`;
 
-const Text = tw.h1`col-span-full lg:col-span-7 flex items-center mt-60 lg:mt-0 text-2xl font-athletics uppercase`;
+const Content = styled.div`
+  ${tw`col-span-full lg:col-span-7 flex items-center`}
+`;
+
+const Text = styled.h1`
+  ${tw`w-full mt-60 lg:mt-0 text-2xl font-athletics uppercase`}
+
+  ${up("lg")} {
+    max-width: 75rem;
+  }
+`;
 
 const Image = styled.div`
   ${tw`relative col-span-full lg:col-span-5 order-first lg:order-last lg:h-full lg:ml-0`}
@@ -55,7 +59,9 @@ export const HeroSplit = ({ image, text, ...rest }: Props) => {
   return (
     <Wrapper {...rest}>
       <Container fullW>
-        <Text>{text}</Text>
+        <Content>
+          <Text>{text}</Text>
+        </Content>
 
         <Image>
           <BaseImage absolute fullH fullW {...image?.[0]} />

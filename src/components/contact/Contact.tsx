@@ -8,6 +8,7 @@ import { ContactDirectory } from "./ContactDirectory";
 
 interface Props {
   address?: string;
+  addressLink?: string;
   contact: ContactQuery["contact"];
   socials: GlobalsQuery["socials"];
 }
@@ -20,12 +21,14 @@ const Socials = styled.div`
   margin-top: 1.5em;
 `;
 
-export const Contact = ({ address, contact, socials }: Props) => {
+export const Contact = ({ address, addressLink, contact, socials }: Props) => {
   return (
     <>
       <StyledBaseSection title={contact?.title} border noMt>
         <Address>
-          <p>{address}</p>
+          <p>
+            <BaseLink href={addressLink}>{address}</BaseLink>
+          </p>
 
           {contact?.phone && (
             <BaseLink href={contact.phone.url} block underline>

@@ -21,6 +21,7 @@ export const GLOBALS_QUERY = gql`
           ...Cta
         }
         address: textWithLineBreaks
+        addressLink: text
       }
     }
 

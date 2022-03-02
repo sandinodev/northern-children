@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import tw, { css, styled } from "twin.macro";
 
 import { BaseContainer, BaseImage, BaseText, BaseWrapper } from "~/components/base";
+import { MaskOpacity } from "~/components/mask";
 
 import { useBreakpoints } from "~/hooks";
 
@@ -98,7 +99,9 @@ export const SliderVertical = ({ slides }: Props) => {
       {slides.map(({ image, text, title }, i) => (
         <Slide key={i} className="slider-vertical__slide" i={i}>
           <Container className="slider-vertical__slide-container">
-            <Title>{title}</Title>
+            <Title>
+              <MaskOpacity>{title}</MaskOpacity>
+            </Title>
             <Text>
               <BaseText text={text} />
             </Text>

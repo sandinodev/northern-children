@@ -45,7 +45,7 @@ const HeroText = styled(BaseContainer)<{ bg?: string }>`
 
 const Title = tw.h1`col-span-full lg:col-span-7 mb-34 lg:mb-46 text-lg font-alpina`;
 
-const Date = tw.time`hidden lg:block col-span-full mb-80`;
+const Date = tw.time`hidden lg:block col-span-full mb-80 text-xs font-era-mono`;
 
 const Image = tw.div`col-span-full lg:col-span-6`;
 

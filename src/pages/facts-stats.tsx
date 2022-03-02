@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from "next";
-import { FactsStatsBlocks } from "~/components/factsStats";
 
+import { FactsStatsBlocks } from "~/components/factsStats";
 import { Hero } from "~/components/hero";
 import { Seo } from "~/components/seo";
 

@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import { forwardRef, PropsWithChildren } from "react";
 import tw, { css, styled } from "twin.macro";
 
 import { isLinkExternal, parsePublicToLocalHref } from "~/utils";
@@ -23,7 +24,7 @@ const Wrapper = styled.a<StylesProps>`
     `}
 `;
 
-export const BaseLink: React.FC<Props> = ({ children, href, ...rest }) => {
+export const BaseLink = forwardRef<HTMLAnchorElement, PropsWithChildren<Props>>(({ children, href, ...rest }, ref) => {
   const isExternal = isLinkExternal(href);
 
   if (!href) return null;
@@ -31,14 +32,16 @@ export const BaseLink: React.FC<Props> = ({ children, href, ...rest }) => {
   return (
     <>
       {isExternal ? (
-        <Wrapper href={href} target="_blank" rel="noopener noreferrer" {...rest}>
+        <Wrapper ref={ref} href={href} target="_blank" rel="noopener noreferrer" {...rest}>
           {children}
         </Wrapper>
       ) : (
         <NextLink href={parsePublicToLocalHref(href) || href} scroll={false} passHref>
-          <Wrapper {...rest}>{children}</Wrapper>
+          <Wrapper ref={ref} {...rest}>
+            {children}
+          </Wrapper>
         </NextLink>
       )}
     </>
   );
-};
+});

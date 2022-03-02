@@ -10,7 +10,7 @@ interface Props {
   seo?: SeoFragment[];
 }
 
-const Wrapper = tw.div`col-span-full`;
+const Wrapper = tw.div`col-span-full text-xs font-era-mono`;
 
 const Socials = tw.ul`inline-flex`;
 

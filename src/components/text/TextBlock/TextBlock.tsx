@@ -18,7 +18,13 @@ const Wrapper = styled(BaseWrapper)<StylesExternalProps>`
     `}
 `;
 
-const Text = tw.div`col-span-full lg:col-span-8 lg:col-start-3 my-60 lg:my-144 text-lg text-center font-alpina`;
+const Text = styled.div`
+  ${tw`col-span-full lg:col-span-8 lg:col-start-3 my-60 lg:my-144 text-lg text-center font-alpina`}
+
+  p {
+    ${tw`last:mb-0`}
+  }
+`;
 
 export const TextBlock = ({ text, ...rest }: Props) => {
   if (!text?.length) return null;

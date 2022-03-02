@@ -1,7 +1,9 @@
 import { upperFirst } from "lodash";
 import { useMemo } from "react";
 import tw, { css, styled } from "twin.macro";
+
 import { AssetFragment } from "~/types";
+import { MaskOpacity } from "../mask";
 
 import { BaseImage } from "./BaseImage";
 import { BaseLink } from "./BaseLink";
@@ -16,6 +18,10 @@ interface Props extends StylesExternalProps {
   subtitle?: string;
   title?: string;
 }
+
+const StyledMaskOpacity = styled(MaskOpacity)`
+  ${tw`grid gap-x-40 w-full h-full bg-white`}
+`;
 
 const Image = styled.div`
   ${tw`relative col-span-full mb-20`}
@@ -41,6 +47,7 @@ const Subtitle = styled.h4<{ text?: string }>`
     content: "${({ text }) => text}";
     transform: translateY(120%);
   }
+
   & > div,
   &:before {
     transition: all 0.3s;
@@ -48,7 +55,7 @@ const Subtitle = styled.h4<{ text?: string }>`
 `;
 
 const Wrapper = styled(BaseLink)<StylesExternalProps>`
-  ${tw`grid gap-x-40 w-full h-full bg-white border border-transparent`}
+  ${tw`w-full border border-transparent`}
 
   transition: border-color 0.5s;
 
@@ -79,14 +86,18 @@ const Wrapper = styled(BaseLink)<StylesExternalProps>`
   ${({ large }) =>
     large
       ? css`
-          ${tw`grid-cols-6`}
+          ${StyledMaskOpacity} {
+            ${tw`grid-cols-6`}
+          }
 
           ${Title} {
             ${tw`col-span-full lg:col-span-4 pl-10 mb-40 lg:mb-60`}
           }
         `
       : css`
-          ${tw`grid-cols-3`}
+          ${StyledMaskOpacity} {
+            ${tw`grid-cols-3`}
+          }
 
           ${Title} {
             ${tw`col-span-full px-10 mb-40`}
@@ -99,17 +110,19 @@ export const BaseCard = ({ image, subtitle, title, ...rest }: Props) => {
 
   return (
     <Wrapper {...rest}>
-      {!!image?.length && (
-        <Image>
-          <BaseImage absolute fullW fullH {...image[0]} />
-        </Image>
-      )}
+      <StyledMaskOpacity duration={0.6} noY>
+        {!!image?.length && (
+          <Image>
+            <BaseImage absolute fullW fullH {...image[0]} />
+          </Image>
+        )}
 
-      <Title>{title}</Title>
+        <Title>{title}</Title>
 
-      <Subtitle text={_subtitle}>
-        <div>{_subtitle}</div>
-      </Subtitle>
+        <Subtitle text={_subtitle}>
+          <div>{_subtitle}</div>
+        </Subtitle>
+      </StyledMaskOpacity>
     </Wrapper>
   );
 };

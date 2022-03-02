@@ -39,7 +39,7 @@ const Index: NextPage<Props> = ({ home, ...rest }) => {
       <DefaultPage>
         {!!home?.slides?.length && <StyledSlider interval={home.interval} slides={home.slides} hScreen />}
 
-        {!!home?.cta?.length && <Cta yellow {...home.cta[0]} />}
+        {!!home?.cta?.length && <Cta noBorder wide yellow {...home.cta[0]} />}
 
         {(!!home?.newsStoriesFeatured?.length || !!home?.newsStoriesLatest?.length) && (
           <NewsStories featured={home?.newsStoriesFeatured} list={home?.newsStoriesLatest} />

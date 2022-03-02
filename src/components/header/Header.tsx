@@ -58,7 +58,7 @@ const StyledLogoSVG = styled(LogoSVG)`
 `;
 
 const Items = styled.ul`
-  ${tw`hidden lg:flex col-span-7 items-center justify-between pointer-events-none`}
+  ${tw`hidden lg:flex col-span-7 items-center justify-end pointer-events-none`}
 
   grid-column-end: -1;
 `;
@@ -85,7 +85,7 @@ const Links = styled.ul`
 `;
 
 const Group = styled.li`
-  ${tw`relative`}
+  ${tw`relative mr-80 last:mr-0`}
 
   transition: opacity 0.4s;
   pointer-events: all;
@@ -144,7 +144,7 @@ export const Header = () => {
 
   return (
     <Wrapper as="header" i={currI}>
-      <Container as="nav">
+      <Container as="nav" fullW>
         <Logo>
           <BaseLink href="/" block>
             <StyledLogoSVG />

@@ -1,22 +1,39 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/router";
-import { useMemo, useRef } from "react";
-import tw, { styled } from "twin.macro";
+import { useEffect, useMemo, useRef, useState } from "react";
+import tw, { css, styled } from "twin.macro";
 
 import { BaseButton } from "~/components/base";
 
 import { useMagnetize } from "~/hooks";
 
 import { DataStore, useDataStore } from "~/store/data";
+import { eases } from "~/styles/eases";
+
+import { isClient } from "~/utils";
 import { down } from "~/utils/screens";
+
+if (isClient) {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Wrapper = styled.section<{ isVisible: boolean }>`
   ${tw`fixed bottom-40 lg:bottom-60 lg:right-20 z-donate`}
+
+  transition: opacity 0.25s ${eases.sine.out}, visibility 0s 0s;
 
   ${down("lg")} {
     ${tw`left-18`}
   }
 
-  ${({ isVisible }) => !isVisible && tw`opacity-0 invisible`}
+  ${({ isVisible }) =>
+    !isVisible &&
+    css`
+      ${tw`opacity-0 invisible`}
+
+      transition: opacity 0.25s ${eases.sine.out}, visibility 0s 0.25s;
+    `}
 `;
 
 const StyledBaseButton = styled(BaseButton)`
@@ -32,6 +49,7 @@ export const Donate = () => {
 
   const refs = {
     button: useRef<HTMLLinkElement>(null),
+    st: useRef<gsap.plugins.ScrollTriggerInstance>(),
   };
 
   const hasDonate = useMemo(
@@ -40,10 +58,19 @@ export const Donate = () => {
     [donate?.pages, router.pathname]
   );
 
+  const [isFooter, setIsFooter] = useState(false);
+
   useMagnetize({ disabled: !hasDonate, target: refs.button });
 
+  useEffect(() => {
+    refs.st.current = ScrollTrigger.create({
+      trigger: "footer",
+      onToggle: ({ isActive }) => setIsFooter(isActive),
+    });
+  });
+
   return (
-    <Wrapper isVisible={hasDonate}>
+    <Wrapper isVisible={hasDonate && !isFooter}>
       <StyledBaseButton ref={refs.button} href={donate?.link}>
         Donate
       </StyledBaseButton>

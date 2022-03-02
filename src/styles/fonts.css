@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Alpina";
-  src: url("/fonts/GTAlpina-Light.woff2");
+  src: url("/fonts/gt-alpina/GT-Alpina-Standard-Light.woff2") format("woff2"),
+  url("/fonts/gt-alpina/GT-Alpina-Standard-Light.woff") format("woff");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +9,8 @@
 
 @font-face {
   font-family: "Athletics";
-  src: url("/fonts/Athletics-ExtraBold.otf");
+  src: url("/fonts/athletics/Athletics-ExtraBold.woff2") format("woff2"),
+  url("/fonts/athletics/Athletics-ExtraBold.woff") format("woff");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -16,7 +18,8 @@
 
 @font-face {
   font-family: "ModernEra";
-  src: url("/fonts/ModernEra-Regular.otf");
+  src: url("/fonts/modern-era/ModernEra-Regular.woff2") format("woff2"),
+  url("/fonts/modern-era/ModernEra-Regular.woff") format("woff");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -24,15 +27,8 @@
 
 @font-face {
   font-family: "ModernEra";
-  src: url("/fonts/ModernEra-Medium.otf");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ModernEra";
-  src: url("/fonts/ModernEra-Bold.otf");
+  src: url("/fonts/modern-era/ModernEra-Bold.woff2") format("woff2"),
+  url("/fonts/modern-era/ModernEra-Bold.woff") format("woff");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -40,16 +36,9 @@
 
 @font-face {
   font-family: "ModernEraMono";
-  src: url("/fonts/ModernEraMono-Regular.otf");
+  src: url("/fonts/modern-era-mono/ModernEraMono-Medium.woff2") format("woff2"),
+  url("/fonts/modern-era-mono/ModernEraMono-Medium.woff") format("woff");
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ModernEraMono";
-  src: url("/fonts/ModernEraMono-Medium.otf");
-  font-style: normal;
-  font-weight: 500;
   font-display: swap;
 }

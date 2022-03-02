@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useMemo } from "react";
-import tw from "twin.macro";
+import tw, { styled } from "twin.macro";
 
 import FacebookSVG from "~/assets/svg/icons/socials/facebook.svg";
 import InstagramSVG from "~/assets/svg/icons/socials/instagram.svg";
@@ -12,9 +12,18 @@ import { PAGES_WITHOUT_FOOTER, PAGES_WITHOUT_FOOTER_CTA } from "~/constants";
 
 import { DataStore, useDataStore } from "~/store/data";
 
-const Wrapper = tw.footer`border-t border-black bg-white-greenish z-footer lg:z-0`;
+const Wrapper = tw.footer`border-t border-black bg-white-greenish z-footer`;
 
-const Main = tw(BaseWrapper)`pt-40 pb-20 lg:py-20`;
+const Main = styled(BaseWrapper)`
+  ${tw`pt-40 pb-20 lg:py-20`}
+
+  a {
+    transition: opacity 0.35s;
+    &:hover {
+      ${tw`opacity-50`}
+    }
+  }
+`;
 
 const MainContainer = tw(BaseContainer)`items-end`;
 
@@ -44,8 +53,10 @@ export const Footer = () => {
       {hasFooterCTA && <Cta turquoise {...footer?.cta?.[0]} />}
 
       <Main>
-        <MainContainer>
-          <Address>{footer?.address}</Address>
+        <MainContainer fullW>
+          <Address>
+            <BaseLink href={footer?.addressLink}>{footer?.address}</BaseLink>
+          </Address>
 
           <Newsletter>
             <button aria-label="Show newsletter signup modal" type="button">

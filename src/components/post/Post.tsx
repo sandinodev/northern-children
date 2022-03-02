@@ -19,7 +19,7 @@ const components: { [key: string]: (props: PostNewsFragment | PostStoryFragment)
 } as const;
 
 const Category = styled.div`
-  ${tw`col-span-full`}
+  ${tw`col-span-full text-xs font-era-mono`}
 
   margin-bottom: 1.5em;
 `;

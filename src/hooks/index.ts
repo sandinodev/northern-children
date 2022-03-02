@@ -5,5 +5,6 @@ export { useInView } from "./useInView";
 export { useMagnetize } from "./useMagnetize";
 export { useMediaQuery } from "./useMediaQuery";
 export { useMousePosition } from "./useMousePosition";
+export { useParallax } from "./useParallax";
 export { useSetGlobalData } from "./useSetGlobalData";
 export type { GlobalDataProps } from "./useSetGlobalData";

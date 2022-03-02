@@ -1,6 +1,7 @@
 import tw, { styled } from "twin.macro";
 
 import { BaseWrapper, BaseContainer, BaseImage, BaseText, BaseButton } from "~/components/base";
+import { MaskOpacity } from "~/components/mask";
 
 import { AssetFragment, LinkFragment } from "~/types";
 
@@ -22,7 +23,7 @@ const Title = styled.h2`
   ${tw`mb-40 lg:mb-60 text-xl font-alpina`}
 `;
 
-const Subtitle = tw.h3`mb-40 text-md font-bold`;
+const Subtitle = tw.h3`mb-40 text-md`;
 
 const ImageMobile = tw.div`lg:hidden w-full mb-40`;
 
@@ -37,9 +38,15 @@ export const Tile = ({ item }: TileProps) => {
     <Wrapper as="li">
       <BaseContainer>
         <Content>
-          <Title>{item.title}</Title>
+          <MaskOpacity>
+            <Title>{item.title}</Title>
+          </MaskOpacity>
 
-          {!!item.subtitle?.length && <Subtitle>{item.subtitle}</Subtitle>}
+          {!!item.subtitle?.length && (
+            <MaskOpacity>
+              <Subtitle>{item.subtitle}</Subtitle>
+            </MaskOpacity>
+          )}
 
           <ImageMobile>
             <BaseImage {...item.image?.[0]} />

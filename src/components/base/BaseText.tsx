@@ -1,5 +1,7 @@
 import ReactMarkdown from "react-markdown";
 
+import { MaskOpacity } from "~/components/mask";
+
 interface Props {
   text?: string;
 }
@@ -7,5 +9,9 @@ interface Props {
 export const BaseText = ({ text, ...rest }: Props) => {
   if (!text?.length) return null;
 
-  return <ReactMarkdown children={text} {...rest} />;
+  return (
+    <MaskOpacity {...rest}>
+      <ReactMarkdown children={text} />
+    </MaskOpacity>
+  );
 };

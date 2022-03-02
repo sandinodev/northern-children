@@ -1,3 +1,8 @@
+export const HEADER_HEIGHT = {
+  min: 85,
+  max: 69,
+};
+
 export const LINKS_GROUPS = [
   {
     title: "Who are we",

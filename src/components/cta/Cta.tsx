@@ -1,6 +1,7 @@
-import tw, { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 
 import { BaseButton, BaseContainer, BaseWrapper } from "~/components/base";
+import { MaskOpacity } from "~/components/mask";
 
 import { CtaFragment } from "~/types";
 
@@ -8,6 +9,7 @@ import { parsePublicToLocalHref } from "~/utils";
 
 interface StylesExternalProps {
   noBorder?: boolean;
+  wide?: boolean;
   yellow?: boolean;
 }
 
@@ -20,10 +22,20 @@ const Wrapper = styled(BaseWrapper)<StylesExternalProps>`
 
   ${({ noBorder }) => !noBorder && tw`border-b border-black`}
 
+  ${({ wide }) =>
+    wide &&
+    css`
+      ${Content} {
+        ${tw`lg:col-span-8 lg:col-start-3`}
+      }
+    `}
+
   ${({ yellow }) => yellow && tw`bg-yellow`}
 `;
 
-const Content = tw.div`col-span-full lg:col-span-6 lg:col-start-4 flex flex-col items-center text-center text-lg-alpina font-alpina`;
+const Content = styled.div`
+  ${tw`col-span-full lg:col-span-6 lg:col-start-4 flex flex-col items-center text-center text-lg-alpina font-alpina`}
+`;
 
 const Text = tw.p`mb-64`;
 
@@ -34,7 +46,9 @@ export const Cta = ({ links, text, turquoise, ...rest }: Props) => {
     <Wrapper {...rest}>
       <BaseContainer>
         <Content>
-          <Text>{text}</Text>
+          <MaskOpacity>
+            <Text>{text}</Text>
+          </MaskOpacity>
 
           {!!links?.length && (
             <Links>
