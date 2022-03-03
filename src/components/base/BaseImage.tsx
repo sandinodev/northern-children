@@ -20,6 +20,7 @@ interface Props extends StylesProps {
   customH?: number;
   kind?: string;
   layout?: ImageProps["layout"];
+  noMask?: boolean;
   noPlaceholder?: boolean;
   objectFit?: ImageProps["objectFit"];
   placeholder?: string;
@@ -93,6 +94,7 @@ export const BaseImage = forwardRef<HTMLImageElement, Props>(
       h = 0,
       kind: _,
       layout,
+      noMask,
       noPlaceholder,
       objectFit = "cover",
       placeholder,
@@ -128,7 +130,7 @@ export const BaseImage = forwardRef<HTMLImageElement, Props>(
 
     return (
       <Wrapper ref={ref} h={h} w={w} {...rest}>
-        <MaskOpacity duration={0.8} noY>
+        <MaskOpacity duration={0.8} manual={noMask} visible={noMask} noY>
           <Image
             alt={alt}
             lazyBoundary={lazyBoundary}

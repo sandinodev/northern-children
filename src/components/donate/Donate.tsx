@@ -67,6 +67,10 @@ export const Donate = () => {
       trigger: "footer",
       onToggle: ({ isActive }) => setIsFooter(isActive),
     });
+
+    return () => {
+      refs.st.current?.kill();
+    };
   });
 
   return (

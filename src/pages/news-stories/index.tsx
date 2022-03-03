@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { useEffect } from "react";
 
 import { NewsStories } from "~/components/newsStories";
 import { Seo } from "~/components/seo";
@@ -11,6 +12,8 @@ import { DefaultPage } from "~/layouts/DefaultPage";
 
 import { fetchData } from "~/lib/api";
 
+import { PostsStore, usePostsStore } from "~/store/posts";
+
 import { GlobalsQuery, NewsStoriesQuery, PostsQuery } from "~/types";
 
 interface Props extends GlobalDataProps {
@@ -19,14 +22,26 @@ interface Props extends GlobalDataProps {
   posts: PostsQuery["posts"];
 }
 
+const postsStoreSelector = ({ setAmount, posts, setPosts }: PostsStore) => ({ setAmount, posts, setPosts });
+
 const Page: NextPage<Props> = ({ amount, news, posts, ...rest }) => {
+  const { setAmount, posts: storedPosts, setPosts } = usePostsStore(postsStoreSelector);
+
   useSetGlobalData(rest);
+
+  useEffect(() => {
+    console.log(Number(posts?.length), Number(storedPosts?.length));
+    if (!storedPosts || Number(posts?.length) > Number(storedPosts)) {
+      setAmount(amount);
+      setPosts(posts);
+    }
+  }, [amount, posts, setAmount, setPosts, storedPosts]);
 
   return (
     <>
       <Seo seo={news?.seo?.[0]} />
 
-      <DefaultPage mt>{posts?.length && <NewsStories amount={amount} list={posts} loadMore />}</DefaultPage>
+      <DefaultPage mt>{posts?.length && <NewsStories loadMore />}</DefaultPage>
     </>
   );
 };

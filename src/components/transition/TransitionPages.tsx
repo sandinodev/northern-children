@@ -38,7 +38,7 @@ export const TransitionPages: React.FC<Props> = ({ children }) => {
         onExited={onExited}
         timeout={{
           enter: 450,
-          exit: 300,
+          exit: 350,
         }}
         mountOnEnter
         unmountOnExit

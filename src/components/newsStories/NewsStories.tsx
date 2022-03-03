@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import tw, { styled } from "twin.macro";
 
 import { BaseButton, BaseCard, BaseContainer, BaseSection } from "~/components/base";
+import { PostsStore, usePostsStore } from "~/store/posts";
 
 import { NewsCardFragment, StoryCardFragment } from "~/types";
 
@@ -13,7 +14,6 @@ interface ListProps {
 }
 
 interface Props {
-  amount?: number;
   featured?: List;
   list?: List;
   loadMore?: boolean;
@@ -60,9 +60,14 @@ const NewsStoriesList = ({ isFeatured, list }: ListProps) => {
   );
 };
 
-export const NewsStories = ({ amount, featured, list = [], loadMore }: Props) => {
+const postsStoreSelector = ({ amount, posts, setPosts }: PostsStore) => ({ amount, posts, setPosts });
+
+export const NewsStories = ({ featured, list = [], loadMore }: Props) => {
+  const { amount, posts, setPosts } = usePostsStore(postsStoreSelector);
+
   const [isFetching, setIsFetching] = useState(false);
-  const [postsList, setPostsList] = useState([...list]);
+  // const [postsList, setPostsList] = useState([...list]);
+  const postsList = useMemo(() => (loadMore ? posts : list) || [], [list, loadMore, posts]);
 
   const canFetchMore = useMemo(() => !!amount && amount > postsList.length, [amount, postsList.length]);
   const isMoreHidden = useMemo(() => !!loadMore && !canFetchMore, [canFetchMore, loadMore]);
@@ -73,14 +78,14 @@ export const NewsStories = ({ amount, featured, list = [], loadMore }: Props) =>
     setIsFetching(true);
     try {
       const res = await fetch(`/api/fetch-more-posts?offset=${postsList.length}`);
-      const { posts } = await res.json();
+      const { posts: newPosts } = await res.json();
 
       if (!res.ok) {
         throw new Error();
       }
 
-      if (posts?.length) {
-        setPostsList((prev) => [...prev, ...posts]);
+      if (newPosts?.length) {
+        setPosts([...postsList, ...newPosts]);
       }
     } catch (e) {
       // eslint-disable-next-line no-console
@@ -100,7 +105,7 @@ export const NewsStories = ({ amount, featured, list = [], loadMore }: Props) =>
     <BaseSection noMt={loadMore} title="News & Stories" mb>
       <Container as="ul" gapY>
         {!!featured?.length && <NewsStoriesList list={featured} isFeatured />}
-        {!!list?.length && <NewsStoriesList list={postsList} />}
+        {!!postsList?.length && <NewsStoriesList list={postsList} />}
       </Container>
 
       <More isHidden={isMoreHidden}>

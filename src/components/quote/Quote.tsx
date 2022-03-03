@@ -1,10 +1,21 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import { useIsomorphicLayoutEffect } from "react-use";
 import tw, { styled } from "twin.macro";
 
 import { BaseContainer, BaseImage, BaseWrapper } from "~/components/base";
+import { MaskOpacity } from "~/components/mask";
 
 import { QuoteFragment } from "~/types";
 
-const Wrapper = tw(BaseWrapper)`relative z-0`;
+import { isClient } from "~/utils";
+
+if (isClient) {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+const Wrapper = tw(BaseWrapper)`relative overflow-hidden z-0`;
 
 const Container = tw(BaseContainer)`h-screen`;
 
@@ -28,25 +39,56 @@ const Caption = tw.figcaption`text-xs font-era-mono`;
 
 const Image = styled.div`
   ${tw`absolute top-0 left-0 w-full h-full -z-1`}
+
+  transform: scale(1.3) translateZ(0.1px);
 `;
 
 export const Quote = ({ caption, image, quote, ...rest }: QuoteFragment) => {
+  const refs = {
+    image: useRef<HTMLDivElement>(null),
+    root: useRef<HTMLDivElement>(null),
+    st: useRef<gsap.plugins.ScrollTriggerInstance>(),
+  };
+
+  useIsomorphicLayoutEffect(() => {
+    if (!quote?.length || !refs.root.current || !refs.image.current) return;
+
+    const t = gsap.fromTo(refs.image.current, { scale: 1.3 }, { scale: 1, duration: 0.4, ease: "none", paused: true });
+
+    refs.st.current = ScrollTrigger.create({
+      invalidateOnRefresh: true,
+      end: "bottom bottom",
+      start: "top bottom",
+      trigger: refs.root.current,
+      onUpdate: ({ progress }) => {
+        t.progress(progress);
+      },
+    });
+
+    return () => {
+      refs.st.current?.kill();
+      t.kill();
+    };
+  }, [quote?.length, refs.image, refs.root, refs.st]);
+
   if (!quote?.length) return null;
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper ref={refs.root} {...rest}>
       <Container>
         <Figure>
           <Blockquote>
-            <p>{quote}</p>
+            <MaskOpacity as="p">{quote}</MaskOpacity>
           </Blockquote>
-          <Caption>{caption}</Caption>
+          <Caption>
+            <MaskOpacity>{caption}</MaskOpacity>
+          </Caption>
         </Figure>
       </Container>
 
       {!!image?.length && (
-        <Image>
-          <BaseImage fullH fullW {...image[0]} />
+        <Image ref={refs.image}>
+          <BaseImage fullH fullW noMask {...image[0]} />
         </Image>
       )}
     </Wrapper>

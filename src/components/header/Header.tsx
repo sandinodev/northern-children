@@ -78,10 +78,26 @@ const StyledBaseLink = styled(BaseLink)`
   ${Item}
 `;
 
+const Link = styled.li`
+  ${tw`opacity-25`}
+
+  transition: opacity 0.35s;
+
+  &:hover {
+    ${tw`opacity-100`}
+  }
+`;
+
 const Links = styled.ul`
   ${tw`absolute top-full left-0 opacity-0 invisible`}
 
   transition: opacity 0.35s, visibility 0s 0.35s;
+
+  &:not(:hover) {
+    ${Link} {
+      ${tw`opacity-100`}
+    }
+  }
 `;
 
 const Group = styled.li`
@@ -160,9 +176,9 @@ export const Header = () => {
 
               <Links>
                 {links.map(({ href, text }, j) => (
-                  <li key={j}>
+                  <Link key={j}>
                     <StyledBaseLink href={href}>{text}</StyledBaseLink>
-                  </li>
+                  </Link>
                 ))}
               </Links>
             </Group>
