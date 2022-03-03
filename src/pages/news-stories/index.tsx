@@ -30,7 +30,6 @@ const Page: NextPage<Props> = ({ amount, news, posts, ...rest }) => {
   useSetGlobalData(rest);
 
   useEffect(() => {
-    console.log(Number(posts?.length), Number(storedPosts?.length));
     if (!storedPosts || Number(posts?.length) > Number(storedPosts)) {
       setAmount(amount);
       setPosts(posts);

@@ -8,13 +8,13 @@ import { Donate } from "~/components/donate";
 import { Footer } from "~/components/footer";
 import { Header } from "~/components/header";
 import { Intro } from "~/components/intro";
+import { Menu } from "~/components/menu";
 import { TransitionPages } from "~/components/transition";
 
 import { Store, useStore } from "~/store";
 
 import { GlobalStyles } from "~/styles/GlobalStyles";
 import "~/styles/fonts.css";
-import { Menu } from "~/components/menu";
 
 const defaultSeo: DefaultSeoProps = {
   title: "Title",
@@ -112,10 +112,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
       <TransitionPages>
         <Component {...pageProps} />
-
-        <Footer />
       </TransitionPages>
 
+      <Footer />
       <Donate />
 
       {isIntro && <Intro />}

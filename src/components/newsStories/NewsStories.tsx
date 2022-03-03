@@ -66,7 +66,6 @@ export const NewsStories = ({ featured, list = [], loadMore }: Props) => {
   const { amount, posts, setPosts } = usePostsStore(postsStoreSelector);
 
   const [isFetching, setIsFetching] = useState(false);
-  // const [postsList, setPostsList] = useState([...list]);
   const postsList = useMemo(() => (loadMore ? posts : list) || [], [list, loadMore, posts]);
 
   const canFetchMore = useMemo(() => !!amount && amount > postsList.length, [amount, postsList.length]);
