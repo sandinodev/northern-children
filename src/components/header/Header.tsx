@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { gsap } from "gsap";
+import { useEffect, useRef, useState } from "react";
 import tw, { css, styled } from "twin.macro";
 
 import LogoSVG from "~/assets/svg/logo.svg";
@@ -124,19 +125,7 @@ const MenuIcon = styled.div<{ isClose: boolean }>`
     isClose &&
     css`
       ${Burger} {
-        transform: translate(0, 0.8rem) scaleX(1.1);
-      }
-
-      ${Line} {
-        ${tw`last:opacity-0`}
-
-        &:first-child {
-          transform: rotate(45deg);
-        }
-
-        &:nth-child(2) {
-          transform: translate(1%, -300%) rotate(-45deg);
-        }
+        transform: scaleX(1.1);
       }
     `}
 `;
@@ -147,16 +136,16 @@ const Burger = styled.div`
   transition: transform 0.3s ${eases.sine.out};
 `;
 
-const Line = styled.div`
-  ${tw`w-full h-3 mb-6 last:mb-0 bg-black`}
-
-  transform-origin: center;
-  transition: transform 0.3s ${eases.sine.out}, opacity 0.2s ${eases.sine.out};
-`;
+const Line = tw.div`w-full h-3 mb-6 last:mb-0 bg-black origin-center`;
 
 const storeSelector = ({ isMenuOpen, setIsMenuOpen }: Store) => ({ isMenuOpen, setIsMenuOpen });
 
 export const Header = () => {
+  const refs = {
+    burger: useRef<HTMLDivElement>(null),
+    tl: useRef<GSAPTimeline>(),
+  };
+
   const { isMenuOpen, setIsMenuOpen } = useStore(storeSelector);
 
   const [currI, setCurrI] = useState(-1);
@@ -170,6 +159,26 @@ export const Header = () => {
   const onMouseLeave = () => setCurrI(-1);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  useEffect(() => {
+    if (!refs.burger.current) return;
+    const lines = refs.burger.current.children;
+
+    refs.tl.current = gsap
+      .timeline({ paused: true })
+      .to(lines[0], { y: "0.9rem", duration: 0.15, ease: "sine.out" }, 0)
+      .to(lines[2], { y: "-0.9rem", duration: 0.15, ease: "sine.out" }, 0)
+      .set(lines[2], { autoAlpha: 0 })
+      .addLabel("close")
+      .to(lines[0], { rotate: 45, duration: 0.15, ease: "sine.out" }, "close")
+      .to(lines[1], { y: "-25%", rotate: -45, duration: 0.15, ease: "sine.out" }, "close");
+  }, [refs.burger, refs.tl]);
+
+  useEffect(() => {
+    if (!refs.tl.current) return;
+
+    isMenuOpen ? refs.tl.current.play() : refs.tl.current.reverse();
+  }, [isMenuOpen, refs.tl]);
 
   return (
     <Wrapper as="header" i={currI}>
@@ -202,7 +211,7 @@ export const Header = () => {
 
         <Menu onClick={toggleMenu}>
           <MenuIcon isClose={isMenuOpen}>
-            <Burger>
+            <Burger ref={refs.burger}>
               <Line />
               <Line />
               <Line />
