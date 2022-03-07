@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { useEffect, useState } from "react";
 import { styled } from "twin.macro";
 
 import { Cta } from "~/components/cta";
@@ -15,8 +16,10 @@ import { GlobalDataProps, useSetGlobalData } from "~/hooks";
 import { DefaultPage } from "~/layouts/DefaultPage";
 
 import { fetchData } from "~/lib/api";
+import { Store, useStore } from "~/store";
 
 import { GlobalsQuery, HomeQuery } from "~/types";
+
 import { down } from "~/utils/screens";
 
 interface Props extends GlobalDataProps {
@@ -29,8 +32,21 @@ const StyledSlider = styled(Slider)`
   }
 `;
 
+const storeSelector = ({ isIntro, setIsIntro }: Store) => ({ isIntro, setIsIntro });
+
 const Index: NextPage<Props> = ({ home, ...rest }) => {
+  const { isIntro, setIsIntro } = useStore(storeSelector);
+
+  const [hadIntro, setHadIntro] = useState(isIntro);
+
   useSetGlobalData(rest);
+
+  useEffect(() => {
+    if (isIntro || hadIntro) return;
+
+    setIsIntro(true);
+    setHadIntro(true);
+  }, [hadIntro, isIntro, setIsIntro]);
 
   return (
     <>
