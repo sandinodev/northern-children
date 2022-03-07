@@ -31,7 +31,7 @@ export const useInView = ({ disabled, once = true, start = "top bottom", trigger
   };
 
   useIsomorphicLayoutEffect(() => {
-    if (disabled || (waitForIntro && isIntro) || !trigger.current || refs.st.current) return;
+    if (disabled || (waitForIntro && isIntro) || !trigger.current) return;
 
     refs.st.current = ScrollTrigger.create({
       once,
