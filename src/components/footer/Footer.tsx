@@ -59,9 +59,7 @@ export const Footer = () => {
           </Address>
 
           <Newsletter>
-            <button aria-label="Show newsletter signup modal" type="button">
-              Newsletter
-            </button>
+            <BaseLink href={footer?.newsletterLink}>Newsletter</BaseLink>
           </Newsletter>
 
           <Socials>

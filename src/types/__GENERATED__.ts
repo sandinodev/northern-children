@@ -1786,6 +1786,7 @@ export type QueryGlobalSetsArgs = {
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   images?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   pages?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   handle?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -1822,6 +1823,7 @@ export type QueryGlobalSetArgs = {
   siteSettingsId?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   textWithLineBreaks?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   text?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
+  textAdditional?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   images?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   pages?: Maybe<Array<Maybe<Scalars['QueryArgument']>>>;
   handle?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -4315,6 +4317,7 @@ export type Footer_GlobalSet = ElementInterface & GlobalSetInterface & {
   cta?: Maybe<Array<Maybe<Cta_NeoField>>>;
   textWithLineBreaks?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
+  textAdditional?: Maybe<Scalars['String']>;
 };
 
 
@@ -14104,7 +14107,7 @@ export type LinkFragment = { text?: Maybe<string>, type?: Maybe<string>, url?: M
 export type GlobalsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GlobalsQuery = { donate?: Maybe<{ link?: Maybe<string>, pages?: Maybe<Array<Maybe<{ slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> }>>> }>, footer?: Maybe<{ address?: Maybe<string>, addressLink?: Maybe<string>, cta?: Maybe<Array<Maybe<CtaFragment>>> }>, intro?: Maybe<{ images?: Maybe<Array<Maybe<AssetFragment>>> }>, socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>, url?: Maybe<string> }> }>>> }> };
+export type GlobalsQuery = { donate?: Maybe<{ link?: Maybe<string>, pages?: Maybe<Array<Maybe<{ slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> } | { slug?: Maybe<string> }>>> }>, footer?: Maybe<{ address?: Maybe<string>, addressLink?: Maybe<string>, newsletterLink?: Maybe<string>, cta?: Maybe<Array<Maybe<CtaFragment>>> }>, intro?: Maybe<{ images?: Maybe<Array<Maybe<AssetFragment>>> }>, socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>, url?: Maybe<string> }> }>>> }> };
 
 export type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 

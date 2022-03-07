@@ -22,6 +22,7 @@ export const GLOBALS_QUERY = gql`
         }
         address: textWithLineBreaks
         addressLink: text
+        newsletterLink: textAdditional
       }
     }
 
