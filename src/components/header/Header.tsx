@@ -2,8 +2,6 @@ import { useState } from "react";
 import tw, { css, styled } from "twin.macro";
 
 import LogoSVG from "~/assets/svg/logo.svg";
-import CloseSVG from "~/assets/svg/icons/close.svg";
-import MenuSVG from "~/assets/svg/icons/menu.svg";
 
 import { BaseContainer, BaseLink, BaseWrapper } from "~/components/base";
 
@@ -119,26 +117,41 @@ const Menu = styled.button`
   ${tw`lg:hidden relative p-5`}
 `;
 
-const MenuIcon = styled.span<{ isAbsolute?: boolean; isVisible: boolean }>`
+const MenuIcon = styled.div<{ isClose: boolean }>`
   ${tw`inline-block`}
 
-  transition: opacity 0.35s 0.3s ${eases.sine.out};
-
-  ${({ isAbsolute }) =>
-    isAbsolute &&
+  ${({ isClose }) =>
+    isClose &&
     css`
-      ${tw`absolute top-1/2 left-1/2`}
+      ${Burger} {
+        transform: translate(0, 0.8rem) scaleX(1.1);
+      }
 
-      transform: translate(-50%, -50%);
+      ${Line} {
+        ${tw`last:opacity-0`}
+
+        &:first-child {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: translate(1%, -300%) rotate(-45deg);
+        }
+      }
     `}
+`;
 
-  ${({ isVisible }) =>
-    !isVisible &&
-    css`
-      ${tw`opacity-0`}
+const Burger = styled.div`
+  ${tw`w-24 h-21`}
 
-      transition-delay: 0s;
-    `}
+  transition: transform 0.3s ${eases.sine.out};
+`;
+
+const Line = styled.div`
+  ${tw`w-full h-3 mb-6 last:mb-0 bg-black`}
+
+  transform-origin: center;
+  transition: transform 0.3s ${eases.sine.out}, opacity 0.2s ${eases.sine.out};
 `;
 
 const storeSelector = ({ isMenuOpen, setIsMenuOpen }: Store) => ({ isMenuOpen, setIsMenuOpen });
@@ -188,12 +201,12 @@ export const Header = () => {
         </Items>
 
         <Menu onClick={toggleMenu}>
-          <MenuIcon isVisible={!isMenuOpen}>
-            <MenuSVG />
-          </MenuIcon>
-
-          <MenuIcon isVisible={isMenuOpen} isAbsolute>
-            <CloseSVG />
+          <MenuIcon isClose={isMenuOpen}>
+            <Burger>
+              <Line />
+              <Line />
+              <Line />
+            </Burger>
           </MenuIcon>
         </Menu>
       </Container>
