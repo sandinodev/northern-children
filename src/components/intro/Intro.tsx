@@ -75,7 +75,7 @@ export const Intro = () => {
     <Wrapper ref={refs.root}>
       {selectedImages.map((image, i) => (
         <Image key={i} isVisible={i === currI}>
-          <img alt="" {...image} />
+          <img alt="" src={`http://${image.placeholder?.split("https://")[1]}`} />
         </Image>
       ))}
     </Wrapper>
