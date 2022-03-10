@@ -122,11 +122,13 @@ export const BaseImage = forwardRef<HTMLImageElement, Props>(
 
     const lazyBoundary = useMemo(() => `${1000 + wH}px`, [wH]);
 
+    const _src = useMemo(() => src?.replace("https", "http"), [src]);
+
     const [isLoaded, setIsLoaded] = useState(false);
 
     const onLoadingComplete = () => setIsLoaded(true);
 
-    if (!src) return null;
+    if (!_src) return null;
 
     return (
       <Wrapper ref={ref} h={h} w={w} {...rest}>
@@ -139,7 +141,7 @@ export const BaseImage = forwardRef<HTMLImageElement, Props>(
             onLoadingComplete={onLoadingComplete}
             priority={priority}
             sizes={sizes}
-            src={src}
+            src={_src}
             quality={quality}
             {...dimensions}
           />

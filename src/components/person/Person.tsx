@@ -3,6 +3,7 @@ import tw from "twin.macro";
 import { BaseButton, BaseContainer, BaseImage, BaseText, BaseWrapper } from "~/components/base";
 
 import { PersonQuery } from "~/types";
+import { MaskOpacity } from "../mask";
 
 const Content = tw.div`col-span-full lg:col-span-6`;
 
@@ -19,8 +20,12 @@ export const Person = (person: PersonQuery["person"]) => {
     <BaseWrapper mb>
       <BaseContainer>
         <Content>
-          <Title>{`${person.name}${person.education?.length ? `, ${person.education}` : ""}`}</Title>
-          <Subtitle>{person.role}</Subtitle>
+          <Title>
+            <MaskOpacity>{`${person.name}${person.education?.length ? `, ${person.education}` : ""}`}</MaskOpacity>
+          </Title>
+          <Subtitle>
+            <MaskOpacity>{person.role}</MaskOpacity>
+          </Subtitle>
 
           <BaseImage fullW {...person.image?.[0]} />
 
@@ -28,9 +33,11 @@ export const Person = (person: PersonQuery["person"]) => {
             <BaseText text={person.description} />
           </Description>
 
-          <BaseButton href="/team" ariaLabel="Go to previous page">
-            Back
-          </BaseButton>
+          <MaskOpacity start="top bottom" noY>
+            <BaseButton href="/team" ariaLabel="Go to previous page">
+              Back
+            </BaseButton>
+          </MaskOpacity>
         </Content>
       </BaseContainer>
     </BaseWrapper>

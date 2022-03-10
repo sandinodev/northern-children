@@ -44,28 +44,28 @@ const Links = tw.div`grid grid-flow-row lg:grid-flow-col auto-cols-fr gap-x-10 l
 export const Cta = ({ links, text, turquoise, ...rest }: Props) => {
   return (
     <Wrapper {...rest}>
-      <BaseContainer>
-        <Content>
-          <MaskOpacity>
+      <MaskOpacity start="top bottom" noY>
+        <BaseContainer>
+          <Content>
             <Text>{text}</Text>
-          </MaskOpacity>
 
-          {!!links?.length && (
-            <Links>
-              {links.map(({ ariaLabel, link }, i) => (
-                <BaseButton
-                  key={i}
-                  ariaLabel={ariaLabel}
-                  href={parsePublicToLocalHref(link?.url)}
-                  turquoise={turquoise}
-                >
-                  {link?.text}
-                </BaseButton>
-              ))}
-            </Links>
-          )}
-        </Content>
-      </BaseContainer>
+            {!!links?.length && (
+              <Links>
+                {links.map(({ ariaLabel, link }, i) => (
+                  <BaseButton
+                    key={i}
+                    ariaLabel={ariaLabel}
+                    href={parsePublicToLocalHref(link?.url)}
+                    turquoise={turquoise}
+                  >
+                    {link?.text}
+                  </BaseButton>
+                ))}
+              </Links>
+            )}
+          </Content>
+        </BaseContainer>
+      </MaskOpacity>
     </Wrapper>
   );
 };

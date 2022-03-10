@@ -49,7 +49,7 @@ export const Footer = () => {
   if (!hasFooter) return null;
 
   return (
-    <Wrapper>
+    <Wrapper id="footer">
       {hasFooterCTA && <Cta turquoise {...footer?.cta?.[0]} />}
 
       <Main>

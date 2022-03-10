@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import tw, { styled } from "twin.macro";
 import { BaseContainer, BaseButton, BaseWrapper } from "~/components/base";
 
+import { MaskOpacity } from "~/components/mask";
 import { Share } from "~/components/share";
 
 import { PostNewsFragment, PostQuery, PostStoryFragment } from "~/types";
@@ -37,11 +38,15 @@ export const Post = ({ post }: Props) => {
 
       <BaseWrapper as="footer" mb>
         <BaseContainer>
-          <Category>Category: {category}</Category>
+          <Category>
+            <MaskOpacity>Category: {category}</MaskOpacity>
+          </Category>
 
           <StyledShare seo={post?.seo} share={post?.share} />
 
-          <BaseButton href="/news-stories">Back</BaseButton>
+          <MaskOpacity noY>
+            <BaseButton href="/news-stories">Back</BaseButton>
+          </MaskOpacity>
         </BaseContainer>
       </BaseWrapper>
     </article>

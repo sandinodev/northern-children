@@ -7,6 +7,8 @@ import { Store, useStore } from "~/store";
 
 import { isClient } from "~/utils";
 
+import { useMounted } from "./useMounted";
+
 if (isClient) {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -30,12 +32,15 @@ export const useInView = ({ disabled, once = true, start = "top bottom", trigger
     st: useRef<any>(),
   };
 
+  const isMounted = useMounted();
+
   useIsomorphicLayoutEffect(() => {
-    if (disabled || (waitForIntro && isIntro) || !trigger.current) return;
+    if (!isMounted || disabled || (waitForIntro && isIntro) || !trigger.current) return;
 
     refs.st.current = ScrollTrigger.create({
       once,
       start,
+      invalidateOnRefresh: true,
       trigger: trigger.current,
       onEnter: () => {
         setIsVisible(true);
@@ -45,7 +50,7 @@ export const useInView = ({ disabled, once = true, start = "top bottom", trigger
     return () => {
       refs.st.current && refs.st.current.kill();
     };
-  }, [disabled, isIntro, once, refs.st, trigger, waitForIntro]);
+  }, [disabled, isIntro, isMounted, once, refs.st, trigger, waitForIntro]);
 
   return { isVisible };
 };

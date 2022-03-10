@@ -4,6 +4,9 @@ import { useRef } from "react";
 import { SwitchTransition, Transition } from "react-transition-group";
 import tw from "twin.macro";
 
+import { Donate } from "~/components/donate";
+import { Footer } from "~/components/footer";
+
 interface Props {}
 
 const Wrapper = tw.div`flex flex-col flex-1 bg-white-greenish`;
@@ -43,7 +46,12 @@ export const TransitionPages: React.FC<Props> = ({ children }) => {
         mountOnEnter
         unmountOnExit
       >
-        <Wrapper ref={refs.root}>{children}</Wrapper>
+        <Wrapper ref={refs.root}>
+          {children}
+
+          <Donate />
+          <Footer />
+        </Wrapper>
       </Transition>
     </SwitchTransition>
   );

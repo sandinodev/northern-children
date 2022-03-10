@@ -2,8 +2,6 @@ import NextLink from "next/link";
 import { forwardRef, PropsWithChildren } from "react";
 import tw, { styled } from "twin.macro";
 
-import { MaskOpacity } from "~/components/mask";
-
 import { isLinkExternal, parsePublicToLocalHref } from "~/utils";
 import { supportsHover } from "~/utils/screens";
 
@@ -47,11 +45,9 @@ const Button = forwardRef<any, PropsWithChildren<ButtonProps>>(
     const props = isExternal ? { target: "_blank", rel: "noopener noreferrer", type: undefined } : {};
 
     return (
-      <MaskOpacity noY>
-        <Wrapper ref={ref} as={isLink ? "a" : "button"} {...rest} {...props} aria-label={ariaLabel}>
-          {children}
-        </Wrapper>
-      </MaskOpacity>
+      <Wrapper ref={ref} as={isLink ? "a" : "button"} {...rest} {...props} aria-label={ariaLabel}>
+        {children}
+      </Wrapper>
     );
   }
 );

@@ -22,7 +22,7 @@ const Description = tw.div`col-span-full lg:col-span-8`;
 export const Trustees = ({ title, trustees }: Props) => {
   return (
     <BaseSection title={title} mb>
-      <StyledMaskOpacity noY>
+      <StyledMaskOpacity start="top bottom" noY>
         <List>
           {trustees.map(({ description, name, role }, i) => (
             <Trustee key={i} fullW>

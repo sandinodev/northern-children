@@ -4,8 +4,6 @@ import { AppProps } from "next/app";
 import { DefaultSeo, DefaultSeoProps } from "next-seo";
 import { useEffect } from "react";
 
-import { Donate } from "~/components/donate";
-import { Footer } from "~/components/footer";
 import { Header } from "~/components/header";
 import { Intro } from "~/components/intro";
 import { Menu } from "~/components/menu";
@@ -35,7 +33,7 @@ const storeSelector = ({ isIntro, setWH, setWW }: Store) => ({
   setWW,
 });
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps, router }: AppProps) => {
   const { isIntro, setWH, setWW } = useStore(storeSelector);
 
   useEffect(() => {
@@ -113,9 +111,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <TransitionPages>
         <Component {...pageProps} />
       </TransitionPages>
-
-      <Footer />
-      <Donate />
 
       {isIntro && <Intro />}
     </>

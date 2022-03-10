@@ -3,6 +3,8 @@ import { useMemo } from "react";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 import tw, { styled } from "twin.macro";
 
+import { MaskOpacity } from "~/components/mask";
+
 import { SeoFragment, ShareFacebookFragment, ShareTwitterFragment } from "~/types";
 
 interface Props {
@@ -50,26 +52,28 @@ export const Share = ({ share, seo, ...rest }: Props) => {
 
   return (
     <Wrapper {...rest}>
-      Share:
-      <Socials>
-        <Social>
-          <FacebookShareButton hashtag={_share.facebook?.hashtag} quote={_share.facebook?.quote} url={shareUrl}>
-            Facebook
-          </FacebookShareButton>
-        </Social>
+      <MaskOpacity>
+        Share:
+        <Socials>
+          <Social>
+            <FacebookShareButton hashtag={_share.facebook?.hashtag} quote={_share.facebook?.quote} url={shareUrl}>
+              Facebook
+            </FacebookShareButton>
+          </Social>
 
-        <Social>
-          <TwitterShareButton hashtags={twitterHashtags} title={seo?.[0].title} url={shareUrl}>
-            Twitter
-          </TwitterShareButton>
-        </Social>
+          <Social>
+            <TwitterShareButton hashtags={twitterHashtags} title={seo?.[0].title} url={shareUrl}>
+              Twitter
+            </TwitterShareButton>
+          </Social>
 
-        <Social>
-          <LinkedinShareButton summary={seo?.[0].description} url={shareUrl}>
-            Linkedin
-          </LinkedinShareButton>
-        </Social>
-      </Socials>
+          <Social>
+            <LinkedinShareButton summary={seo?.[0].description} url={shareUrl}>
+              Linkedin
+            </LinkedinShareButton>
+          </Social>
+        </Socials>
+      </MaskOpacity>
     </Wrapper>
   );
 };

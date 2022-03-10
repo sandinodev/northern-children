@@ -52,7 +52,7 @@ const Wrapper = styled.div.attrs(({ isHidden }: StylesProps) => ({
 export const MaskOpacity: React.FC<Props> = ({
   as,
   children,
-  delay = 0,
+  delay = 0.1,
   duration = 0.5,
   manual,
   start = "center center+=30%",

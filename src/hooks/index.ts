@@ -4,6 +4,7 @@ export { useFontsLoaded } from "./useFontsLoaded";
 export { useInView } from "./useInView";
 export { useMagnetize } from "./useMagnetize";
 export { useMediaQuery } from "./useMediaQuery";
+export { useMounted } from "./useMounted";
 export { useMousePosition } from "./useMousePosition";
 export { useParallax } from "./useParallax";
 export { useSetGlobalData } from "./useSetGlobalData";

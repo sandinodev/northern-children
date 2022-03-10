@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import tw, { styled } from "twin.macro";
 
 import { BaseButton, BaseCard, BaseContainer, BaseSection } from "~/components/base";
+import { MaskOpacity } from "~/components/mask";
 import { PostsStore, usePostsStore } from "~/store/posts";
 
 import { NewsCardFragment, StoryCardFragment } from "~/types";
@@ -108,14 +109,16 @@ export const NewsStories = ({ featured, list = [], loadMore }: Props) => {
       </Container>
 
       <More isHidden={isMoreHidden}>
-        <BaseButton
-          disabled={isFetching || isMoreHidden}
-          onClick={loadMore ? fetchMorePosts : undefined}
-          {...buttonProps}
-        >
-          More
-          {loadMore && <Loading isVisible={isFetching}>Loading</Loading>}
-        </BaseButton>
+        <MaskOpacity noY>
+          <BaseButton
+            disabled={isFetching || isMoreHidden}
+            onClick={loadMore ? fetchMorePosts : undefined}
+            {...buttonProps}
+          >
+            More
+            {loadMore && <Loading isVisible={isFetching}>Loading</Loading>}
+          </BaseButton>
+        </MaskOpacity>
       </More>
     </BaseSection>
   );

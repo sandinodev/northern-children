@@ -28,17 +28,18 @@ export const useParallax = (el: RefObject<HTMLElement> | MutableRefObject<RefObj
     refs.items.current.forEach((item, i) => {
       if (!item.current) return;
 
-      const y = item.current instanceof HTMLImageElement ? "10%" : "20%";
+      const y = "30%";
 
       refs.tls.current[i] = gsap
         .timeline({
           scrollTrigger: {
+            start: 0,
             trigger: item.current,
             scrub: true,
             invalidateOnRefresh: true,
           },
         })
-        .fromTo(item.current, { y: `-${y}` }, { y: `${y}`, ease: "none" });
+        .fromTo(item.current, { y: 0 }, { y: `${y}`, ease: "none" });
     });
 
     return () => {
