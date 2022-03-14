@@ -27,7 +27,9 @@ export const Contact = ({ address, addressLink, contact, socials }: Props) => {
       <StyledBaseSection title={contact?.title} border noMt>
         <Address>
           <p>
-            <BaseLink href={addressLink}>{address}</BaseLink>
+            <BaseLink href={addressLink} underline>
+              {address}
+            </BaseLink>
           </p>
 
           {contact?.phone && (
