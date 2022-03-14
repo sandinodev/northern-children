@@ -10,7 +10,7 @@ export interface FactsStatsRichTextBlockProps extends FactsStatsRichTextBlockFra
   color: string;
 }
 
-const StyledRichText = styled(BaseRichText)<{ color: string }>`
+const StyledRichText = styled(BaseRichText)<{ $color: string }>`
   ${tw`col-span-full lg:col-span-6 mt-40 lg:mt-80 mb-30 lg:mb-100`}
 
   h2 {
@@ -20,10 +20,10 @@ const StyledRichText = styled(BaseRichText)<{ color: string }>`
       width: 120%;
     }
 
-    ${({ color }) =>
-      color &&
+    ${({ $color }) =>
+      $color &&
       css`
-        color: var(--color-${color.toLowerCase()});
+        color: var(--color-${$color.toLowerCase()});
       `}
   }
 
@@ -32,8 +32,9 @@ const StyledRichText = styled(BaseRichText)<{ color: string }>`
   }
 
   ol {
-    ${tw`list-inside`}
+    ${tw`list-outside`}
 
+    margin-left: 1em;
     counter-reset: list;
 
     & > li {
@@ -49,7 +50,9 @@ const StyledRichText = styled(BaseRichText)<{ color: string }>`
   }
 
   ul {
-    ${tw`mb-56 lg:mb-72 list-disc list-inside`}
+    ${tw`mb-56 lg:mb-72 list-disc list-outside`}
+
+    margin-left: 1em;
 
     li {
       ${tw`mb-27`}
@@ -61,7 +64,7 @@ export const RichTextBlock = ({ color, text }: FactsStatsRichTextBlockProps) => 
   return (
     <BaseWrapper>
       <BaseContainer>
-        <StyledRichText color={color} text={text} />
+        <StyledRichText $color={color} text={text} />
       </BaseContainer>
     </BaseWrapper>
   );

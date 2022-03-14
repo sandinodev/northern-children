@@ -24,14 +24,16 @@ const StyledRichText = styled(BaseRichText)`
   }
 
   ol {
-    ${tw`list-decimal list-inside`}
+    ${tw`list-decimal list-outside`}
 
+    margin-left: 1em;
     margin-bottom: 1.5em;
   }
 
   ul {
-    ${tw`list-disc list-inside`}
+    ${tw`list-disc list-outside`}
 
+    margin-left: 1em;
     margin-bottom: 1.5em;
   }
 `;
