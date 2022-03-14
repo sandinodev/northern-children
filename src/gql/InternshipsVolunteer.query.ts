@@ -8,6 +8,7 @@ export const INTERNSHIPS_VOLUNTEER_QUERY = gql`
   query InternshipsVolunteer {
     internships: entry(slug: "internships-volunteer") {
       ... on internshipsVolunteer_internshipsVolunteer_Entry {
+        color
         description: textWithLineBreaks
         image {
           ...Asset

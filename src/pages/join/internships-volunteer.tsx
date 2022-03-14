@@ -29,9 +29,9 @@ const Page: NextPage<Props> = ({ internships, ...rest }) => {
       <DefaultPage>
         {!!internships?.image?.length && <Hero image={internships.image} text={internships.title} />}
 
-        <TextBlock bg="blue" text={internships?.description} />
+        <TextBlock bg={internships?.color} text={internships?.description} />
 
-        {!!internships?.tiles?.length && <Tiles color="blue" items={internships.tiles} />}
+        {!!internships?.tiles?.length && <Tiles color={internships?.color} items={internships.tiles} />}
       </DefaultPage>
     </>
   );

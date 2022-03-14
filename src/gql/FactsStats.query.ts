@@ -19,6 +19,7 @@ export const FACTS_STATS_QUERY = gql`
           ...FactsStatsRichTextBlock
           ...FactsStatsTextWithBackgroundBlock
         }
+        color
         heroImage: image {
           ...Asset
         }

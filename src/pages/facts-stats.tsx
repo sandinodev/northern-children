@@ -28,7 +28,7 @@ const Page: NextPage<Props> = ({ facts, ...rest }) => {
       <DefaultPage>
         {!!facts?.heroImage?.length && <Hero image={facts.heroImage} text={facts.title} />}
 
-        {!!facts?.blocks?.length && <FactsStatsBlocks blocks={facts.blocks} />}
+        {!!facts?.blocks?.length && <FactsStatsBlocks blocks={facts.blocks} color={facts.color} />}
       </DefaultPage>
     </>
   );

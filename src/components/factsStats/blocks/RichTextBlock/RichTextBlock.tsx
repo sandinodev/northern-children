@@ -1,4 +1,4 @@
-import tw, { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 
 import { BaseContainer, BaseRichText, BaseWrapper } from "~/components/base";
 
@@ -6,15 +6,25 @@ import { FactsStatsRichTextBlockFragment } from "~/types";
 
 import { up } from "~/utils/screens";
 
-const StyledRichText = styled(BaseRichText)`
+export interface FactsStatsRichTextBlockProps extends FactsStatsRichTextBlockFragment {
+  color: string;
+}
+
+const StyledRichText = styled(BaseRichText)<{ color: string }>`
   ${tw`col-span-full lg:col-span-6 mt-40 lg:mt-80 mb-30 lg:mb-100`}
 
   h2 {
-    ${tw`mb-40 lg:mb-68 text-red text-2xl font-alpina`}
+    ${tw`mb-40 lg:mb-68 text-2xl font-alpina`}
 
     ${up("lg")} {
       width: 120%;
     }
+
+    ${({ color }) =>
+      color &&
+      css`
+        color: var(--color-${color.toLowerCase()});
+      `}
   }
 
   h3 {
@@ -47,11 +57,11 @@ const StyledRichText = styled(BaseRichText)`
   }
 `;
 
-export const RichTextBlock = ({ text }: FactsStatsRichTextBlockFragment) => {
+export const RichTextBlock = ({ color, text }: FactsStatsRichTextBlockProps) => {
   return (
     <BaseWrapper>
       <BaseContainer>
-        <StyledRichText text={text} />
+        <StyledRichText color={color} text={text} />
       </BaseContainer>
     </BaseWrapper>
   );
