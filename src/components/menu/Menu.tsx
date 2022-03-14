@@ -12,7 +12,7 @@ import { Store, useStore } from "~/store";
 import { eases } from "~/styles/eases";
 
 const Wrapper = styled(BaseWrapper)<{ isVisible: boolean }>`
-  ${tw`lg:hidden fixed top-0 left-0 w-full h-full bg-white-greenish z-menu`}
+  ${tw`lg:hidden fixed top-0 left-0 w-screen h-screen bg-white-greenish z-menu`}
 
   height: -webkit-fill-available;
   padding-top: ${MAIN_PADDING_TOP.min + 80}px;

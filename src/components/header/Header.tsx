@@ -181,7 +181,7 @@ export const Header = () => {
   }, [isMenuOpen, refs.tl]);
 
   return (
-    <Wrapper as="header" i={currI}>
+    <Wrapper id="header" as="header" i={currI}>
       <Container as="nav" fullW>
         <Logo>
           <BaseLink href="/" block>
