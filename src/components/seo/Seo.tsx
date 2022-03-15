@@ -18,7 +18,7 @@ export const Seo = ({ seo }: Props) => {
       openGraph={{
         images: [
           {
-            url: seo?.image?.url || seoDefault?.image?.[0].src,
+            url: seo?.image?.url || seoDefault?.image?.[0]?.src,
             width: 1200,
             height: 630,
           },
