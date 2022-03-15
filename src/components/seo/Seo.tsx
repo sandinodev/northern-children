@@ -6,19 +6,19 @@ interface Props {
   seo?: { [key: string]: any };
 }
 
-const dataStoreSelector = (state: DataStore) => state.shareImage;
+const dataStoreSelector = (state: DataStore) => state.seoDefault;
 
 export const Seo = ({ seo }: Props) => {
-  const shareImage = useDataStore(dataStoreSelector);
+  const seoDefault = useDataStore(dataStoreSelector);
 
   return (
     <NextSeo
       title={seo?.title}
-      description={seo?.description}
+      description={seo?.description || seoDefault?.description}
       openGraph={{
         images: [
           {
-            url: seo?.image?.url || shareImage?.image?.[0].src,
+            url: seo?.image?.url || seoDefault?.image?.[0].src,
             width: 1200,
             height: 630,
           },

@@ -34,8 +34,9 @@ export const GLOBALS_QUERY = gql`
       }
     }
 
-    shareImage: globalSet(handle: "shareImage") {
-      ... on shareImage_GlobalSet {
+    seoDefault: globalSet(handle: "seoDefault") {
+      ... on seoDefault_GlobalSet {
+        description: text
         image @transform(width: 1200, height: 630, quality: 90, immediately: true) {
           ...Asset
         }

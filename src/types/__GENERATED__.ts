@@ -12068,6 +12068,94 @@ export type Quote_Quote_BlockTypeImageArgs = {
   uploader?: Maybe<Scalars["QueryArgument"]>;
 };
 
+export type SeoDefault_GlobalSet = ElementInterface &
+  GlobalSetInterface & {
+    /** The id of the entity */
+    id?: Maybe<Scalars["ID"]>;
+    /** The uid of the entity */
+    uid?: Maybe<Scalars["String"]>;
+    /** Return a number of related elements for a field. */
+    _count?: Maybe<Scalars["Int"]>;
+    /** The element’s title. */
+    title?: Maybe<Scalars["String"]>;
+    /** The element’s slug. */
+    slug?: Maybe<Scalars["String"]>;
+    /** The element’s URI. */
+    uri?: Maybe<Scalars["String"]>;
+    /** Whether the element is enabled or not. */
+    enabled?: Maybe<Scalars["Boolean"]>;
+    /** Whether the element is archived or not. */
+    archived?: Maybe<Scalars["Boolean"]>;
+    /** The ID of the site the element is associated with. */
+    siteId?: Maybe<Scalars["Int"]>;
+    /** The unique identifier for an element-site relation. */
+    siteSettingsId?: Maybe<Scalars["ID"]>;
+    /** The language of the site element is associated with. */
+    language?: Maybe<Scalars["String"]>;
+    /** The element’s search score, if the `search` parameter was used when querying for the element. */
+    searchScore?: Maybe<Scalars["String"]>;
+    /** Whether the element has been soft-deleted or not. */
+    trashed?: Maybe<Scalars["Boolean"]>;
+    /** The element's status. */
+    status?: Maybe<Scalars["String"]>;
+    /** The date the element was created. */
+    dateCreated?: Maybe<Scalars["DateTime"]>;
+    /** The date the element was last updated. */
+    dateUpdated?: Maybe<Scalars["DateTime"]>;
+    /** The name of the global set. */
+    name?: Maybe<Scalars["String"]>;
+    /** The handle of the global set. */
+    handle?: Maybe<Scalars["String"]>;
+    text?: Maybe<Scalars["String"]>;
+    image?: Maybe<Array<Maybe<AssetInterface>>>;
+  };
+
+export type SeoDefault_GlobalSet_CountArgs = {
+  field: Scalars["String"];
+};
+
+export type SeoDefault_GlobalSetImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  unique?: Maybe<Scalars["Boolean"]>;
+  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  enabledForSite?: Maybe<Scalars["Boolean"]>;
+  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  search?: Maybe<Scalars["String"]>;
+  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  fixedOrder?: Maybe<Scalars["Boolean"]>;
+  inReverse?: Maybe<Scalars["Boolean"]>;
+  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  offset?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  orderBy?: Maybe<Scalars["String"]>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateModified?: Maybe<Scalars["String"]>;
+  includeSubfolders?: Maybe<Scalars["Boolean"]>;
+  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uploader?: Maybe<Scalars["QueryArgument"]>;
+};
+
 export type Seo_MatrixField = Seo_Seo_BlockType;
 
 export type Seo_Seo_BlockType = ElementInterface &
@@ -12974,93 +13062,6 @@ export type Services_Service_EntryProgramsArgs = {
 export type ShareHashtags_TableRow = {
   col1?: Maybe<Scalars["String"]>;
   hashtag?: Maybe<Scalars["String"]>;
-};
-
-export type ShareImage_GlobalSet = ElementInterface &
-  GlobalSetInterface & {
-    /** The id of the entity */
-    id?: Maybe<Scalars["ID"]>;
-    /** The uid of the entity */
-    uid?: Maybe<Scalars["String"]>;
-    /** Return a number of related elements for a field. */
-    _count?: Maybe<Scalars["Int"]>;
-    /** The element’s title. */
-    title?: Maybe<Scalars["String"]>;
-    /** The element’s slug. */
-    slug?: Maybe<Scalars["String"]>;
-    /** The element’s URI. */
-    uri?: Maybe<Scalars["String"]>;
-    /** Whether the element is enabled or not. */
-    enabled?: Maybe<Scalars["Boolean"]>;
-    /** Whether the element is archived or not. */
-    archived?: Maybe<Scalars["Boolean"]>;
-    /** The ID of the site the element is associated with. */
-    siteId?: Maybe<Scalars["Int"]>;
-    /** The unique identifier for an element-site relation. */
-    siteSettingsId?: Maybe<Scalars["ID"]>;
-    /** The language of the site element is associated with. */
-    language?: Maybe<Scalars["String"]>;
-    /** The element’s search score, if the `search` parameter was used when querying for the element. */
-    searchScore?: Maybe<Scalars["String"]>;
-    /** Whether the element has been soft-deleted or not. */
-    trashed?: Maybe<Scalars["Boolean"]>;
-    /** The element's status. */
-    status?: Maybe<Scalars["String"]>;
-    /** The date the element was created. */
-    dateCreated?: Maybe<Scalars["DateTime"]>;
-    /** The date the element was last updated. */
-    dateUpdated?: Maybe<Scalars["DateTime"]>;
-    /** The name of the global set. */
-    name?: Maybe<Scalars["String"]>;
-    /** The handle of the global set. */
-    handle?: Maybe<Scalars["String"]>;
-    image?: Maybe<Array<Maybe<AssetInterface>>>;
-  };
-
-export type ShareImage_GlobalSet_CountArgs = {
-  field: Scalars["String"];
-};
-
-export type ShareImage_GlobalSetImageArgs = {
-  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
-  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
-  unique?: Maybe<Scalars["Boolean"]>;
-  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
-  enabledForSite?: Maybe<Scalars["Boolean"]>;
-  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  search?: Maybe<Scalars["String"]>;
-  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
-  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
-  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
-  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
-  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
-  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
-  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
-  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  fixedOrder?: Maybe<Scalars["Boolean"]>;
-  inReverse?: Maybe<Scalars["Boolean"]>;
-  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  offset?: Maybe<Scalars["Int"]>;
-  limit?: Maybe<Scalars["Int"]>;
-  orderBy?: Maybe<Scalars["String"]>;
-  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
-  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
-  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
-  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  dateModified?: Maybe<Scalars["String"]>;
-  includeSubfolders?: Maybe<Scalars["Boolean"]>;
-  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  uploader?: Maybe<Scalars["QueryArgument"]>;
 };
 
 export type Share_NeoField = Share_Facebook_BlockType | Share_Twitter_BlockType;
@@ -14516,7 +14517,7 @@ export type GlobalsQuery = {
     cta?: Maybe<Array<Maybe<CtaFragment>>>;
   }>;
   intro?: Maybe<{ images?: Maybe<Array<Maybe<AssetFragment>>> }>;
-  shareImage?: Maybe<{ image?: Maybe<Array<Maybe<AssetFragment>>> }>;
+  seoDefault?: Maybe<{ description?: Maybe<string>; image?: Maybe<Array<Maybe<AssetFragment>>> }>;
   socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>; url?: Maybe<string> }> }>>> }>;
 };
 

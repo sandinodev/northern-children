@@ -10,8 +10,8 @@ export interface DataStore {
   setFooter: (footer?: GlobalsQuery["footer"]) => void;
   intro?: GlobalsQuery["intro"];
   setIntro: (intro?: GlobalsQuery["intro"]) => void;
-  shareImage?: GlobalsQuery["shareImage"];
-  setShareImage: (shareImage?: GlobalsQuery["shareImage"]) => void;
+  seoDefault?: GlobalsQuery["seoDefault"];
+  setSeoDefault: (seoDefault?: GlobalsQuery["seoDefault"]) => void;
   socials?: { [key: string]: string };
   setSocials: (socials?: { [key: string]: string }) => void;
 }
@@ -25,8 +25,8 @@ export const useDataStore = create<DataStore>(
       setFooter: (footer) => set({ footer }),
       intro: undefined,
       setIntro: (intro) => set({ intro }),
-      shareImage: undefined,
-      setShareImage: (shareImage) => set({ shareImage }),
+      seoDefault: undefined,
+      setSeoDefault: (seoDefault) => set({ seoDefault }),
       socials: undefined,
       setSocials: (socials) => set({ socials }),
     };
