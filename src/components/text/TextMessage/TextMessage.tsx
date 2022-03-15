@@ -1,6 +1,6 @@
 import tw from "twin.macro";
 
-import { BaseSection, BaseText } from "~/components/base";
+import { BaseSection, BaseRichText } from "~/components/base";
 import { MaskOpacity } from "~/components/mask";
 
 import { TextMessageFragment } from "~/types";
@@ -13,7 +13,7 @@ const Content = tw.div`col-span-full lg:col-span-6 row-start-2`;
 
 const Subtitle = tw.h3`mb-40 text-md`;
 
-const StyledBaseText = tw(BaseText)`mb-80`;
+const StyledBaseRichText = tw(BaseRichText)`mb-80`;
 
 export const TextMessage = ({ caption, subtitle, text, title }: TextMessageFragment) => {
   return (
@@ -25,7 +25,7 @@ export const TextMessage = ({ caption, subtitle, text, title }: TextMessageFragm
 
         <figure>
           <blockquote>
-            <StyledBaseText text={text} />
+            <StyledBaseRichText text={text} />
           </blockquote>
 
           <MaskOpacity as="figcaption">{caption}</MaskOpacity>
