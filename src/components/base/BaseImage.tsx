@@ -3,6 +3,7 @@ import { forwardRef, useMemo, useState } from "react";
 import tw, { css, styled } from "twin.macro";
 
 import { Store, useStore } from "~/store";
+import { rewriteImageSrc } from "~/utils";
 import { MaskOpacity } from "../mask";
 
 interface StylesProps {
@@ -122,7 +123,7 @@ export const BaseImage = forwardRef<HTMLImageElement, Props>(
 
     const lazyBoundary = useMemo(() => `${1000 + wH}px`, [wH]);
 
-    const _src = useMemo(() => src?.replace("northern-children-dev.fforward", "c0083.paas1.tff"), [src]);
+    const _src = useMemo(() => rewriteImageSrc(src), [src]);
 
     const [isLoaded, setIsLoaded] = useState(false);
 

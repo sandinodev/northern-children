@@ -11,6 +11,7 @@ import { Store, useStore } from "~/store";
 import { DataStore, useDataStore } from "~/store/data";
 
 import { eases } from "~/styles/eases";
+import { rewriteImageSrc } from "~/utils";
 
 const Wrapper = styled(BaseWrapper)`
   ${tw`fixed top-0 left-0 w-screen h-screen bg-white-greenish z-intro`}
@@ -75,7 +76,7 @@ export const Intro = () => {
     <Wrapper ref={refs.root}>
       {selectedImages.map(({ src, ...rest }, i) => (
         <Image key={i} isVisible={i === currI}>
-          <img alt="" src={src?.replace("northern-children-dev.fforward", "c0083.paas1.tff")} {...rest} />
+          <img alt="" src={rewriteImageSrc(src)} {...rest} />
         </Image>
       ))}
     </Wrapper>

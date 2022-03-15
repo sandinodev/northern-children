@@ -24,3 +24,6 @@ export const parsePublicToLocalHref = (href?: string) => {
 
   return url;
 };
+
+export const rewriteImageSrc = (src?: string) =>
+  src?.replace("northern-children-dev.fforward", "c0083.paas1.tff").replace("http://", "https://");
