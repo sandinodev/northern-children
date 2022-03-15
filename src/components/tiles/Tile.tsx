@@ -1,6 +1,6 @@
 import tw, { styled } from "twin.macro";
 
-import { BaseWrapper, BaseContainer, BaseImage, BaseText, BaseButton } from "~/components/base";
+import { BaseWrapper, BaseContainer, BaseImage, BaseText, BaseButton, BaseRichText } from "~/components/base";
 import { MaskOpacity } from "~/components/mask";
 
 import { AssetFragment, LinkFragment } from "~/types";
@@ -13,6 +13,7 @@ export interface TileProps {
     subtitle?: string;
     title?: string;
   };
+  richText?: boolean;
 }
 
 const Wrapper = tw(BaseWrapper)`pt-80 pb-100`;
@@ -31,7 +32,7 @@ const Description = tw.div`mb-60`;
 
 const Image = tw.div`hidden lg:block col-span-5 col-start-8 self-center`;
 
-export const Tile = ({ item }: TileProps) => {
+export const Tile = ({ item, richText }: TileProps) => {
   if (!item) return null;
 
   return (
@@ -53,7 +54,7 @@ export const Tile = ({ item }: TileProps) => {
           </ImageMobile>
 
           <Description>
-            <BaseText text={item.description} />
+            {richText ? <BaseRichText text={item.description} /> : <BaseText text={item.description} />}
           </Description>
 
           {item.contactLink && <BaseButton href={item.contactLink.url}>{item.contactLink.text}</BaseButton>}

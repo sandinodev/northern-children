@@ -8,6 +8,7 @@ interface StylesExternalProps {
 
 interface Props extends StylesExternalProps {
   items: TileProps["item"][];
+  richText?: boolean;
 }
 
 const Wrapper = styled.ul<StylesExternalProps>`
@@ -29,13 +30,13 @@ const Wrapper = styled.ul<StylesExternalProps>`
     `}
 `;
 
-export const Tiles = ({ color, items }: Props) => {
+export const Tiles = ({ color, items, richText }: Props) => {
   if (!items?.length) return null;
 
   return (
     <Wrapper color={color}>
       {items.map((item, i) => (
-        <Tile key={i} item={item} />
+        <Tile key={i} item={item} richText={richText} />
       ))}
     </Wrapper>
   );

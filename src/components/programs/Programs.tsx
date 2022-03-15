@@ -11,5 +11,5 @@ interface Props extends StylesExternalProps {
 }
 
 export const Programs = ({ color, programs }: Props) => {
-  return <Tiles color={color} items={programs} />;
+  return <Tiles color={color} items={programs} richText />;
 };

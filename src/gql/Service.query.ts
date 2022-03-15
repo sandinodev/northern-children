@@ -1,5 +1,6 @@
 import gql from "graphql-tag";
 
+import { PROGRAM_FRAGMENT } from "~/components/programs";
 import { SEO_FRAGMENT } from "~/components/seo";
 
 import { ASSET_FRAGMENT, LINK_FRAGMENT } from "./Fragments.fragment";
@@ -17,17 +18,7 @@ export const SERVICE_QUERY = gql`
           ...Asset
         }
         programs {
-          ... on programs_program_Entry {
-            contactLink {
-              ...Link
-            }
-            description: textWithLineBreaks
-            image {
-              ...Asset
-            }
-            subtitle: text
-            title
-          }
+          ...Program
         }
         seo {
           ...Seo
@@ -39,5 +30,6 @@ export const SERVICE_QUERY = gql`
 
   ${ASSET_FRAGMENT}
   ${LINK_FRAGMENT}
+  ${PROGRAM_FRAGMENT}
   ${SEO_FRAGMENT}
 `;

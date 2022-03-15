@@ -7,7 +7,7 @@ export const PROGRAM_FRAGMENT = gql`
     contactLink {
       ...Link
     }
-    description: textWithLineBreaks
+    description: richText
     image {
       ...Asset
     }
