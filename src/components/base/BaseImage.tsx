@@ -122,13 +122,11 @@ export const BaseImage = forwardRef<HTMLImageElement, Props>(
 
     const lazyBoundary = useMemo(() => `${1000 + wH}px`, [wH]);
 
-    const _src = useMemo(() => src?.replace("northern-children-dev.fforward", "c0083.paas1.tff"), [src]);
-
     const [isLoaded, setIsLoaded] = useState(false);
 
     const onLoadingComplete = () => setIsLoaded(true);
 
-    if (!_src) return null;
+    if (!src) return null;
 
     return (
       <Wrapper ref={ref} h={h} w={w} {...rest}>
@@ -141,7 +139,7 @@ export const BaseImage = forwardRef<HTMLImageElement, Props>(
             onLoadingComplete={onLoadingComplete}
             priority={priority}
             sizes={sizes}
-            src={_src}
+            src={src}
             quality={quality}
             {...dimensions}
           />

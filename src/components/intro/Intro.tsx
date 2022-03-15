@@ -73,9 +73,9 @@ export const Intro = () => {
 
   return (
     <Wrapper ref={refs.root}>
-      {selectedImages.map((image, i) => (
+      {selectedImages.map(({ src, ...rest }, i) => (
         <Image key={i} isVisible={i === currI}>
-          <img alt="" {...image} />
+          <img alt="" src={src?.replace("northern-children-dev.fforward", "c0083.paas1.tff")} {...rest} />
         </Image>
       ))}
     </Wrapper>
