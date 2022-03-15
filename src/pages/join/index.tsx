@@ -20,12 +20,12 @@ interface Props extends GlobalDataProps {
   join: JoinQuery["join"];
 }
 
-const Page: NextPage<Props> = ({ join, ...rest }) => {
+const Page: NextPage<Props> = ({ join, seoDefault, ...rest }) => {
   useSetGlobalData(rest);
 
   return (
     <>
-      <Seo seo={join?.seo?.[0]} />
+      <Seo seo={join?.seo?.[0]} seoDefault={seoDefault} />
 
       <DefaultPage>
         {!!join?.image?.length && <Hero image={join.image} imageMobile={join.imageMobile} text={join.heroText} />}

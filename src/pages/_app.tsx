@@ -17,7 +17,7 @@ import "~/styles/fonts.css";
 const defaultSeo: DefaultSeoProps = {
   title: "Title",
   titleTemplate: "%s | Northern Children",
-  description: "Description",
+  description: "",
   twitter: {
     cardType: "summary_large_image",
   },

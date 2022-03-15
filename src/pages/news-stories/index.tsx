@@ -24,7 +24,7 @@ interface Props extends GlobalDataProps {
 
 const postsStoreSelector = ({ setAmount, posts, setPosts }: PostsStore) => ({ setAmount, posts, setPosts });
 
-const Page: NextPage<Props> = ({ amount, news, posts, ...rest }) => {
+const Page: NextPage<Props> = ({ amount, news, posts, seoDefault, ...rest }) => {
   const { setAmount, posts: storedPosts, setPosts } = usePostsStore(postsStoreSelector);
 
   useSetGlobalData(rest);
@@ -38,7 +38,7 @@ const Page: NextPage<Props> = ({ amount, news, posts, ...rest }) => {
 
   return (
     <>
-      <Seo seo={news?.seo?.[0]} />
+      <Seo seo={news?.seo?.[0]} seoDefault={seoDefault} />
 
       <DefaultPage mt>{posts?.length && <NewsStories loadMore />}</DefaultPage>
     </>

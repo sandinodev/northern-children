@@ -19,12 +19,12 @@ interface Props extends GlobalDataProps {
   internships: InternshipsVolunteerQuery["internships"];
 }
 
-const Page: NextPage<Props> = ({ internships, ...rest }) => {
+const Page: NextPage<Props> = ({ internships, seoDefault, ...rest }) => {
   useSetGlobalData(rest);
 
   return (
     <>
-      <Seo seo={internships?.seo?.[0]} />
+      <Seo seo={internships?.seo?.[0]} seoDefault={seoDefault} />
 
       <DefaultPage>
         {!!internships?.image?.length && (

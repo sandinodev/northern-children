@@ -18,12 +18,12 @@ interface Props extends GlobalDataProps {
   facts: FactsStatsQuery["facts"];
 }
 
-const Page: NextPage<Props> = ({ facts, ...rest }) => {
+const Page: NextPage<Props> = ({ facts, seoDefault, ...rest }) => {
   useSetGlobalData(rest);
 
   return (
     <>
-      <Seo seo={facts?.seo?.[0]} />
+      <Seo seo={facts?.seo?.[0]} seoDefault={seoDefault} />
 
       <DefaultPage>
         {!!facts?.heroImage?.length && (

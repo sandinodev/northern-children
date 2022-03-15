@@ -21,12 +21,12 @@ interface Props extends GlobalDataProps {
   mission: MissionVisionQuery["mission"];
 }
 
-const Page: NextPage<Props> = ({ mission, ...rest }) => {
+const Page: NextPage<Props> = ({ mission, seoDefault, ...rest }) => {
   useSetGlobalData(rest);
 
   return (
     <>
-      <Seo seo={mission?.seo?.[0]} />
+      <Seo seo={mission?.seo?.[0]} seoDefault={seoDefault} />
 
       <DefaultPage>
         {!!mission?.hero?.length && <HeroSplit bg="turquoise" {...mission.hero[0]} />}

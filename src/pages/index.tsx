@@ -34,7 +34,7 @@ const StyledSlider = styled(Slider)`
 
 const storeSelector = ({ isIntro, setIsIntro }: Store) => ({ isIntro, setIsIntro });
 
-const Index: NextPage<Props> = ({ home, ...rest }) => {
+const Index: NextPage<Props> = ({ home, seoDefault, ...rest }) => {
   const { isIntro, setIsIntro } = useStore(storeSelector);
 
   const [hadIntro, setHadIntro] = useState(isIntro);
@@ -50,7 +50,7 @@ const Index: NextPage<Props> = ({ home, ...rest }) => {
 
   return (
     <>
-      <Seo seo={home?.seo?.[0]} />
+      <Seo seo={home?.seo?.[0]} seoDefault={seoDefault} />
 
       <DefaultPage>
         {!!home?.slides?.length && <StyledSlider interval={home.interval} slides={home.slides} hScreen />}

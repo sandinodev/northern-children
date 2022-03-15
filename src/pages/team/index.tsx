@@ -18,12 +18,12 @@ interface Props extends GlobalDataProps {
   team: TeamQuery["team"];
 }
 
-const Page: NextPage<Props> = ({ team, ...rest }) => {
+const Page: NextPage<Props> = ({ seoDefault, team, ...rest }) => {
   useSetGlobalData(rest);
 
   return (
     <>
-      <Seo seo={team?.seo?.[0]} />
+      <Seo seo={team?.seo?.[0]} seoDefault={seoDefault} />
 
       <DefaultPage mt>
         {!!team?.people?.length && <People people={team.people} title={team.teamTitle} />}
