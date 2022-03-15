@@ -23,6 +23,9 @@ export const FACTS_STATS_QUERY = gql`
         heroImage: image {
           ...Asset
         }
+        heroImageMobile: imageMobile {
+          ...Asset
+        }
         seo {
           ...Seo
         }

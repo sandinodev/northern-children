@@ -28,7 +28,7 @@ const Page: NextPage<Props> = ({ join, ...rest }) => {
       <Seo seo={join?.seo?.[0]} />
 
       <DefaultPage>
-        {!!join?.image?.length && <Hero image={join.image} text={join.heroText} />}
+        {!!join?.image?.length && <Hero image={join.image} imageMobile={join.imageMobile} text={join.heroText} />}
 
         {!!join?.description?.length && <TextBlock bg={join.descriptionBg} text={join.description} />}
 

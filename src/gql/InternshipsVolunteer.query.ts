@@ -13,6 +13,9 @@ export const INTERNSHIPS_VOLUNTEER_QUERY = gql`
         image {
           ...Asset
         }
+        imageMobile {
+          ...Asset
+        }
         seo {
           ...Seo
         }

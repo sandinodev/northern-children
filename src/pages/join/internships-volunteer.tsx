@@ -27,7 +27,9 @@ const Page: NextPage<Props> = ({ internships, ...rest }) => {
       <Seo seo={internships?.seo?.[0]} />
 
       <DefaultPage>
-        {!!internships?.image?.length && <Hero image={internships.image} text={internships.title} />}
+        {!!internships?.image?.length && (
+          <Hero image={internships.image} imageMobile={internships.imageMobile} text={internships.title} />
+        )}
 
         <TextBlock bg={internships?.color} text={internships?.description} />
 

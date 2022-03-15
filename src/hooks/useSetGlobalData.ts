@@ -8,18 +8,20 @@ export interface GlobalDataProps {
   donate?: GlobalsQuery["donate"];
   footer?: GlobalsQuery["footer"];
   intro?: GlobalsQuery["intro"];
+  shareImage?: GlobalsQuery["shareImage"];
   socials?: GlobalsQuery["socials"];
 }
 
-const dataStoreSelector = ({ setDonate, setFooter, setIntro, setSocials }: DataStore) => ({
+const dataStoreSelector = ({ setDonate, setFooter, setIntro, setShareImage, setSocials }: DataStore) => ({
   setDonate,
   setFooter,
   setIntro,
+  setShareImage,
   setSocials,
 });
 
-export const useSetGlobalData = ({ donate, footer, intro, socials }: GlobalDataProps) => {
-  const { setDonate, setFooter, setIntro, setSocials } = useDataStore(dataStoreSelector);
+export const useSetGlobalData = ({ donate, footer, intro, shareImage, socials }: GlobalDataProps) => {
+  const { setDonate, setFooter, setIntro, setShareImage, setSocials } = useDataStore(dataStoreSelector);
 
   useEffect(() => {
     const pages: string[] | undefined = donate?.pages?.flatMap(({ slug }) => slug as string).filter(Boolean);
@@ -34,6 +36,10 @@ export const useSetGlobalData = ({ donate, footer, intro, socials }: GlobalDataP
   useEffect(() => {
     setIntro(intro);
   }, [intro, setIntro]);
+
+  useEffect(() => {
+    setShareImage(shareImage);
+  }, [shareImage, setShareImage]);
 
   useEffect(() => {
     const _socials = socials?.links?.reduce((acc: { [key: string]: string }, curr) => {

@@ -572,6 +572,7 @@ export type EntryCriteriaInput = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -763,6 +764,7 @@ export type EntryInterfaceChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -835,6 +837,7 @@ export type EntryInterfaceDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -907,6 +910,7 @@ export type EntryInterfaceParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -979,6 +983,7 @@ export type EntryInterfaceAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -1051,6 +1056,7 @@ export type EntryInterfaceLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -1123,6 +1129,7 @@ export type EntryInterfacePrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -1195,6 +1202,7 @@ export type EntryInterfaceNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -1437,6 +1445,7 @@ export type QueryEntriesArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -1508,6 +1517,7 @@ export type QueryEntryCountArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -1579,6 +1589,7 @@ export type QueryEntryArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -1756,6 +1767,7 @@ export type QueryGlobalSetsArgs = {
   textAdditional?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   images?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   pages?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  image?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   handle?: Maybe<Array<Maybe<Scalars["String"]>>>;
 };
 
@@ -1792,6 +1804,7 @@ export type QueryGlobalSetArgs = {
   textAdditional?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   images?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   pages?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  image?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   handle?: Maybe<Array<Maybe<Scalars["String"]>>>;
 };
 
@@ -2563,6 +2576,7 @@ export type Contact_Contact_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -2634,6 +2648,7 @@ export type Contact_Contact_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -2705,6 +2720,7 @@ export type Contact_Contact_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -2776,6 +2792,7 @@ export type Contact_Contact_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -2847,6 +2864,7 @@ export type Contact_Contact_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -2918,6 +2936,7 @@ export type Contact_Contact_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -2989,6 +3008,7 @@ export type Contact_Contact_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -3281,6 +3301,7 @@ export type Donate_GlobalSetPagesArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -3602,6 +3623,7 @@ export type FactsStats_FactsStats_Entry = ElementInterface &
     seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
     color?: Maybe<Scalars["String"]>;
     image?: Maybe<Array<Maybe<AssetInterface>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetInterface>>>;
     factsStatsBlocks?: Maybe<Array<Maybe<FactsStatsBlocks_NeoField>>>;
   };
 
@@ -3662,6 +3684,7 @@ export type FactsStats_FactsStats_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -3733,6 +3756,7 @@ export type FactsStats_FactsStats_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -3804,6 +3828,7 @@ export type FactsStats_FactsStats_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -3875,6 +3900,7 @@ export type FactsStats_FactsStats_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -3946,6 +3972,7 @@ export type FactsStats_FactsStats_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4017,6 +4044,7 @@ export type FactsStats_FactsStats_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4088,6 +4116,7 @@ export type FactsStats_FactsStats_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4141,6 +4170,48 @@ export type FactsStats_FactsStats_EntrySeoArgs = {
 };
 
 export type FactsStats_FactsStats_EntryImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  unique?: Maybe<Scalars["Boolean"]>;
+  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  enabledForSite?: Maybe<Scalars["Boolean"]>;
+  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  search?: Maybe<Scalars["String"]>;
+  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  fixedOrder?: Maybe<Scalars["Boolean"]>;
+  inReverse?: Maybe<Scalars["Boolean"]>;
+  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  offset?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  orderBy?: Maybe<Scalars["String"]>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateModified?: Maybe<Scalars["String"]>;
+  includeSubfolders?: Maybe<Scalars["Boolean"]>;
+  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uploader?: Maybe<Scalars["QueryArgument"]>;
+};
+
+export type FactsStats_FactsStats_EntryImageMobileArgs = {
   id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
   site?: Maybe<Array<Maybe<Scalars["String"]>>>;
@@ -4347,6 +4418,7 @@ export type Hero_Hero_BlockType = ElementInterface &
     /** The sort order of the matrix block within the owner element field. */
     sortOrder?: Maybe<Scalars["Int"]>;
     image?: Maybe<Array<Maybe<AssetInterface>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetInterface>>>;
     text?: Maybe<Scalars["String"]>;
   };
 
@@ -4355,6 +4427,48 @@ export type Hero_Hero_BlockType_CountArgs = {
 };
 
 export type Hero_Hero_BlockTypeImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  unique?: Maybe<Scalars["Boolean"]>;
+  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  enabledForSite?: Maybe<Scalars["Boolean"]>;
+  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  search?: Maybe<Scalars["String"]>;
+  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  fixedOrder?: Maybe<Scalars["Boolean"]>;
+  inReverse?: Maybe<Scalars["Boolean"]>;
+  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  offset?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  orderBy?: Maybe<Scalars["String"]>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateModified?: Maybe<Scalars["String"]>;
+  includeSubfolders?: Maybe<Scalars["Boolean"]>;
+  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uploader?: Maybe<Scalars["QueryArgument"]>;
+};
+
+export type Hero_Hero_BlockTypeImageMobileArgs = {
   id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
   site?: Maybe<Array<Maybe<Scalars["String"]>>>;
@@ -4561,6 +4675,7 @@ export type Home_Home_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4632,6 +4747,7 @@ export type Home_Home_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4703,6 +4819,7 @@ export type Home_Home_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4774,6 +4891,7 @@ export type Home_Home_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4845,6 +4963,7 @@ export type Home_Home_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4916,6 +5035,7 @@ export type Home_Home_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -4987,6 +5107,7 @@ export type Home_Home_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5161,6 +5282,7 @@ export type Home_Home_EntryNewsStoriesFeaturedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5232,6 +5354,7 @@ export type Home_Home_EntryNewsStoriesLatestArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5353,6 +5476,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_Entry = ElementInterface &
     seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
     color?: Maybe<Scalars["String"]>;
     image?: Maybe<Array<Maybe<AssetInterface>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetInterface>>>;
     textWithLineBreaks?: Maybe<Scalars["String"]>;
     tiles?: Maybe<Array<Maybe<Tiles_MatrixField>>>;
   };
@@ -5414,6 +5538,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5485,6 +5610,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5556,6 +5682,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5627,6 +5754,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5698,6 +5826,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5769,6 +5898,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5840,6 +5970,7 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -5893,6 +6024,48 @@ export type InternshipsVolunteer_InternshipsVolunteer_EntrySeoArgs = {
 };
 
 export type InternshipsVolunteer_InternshipsVolunteer_EntryImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  unique?: Maybe<Scalars["Boolean"]>;
+  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  enabledForSite?: Maybe<Scalars["Boolean"]>;
+  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  search?: Maybe<Scalars["String"]>;
+  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  fixedOrder?: Maybe<Scalars["Boolean"]>;
+  inReverse?: Maybe<Scalars["Boolean"]>;
+  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  offset?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  orderBy?: Maybe<Scalars["String"]>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateModified?: Maybe<Scalars["String"]>;
+  includeSubfolders?: Maybe<Scalars["Boolean"]>;
+  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uploader?: Maybe<Scalars["QueryArgument"]>;
+};
+
+export type InternshipsVolunteer_InternshipsVolunteer_EntryImageMobileArgs = {
   id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
   site?: Maybe<Array<Maybe<Scalars["String"]>>>;
@@ -6158,6 +6331,7 @@ export type Join_Join_Entry = ElementInterface &
     seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
     text?: Maybe<Scalars["String"]>;
     image?: Maybe<Array<Maybe<AssetInterface>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetInterface>>>;
     textAdditional?: Maybe<Scalars["String"]>;
     color?: Maybe<Scalars["String"]>;
     textWithLineBreaks?: Maybe<Scalars["String"]>;
@@ -6222,6 +6396,7 @@ export type Join_Join_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -6293,6 +6468,7 @@ export type Join_Join_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -6364,6 +6540,7 @@ export type Join_Join_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -6435,6 +6612,7 @@ export type Join_Join_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -6506,6 +6684,7 @@ export type Join_Join_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -6577,6 +6756,7 @@ export type Join_Join_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -6648,6 +6828,7 @@ export type Join_Join_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -6701,6 +6882,48 @@ export type Join_Join_EntrySeoArgs = {
 };
 
 export type Join_Join_EntryImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  unique?: Maybe<Scalars["Boolean"]>;
+  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  enabledForSite?: Maybe<Scalars["Boolean"]>;
+  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  search?: Maybe<Scalars["String"]>;
+  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  fixedOrder?: Maybe<Scalars["Boolean"]>;
+  inReverse?: Maybe<Scalars["Boolean"]>;
+  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  offset?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  orderBy?: Maybe<Scalars["String"]>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateModified?: Maybe<Scalars["String"]>;
+  includeSubfolders?: Maybe<Scalars["Boolean"]>;
+  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uploader?: Maybe<Scalars["QueryArgument"]>;
+};
+
+export type Join_Join_EntryImageMobileArgs = {
   id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
   site?: Maybe<Array<Maybe<Scalars["String"]>>>;
@@ -7101,6 +7324,7 @@ export type MissionVision_MissionVision_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -7172,6 +7396,7 @@ export type MissionVision_MissionVision_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -7243,6 +7468,7 @@ export type MissionVision_MissionVision_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -7314,6 +7540,7 @@ export type MissionVision_MissionVision_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -7385,6 +7612,7 @@ export type MissionVision_MissionVision_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -7456,6 +7684,7 @@ export type MissionVision_MissionVision_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -7527,6 +7756,7 @@ export type MissionVision_MissionVision_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -7909,6 +8139,7 @@ export type NewsStories_NewsStories_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -7980,6 +8211,7 @@ export type NewsStories_NewsStories_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8051,6 +8283,7 @@ export type NewsStories_NewsStories_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8122,6 +8355,7 @@ export type NewsStories_NewsStories_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8193,6 +8427,7 @@ export type NewsStories_NewsStories_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8264,6 +8499,7 @@ export type NewsStories_NewsStories_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8335,6 +8571,7 @@ export type NewsStories_NewsStories_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8551,6 +8788,7 @@ export type People_Person_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8622,6 +8860,7 @@ export type People_Person_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8693,6 +8932,7 @@ export type People_Person_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8764,6 +9004,7 @@ export type People_Person_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8835,6 +9076,7 @@ export type People_Person_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8906,6 +9148,7 @@ export type People_Person_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -8977,6 +9220,7 @@ export type People_Person_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -9672,6 +9916,7 @@ export type Posts_News_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -9743,6 +9988,7 @@ export type Posts_News_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -9814,6 +10060,7 @@ export type Posts_News_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -9885,6 +10132,7 @@ export type Posts_News_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -9956,6 +10204,7 @@ export type Posts_News_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10027,6 +10276,7 @@ export type Posts_News_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10098,6 +10348,7 @@ export type Posts_News_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10467,6 +10718,7 @@ export type Posts_Story_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10538,6 +10790,7 @@ export type Posts_Story_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10609,6 +10862,7 @@ export type Posts_Story_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10680,6 +10934,7 @@ export type Posts_Story_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10751,6 +11006,7 @@ export type Posts_Story_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10822,6 +11078,7 @@ export type Posts_Story_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -10893,6 +11150,7 @@ export type Posts_Story_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -11220,6 +11478,7 @@ export type Programs_Program_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -11291,6 +11550,7 @@ export type Programs_Program_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -11362,6 +11622,7 @@ export type Programs_Program_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -11433,6 +11694,7 @@ export type Programs_Program_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -11504,6 +11766,7 @@ export type Programs_Program_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -11575,6 +11838,7 @@ export type Programs_Program_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -11646,6 +11910,7 @@ export type Programs_Program_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12003,6 +12268,7 @@ export type Services_Service_Entry = ElementInterface &
     seo?: Maybe<Array<Maybe<Seo_MatrixField>>>;
     color?: Maybe<Scalars["String"]>;
     image?: Maybe<Array<Maybe<AssetInterface>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetInterface>>>;
     textWithLineBreaks?: Maybe<Scalars["String"]>;
     programs?: Maybe<Array<Maybe<EntryInterface>>>;
   };
@@ -12064,6 +12330,7 @@ export type Services_Service_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12135,6 +12402,7 @@ export type Services_Service_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12206,6 +12474,7 @@ export type Services_Service_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12277,6 +12546,7 @@ export type Services_Service_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12348,6 +12618,7 @@ export type Services_Service_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12419,6 +12690,7 @@ export type Services_Service_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12490,6 +12762,7 @@ export type Services_Service_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12584,6 +12857,48 @@ export type Services_Service_EntryImageArgs = {
   uploader?: Maybe<Scalars["QueryArgument"]>;
 };
 
+export type Services_Service_EntryImageMobileArgs = {
+  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  unique?: Maybe<Scalars["Boolean"]>;
+  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  enabledForSite?: Maybe<Scalars["Boolean"]>;
+  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  search?: Maybe<Scalars["String"]>;
+  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  fixedOrder?: Maybe<Scalars["Boolean"]>;
+  inReverse?: Maybe<Scalars["Boolean"]>;
+  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  offset?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  orderBy?: Maybe<Scalars["String"]>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateModified?: Maybe<Scalars["String"]>;
+  includeSubfolders?: Maybe<Scalars["Boolean"]>;
+  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uploader?: Maybe<Scalars["QueryArgument"]>;
+};
+
 export type Services_Service_EntryProgramsArgs = {
   id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
@@ -12637,6 +12952,7 @@ export type Services_Service_EntryProgramsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -12658,6 +12974,93 @@ export type Services_Service_EntryProgramsArgs = {
 export type ShareHashtags_TableRow = {
   col1?: Maybe<Scalars["String"]>;
   hashtag?: Maybe<Scalars["String"]>;
+};
+
+export type ShareImage_GlobalSet = ElementInterface &
+  GlobalSetInterface & {
+    /** The id of the entity */
+    id?: Maybe<Scalars["ID"]>;
+    /** The uid of the entity */
+    uid?: Maybe<Scalars["String"]>;
+    /** Return a number of related elements for a field. */
+    _count?: Maybe<Scalars["Int"]>;
+    /** The element’s title. */
+    title?: Maybe<Scalars["String"]>;
+    /** The element’s slug. */
+    slug?: Maybe<Scalars["String"]>;
+    /** The element’s URI. */
+    uri?: Maybe<Scalars["String"]>;
+    /** Whether the element is enabled or not. */
+    enabled?: Maybe<Scalars["Boolean"]>;
+    /** Whether the element is archived or not. */
+    archived?: Maybe<Scalars["Boolean"]>;
+    /** The ID of the site the element is associated with. */
+    siteId?: Maybe<Scalars["Int"]>;
+    /** The unique identifier for an element-site relation. */
+    siteSettingsId?: Maybe<Scalars["ID"]>;
+    /** The language of the site element is associated with. */
+    language?: Maybe<Scalars["String"]>;
+    /** The element’s search score, if the `search` parameter was used when querying for the element. */
+    searchScore?: Maybe<Scalars["String"]>;
+    /** Whether the element has been soft-deleted or not. */
+    trashed?: Maybe<Scalars["Boolean"]>;
+    /** The element's status. */
+    status?: Maybe<Scalars["String"]>;
+    /** The date the element was created. */
+    dateCreated?: Maybe<Scalars["DateTime"]>;
+    /** The date the element was last updated. */
+    dateUpdated?: Maybe<Scalars["DateTime"]>;
+    /** The name of the global set. */
+    name?: Maybe<Scalars["String"]>;
+    /** The handle of the global set. */
+    handle?: Maybe<Scalars["String"]>;
+    image?: Maybe<Array<Maybe<AssetInterface>>>;
+  };
+
+export type ShareImage_GlobalSet_CountArgs = {
+  field: Scalars["String"];
+};
+
+export type ShareImage_GlobalSetImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  unique?: Maybe<Scalars["Boolean"]>;
+  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  enabledForSite?: Maybe<Scalars["Boolean"]>;
+  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  search?: Maybe<Scalars["String"]>;
+  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  fixedOrder?: Maybe<Scalars["Boolean"]>;
+  inReverse?: Maybe<Scalars["Boolean"]>;
+  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  offset?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  orderBy?: Maybe<Scalars["String"]>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateModified?: Maybe<Scalars["String"]>;
+  includeSubfolders?: Maybe<Scalars["Boolean"]>;
+  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uploader?: Maybe<Scalars["QueryArgument"]>;
 };
 
 export type Share_NeoField = Share_Facebook_BlockType | Share_Twitter_BlockType;
@@ -12910,6 +13313,7 @@ export type Slides_Slide_BlockType = ElementInterface &
     sortOrder?: Maybe<Scalars["Int"]>;
     text?: Maybe<Scalars["String"]>;
     image?: Maybe<Array<Maybe<AssetInterface>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetInterface>>>;
     bg?: Maybe<Scalars["String"]>;
   };
 
@@ -12918,6 +13322,48 @@ export type Slides_Slide_BlockType_CountArgs = {
 };
 
 export type Slides_Slide_BlockTypeImageArgs = {
+  id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  site?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  siteId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  unique?: Maybe<Scalars["Boolean"]>;
+  preferSites?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  enabledForSite?: Maybe<Scalars["Boolean"]>;
+  title?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  slug?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uri?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  search?: Maybe<Scalars["String"]>;
+  relatedTo?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  relatedToAssets?: Maybe<Array<Maybe<AssetCriteriaInput>>>;
+  relatedToEntries?: Maybe<Array<Maybe<EntryCriteriaInput>>>;
+  relatedToUsers?: Maybe<Array<Maybe<UserCriteriaInput>>>;
+  relatedToCategories?: Maybe<Array<Maybe<CategoryCriteriaInput>>>;
+  relatedToTags?: Maybe<Array<Maybe<TagCriteriaInput>>>;
+  relatedToAll?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  ref?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  fixedOrder?: Maybe<Scalars["Boolean"]>;
+  inReverse?: Maybe<Scalars["Boolean"]>;
+  dateCreated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateUpdated?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  offset?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  orderBy?: Maybe<Scalars["String"]>;
+  siteSettingsId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volumeId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  volume?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  folderId?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  filename?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  kind?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  height?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  width?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  size?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  dateModified?: Maybe<Scalars["String"]>;
+  includeSubfolders?: Maybe<Scalars["Boolean"]>;
+  withTransforms?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  uploader?: Maybe<Scalars["QueryArgument"]>;
+};
+
+export type Slides_Slide_BlockTypeImageMobileArgs = {
   id?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   uid?: Maybe<Array<Maybe<Scalars["String"]>>>;
   site?: Maybe<Array<Maybe<Scalars["String"]>>>;
@@ -13202,6 +13648,7 @@ export type Team_Team_EntryChildrenArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -13273,6 +13720,7 @@ export type Team_Team_EntryDescendantsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -13344,6 +13792,7 @@ export type Team_Team_EntryParentArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -13415,6 +13864,7 @@ export type Team_Team_EntryAncestorsArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -13486,6 +13936,7 @@ export type Team_Team_EntryLocalizedArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -13557,6 +14008,7 @@ export type Team_Team_EntryPrevArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -13628,6 +14080,7 @@ export type Team_Team_EntryNextArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -13733,6 +14186,7 @@ export type Team_Team_EntryPeopleArgs = {
   historyTitle?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   people?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   trustees?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
+  imageMobile?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   programs?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   contactLink?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
   phone?: Maybe<Array<Maybe<Scalars["QueryArgument"]>>>;
@@ -13965,7 +14419,12 @@ export type ShareTwitterFragment = {
   hashtags?: Maybe<Array<Maybe<{ hashtag?: Maybe<string> }>>>;
 };
 
-export type SlideFragment = { bg?: Maybe<string>; text?: Maybe<string>; image?: Maybe<Array<Maybe<AssetFragment>>> };
+export type SlideFragment = {
+  bg?: Maybe<string>;
+  text?: Maybe<string>;
+  image?: Maybe<Array<Maybe<AssetFragment>>>;
+  imageMobile?: Maybe<Array<Maybe<AssetFragment>>>;
+};
 
 export type SliderVerticalSlideFragment = {
   text?: Maybe<string>;
@@ -14009,6 +14468,7 @@ export type FactsStatsQuery = {
       >
     >;
     heroImage?: Maybe<Array<Maybe<AssetFragment>>>;
+    heroImageMobile?: Maybe<Array<Maybe<AssetFragment>>>;
     seo?: Maybe<Array<Maybe<SeoFragment>>>;
   }>;
 };
@@ -14056,6 +14516,7 @@ export type GlobalsQuery = {
     cta?: Maybe<Array<Maybe<CtaFragment>>>;
   }>;
   intro?: Maybe<{ images?: Maybe<Array<Maybe<AssetFragment>>> }>;
+  shareImage?: Maybe<{ image?: Maybe<Array<Maybe<AssetFragment>>> }>;
   socials?: Maybe<{ links?: Maybe<Array<Maybe<{ link?: Maybe<{ text?: Maybe<string>; url?: Maybe<string> }> }>>> }>;
 };
 
@@ -14080,6 +14541,7 @@ export type InternshipsVolunteerQuery = {
     title?: Maybe<string>;
     description?: Maybe<string>;
     image?: Maybe<Array<Maybe<AssetFragment>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetFragment>>>;
     seo?: Maybe<Array<Maybe<SeoFragment>>>;
     tiles?: Maybe<
       Array<
@@ -14105,6 +14567,7 @@ export type JoinQuery = {
     text?: Maybe<string>;
     cta?: Maybe<Array<Maybe<CtaFragment>>>;
     image?: Maybe<Array<Maybe<AssetFragment>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetFragment>>>;
     quote?: Maybe<Array<Maybe<QuoteFragment>>>;
     seo?: Maybe<Array<Maybe<SeoFragment>>>;
   }>;
@@ -14118,7 +14581,15 @@ export type MissionVisionQuery = {
     text?: Maybe<string>;
     teamEffortTitle?: Maybe<string>;
     teamEffortText?: Maybe<string>;
-    hero?: Maybe<Array<Maybe<{ text?: Maybe<string>; image?: Maybe<Array<Maybe<AssetFragment>>> }>>>;
+    hero?: Maybe<
+      Array<
+        Maybe<{
+          text?: Maybe<string>;
+          image?: Maybe<Array<Maybe<AssetFragment>>>;
+          imageMobile?: Maybe<Array<Maybe<AssetFragment>>>;
+        }>
+      >
+    >;
     message?: Maybe<Array<Maybe<TextMessageFragment>>>;
     pills?: Maybe<Array<Maybe<PillFragment>>>;
     quote?: Maybe<Array<Maybe<QuoteFragment>>>;
@@ -14176,6 +14647,7 @@ export type ServiceQuery = {
     title?: Maybe<string>;
     description?: Maybe<string>;
     image?: Maybe<Array<Maybe<AssetFragment>>>;
+    imageMobile?: Maybe<Array<Maybe<AssetFragment>>>;
     programs?: Maybe<
       Array<
         Maybe<{

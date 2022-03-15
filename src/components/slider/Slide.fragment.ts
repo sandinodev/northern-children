@@ -8,6 +8,9 @@ export const SLIDE_FRAGMENT = gql`
     image {
       ...Asset
     }
+    imageMobile {
+      ...Asset
+    }
     text
   }
 

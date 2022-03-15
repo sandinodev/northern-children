@@ -17,6 +17,9 @@ export const MISSION_VISION_QUERY = gql`
             image {
               ...Asset
             }
+            imageMobile {
+              ...Asset
+            }
             text
           }
         }

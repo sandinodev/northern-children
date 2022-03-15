@@ -13,6 +13,9 @@ export const SERVICE_QUERY = gql`
         image {
           ...Asset
         }
+        imageMobile {
+          ...Asset
+        }
         programs {
           ... on programs_program_Entry {
             contactLink {

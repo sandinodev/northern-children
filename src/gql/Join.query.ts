@@ -19,6 +19,9 @@ export const JOIN_QUERY = gql`
         image {
           ...Asset
         }
+        imageMobile {
+          ...Asset
+        }
         quote {
           ...Quote
         }

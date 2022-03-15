@@ -26,7 +26,9 @@ const Page: NextPage<Props> = ({ facts, ...rest }) => {
       <Seo seo={facts?.seo?.[0]} />
 
       <DefaultPage>
-        {!!facts?.heroImage?.length && <Hero image={facts.heroImage} text={facts.title} />}
+        {!!facts?.heroImage?.length && (
+          <Hero image={facts.heroImage} imageMobile={facts.heroImageMobile} text={facts.title} />
+        )}
 
         {!!facts?.blocks?.length && <FactsStatsBlocks blocks={facts.blocks} color={facts.color} />}
       </DefaultPage>

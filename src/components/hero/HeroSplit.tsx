@@ -1,8 +1,10 @@
+import { useMemo } from "react";
 import tw, { css, styled } from "twin.macro";
 
 import { BaseContainer, BaseImage, BaseWrapper } from "~/components/base";
 
 import { MAIN_PADDING_TOP, WRAPPER_PADDING } from "~/constants";
+import { useBreakpoints } from "~/hooks";
 
 import { AssetFragment } from "~/types";
 
@@ -14,6 +16,7 @@ interface StylesExternalProps {
 
 interface Props extends StylesExternalProps {
   image?: AssetFragment[];
+  imageMobile?: AssetFragment[];
   text?: string;
 }
 
@@ -55,7 +58,11 @@ const Image = styled.div`
   }
 `;
 
-export const HeroSplit = ({ image, text, ...rest }: Props) => {
+export const HeroSplit = ({ image, imageMobile, text, ...rest }: Props) => {
+  const { lg } = useBreakpoints();
+
+  const _image = useMemo(() => (lg ? image : imageMobile ? imageMobile : image), [image, imageMobile, lg]);
+
   return (
     <Wrapper {...rest}>
       <Container fullW>
@@ -64,7 +71,7 @@ export const HeroSplit = ({ image, text, ...rest }: Props) => {
         </Content>
 
         <Image>
-          <BaseImage absolute fullH fullW {...image?.[0]} />
+          <BaseImage absolute fullH fullW {..._image?.[0]} />
         </Image>
       </Container>
     </Wrapper>
