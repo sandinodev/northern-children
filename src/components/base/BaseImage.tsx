@@ -122,7 +122,7 @@ export const BaseImage = forwardRef<HTMLImageElement, Props>(
 
     const lazyBoundary = useMemo(() => `${1000 + wH}px`, [wH]);
 
-    const _src = useMemo(() => src?.replace("https", "http"), [src]);
+    const _src = useMemo(() => src?.replace("northern-children-dev.fforward", "c0083.paas1.tff"), [src]);
 
     const [isLoaded, setIsLoaded] = useState(false);
 
