@@ -32,9 +32,8 @@ const StyledRichText = styled(BaseRichText)<{ $color: string }>`
   }
 
   ol {
-    ${tw`list-outside`}
+    ${tw`ml-0 list-outside`}
 
-    margin-left: 1em;
     counter-reset: list;
 
     & > li {
@@ -51,8 +50,6 @@ const StyledRichText = styled(BaseRichText)<{ $color: string }>`
 
   ul {
     ${tw`mb-56 lg:mb-72 list-disc list-outside`}
-
-    margin-left: 1em;
 
     li {
       ${tw`mb-27`}

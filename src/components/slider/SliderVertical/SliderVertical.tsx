@@ -35,7 +35,7 @@ const Slide = styled(BaseWrapper)<{ i: number }>`
 const Container = tw(BaseContainer)`items-start`;
 
 const Title = styled.h3`
-  ${tw`col-span-full mt-60 lg:mt-50 mb-40 text-lg`}
+  ${tw`col-span-full mt-60 lg:mt-120 mb-40 text-lg`}
 `;
 
 const Text = tw.div`col-span-full lg:col-span-7 mb-40 lg:mb-0 lg:text-md`;

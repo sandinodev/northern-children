@@ -33,7 +33,7 @@ export const TextBlock = ({ text, ...rest }: Props) => {
     <Wrapper {...rest}>
       <BaseContainer>
         <Text>
-          <BaseText text={text} />
+          <BaseText start="top bottom" text={text} />
         </Text>
       </BaseContainer>
     </Wrapper>

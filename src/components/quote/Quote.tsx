@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import tw, { styled } from "twin.macro";
 
@@ -17,7 +17,11 @@ if (isClient) {
 
 const Wrapper = tw(BaseWrapper)`relative overflow-hidden z-0`;
 
-const Container = tw(BaseContainer)`h-screen`;
+const Container = styled(BaseContainer)`
+  ${tw`relative h-screen z-1`}
+
+  transform: translateZ(0.1px);
+`;
 
 const Figure = tw.figure`col-span-full flex flex-col items-center justify-center text-white text-center`;
 
@@ -41,6 +45,12 @@ const Image = styled.div`
   ${tw`absolute top-0 left-0 w-full h-full -z-1`}
 
   transform: scale(1.3) translateZ(0.1px);
+
+  &:before {
+    ${tw`absolute top-0 left-0 w-full h-full bg-black opacity-30 z-1`}
+
+    content: "";
+  }
 `;
 
 export const Quote = ({ caption, image, quote, ...rest }: QuoteFragment) => {
@@ -80,6 +90,7 @@ export const Quote = ({ caption, image, quote, ...rest }: QuoteFragment) => {
           <Blockquote>
             <MaskOpacity as="p">{quote}</MaskOpacity>
           </Blockquote>
+
           <Caption>
             <MaskOpacity>{caption}</MaskOpacity>
           </Caption>

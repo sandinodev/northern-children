@@ -12,7 +12,22 @@ const MAIN_TAGS = ["p", "h1", "h2", "h3", "h4", "h5", "ul", "ol"];
 const Wrapper = styled.div`
   ul,
   ol {
-    ${tw`text-xs font-era-mono`}
+    ${tw`text-xs font-era-mono list-outside`}
+
+    margin-left: 1em;
+    margin-bottom: 1.5em;
+  }
+
+  ol {
+    ${tw`list-decimal`}
+  }
+
+  ul {
+    ${tw`list-disc`}
+  }
+
+  a {
+    ${tw`underline`}
   }
 `;
 

@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { MaskOpacity } from "~/components/mask";
 
 interface Props {
+  start?: string;
   text?: string;
 }
 

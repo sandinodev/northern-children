@@ -30,6 +30,10 @@ const Image = styled.div<{ isVisible: boolean }>`
 
       transition-delay: 0s;
     `}
+
+  img {
+    min-width: 20rem;
+  }
 `;
 
 const dataStoreSelector = (state: DataStore) => state.intro;

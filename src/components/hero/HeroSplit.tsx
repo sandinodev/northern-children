@@ -61,7 +61,7 @@ const Image = styled.div`
 export const HeroSplit = ({ image, imageMobile, text, ...rest }: Props) => {
   const { lg } = useBreakpoints();
 
-  const _image = useMemo(() => (lg ? image : imageMobile ? imageMobile : image), [image, imageMobile, lg]);
+  const _image = useMemo(() => (lg ? image : imageMobile?.length ? imageMobile : image), [image, imageMobile, lg]);
 
   return (
     <Wrapper {...rest}>
