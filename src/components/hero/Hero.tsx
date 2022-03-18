@@ -22,7 +22,6 @@ const Wrapper = styled.section`
   ${tw`relative w-full overflow-hidden`}
 
   height: 60vh;
-  margin-top: ${HEADER_HEIGHT.min}px;
 
   ${up("lg")} {
     margin-top: ${HEADER_HEIGHT.max}px;
