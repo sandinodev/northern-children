@@ -55,7 +55,7 @@ export const MaskOpacity: React.FC<Props> = ({
   delay = 0.1,
   duration = 0.5,
   manual,
-  start = "center center+=30%",
+  start = "center center+=40%",
   visible,
   ...rest
 }) => {
@@ -64,7 +64,7 @@ export const MaskOpacity: React.FC<Props> = ({
   };
 
   const { isVisible } = useInView({
-    start: "center center+=40%",
+    start,
     disabled: manual,
     trigger: refs.root,
   });

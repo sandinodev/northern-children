@@ -3,6 +3,7 @@ import tw, { styled } from "twin.macro";
 
 import { BaseImage } from "~/components/base";
 import { MaskOpacity } from "~/components/mask";
+
 import { HEADER_HEIGHT } from "~/constants";
 
 import { useParallax } from "~/hooks";
@@ -21,6 +22,11 @@ const Wrapper = styled.section`
   ${tw`relative w-full overflow-hidden`}
 
   height: 60vh;
+  margin-top: ${HEADER_HEIGHT.min}px;
+
+  ${up("lg")} {
+    margin-top: ${HEADER_HEIGHT.max}px;
+  }
 `;
 
 const BaseImageDesktop = tw(BaseImage)`hidden lg:block`;

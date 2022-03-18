@@ -50,7 +50,7 @@ export const useInView = ({ disabled, once = true, start = "top bottom", trigger
     return () => {
       refs.st.current && refs.st.current.kill();
     };
-  }, [disabled, isIntro, isMounted, once, refs.st, trigger, waitForIntro]);
+  }, [disabled, isIntro, isMounted, once, refs.st, start, trigger, waitForIntro]);
 
   return { isVisible };
 };
