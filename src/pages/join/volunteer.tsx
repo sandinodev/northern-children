@@ -5,7 +5,7 @@ import { Seo } from "~/components/seo";
 import { TextBlock } from "~/components/text";
 import { Tiles } from "~/components/tiles";
 
-import { GLOBALS_QUERY, INTERNSHIPS_VOLUNTEER_QUERY } from "~/gql";
+import { GLOBALS_QUERY, VOLUNTEER_QUERY } from "~/gql";
 
 import { GlobalDataProps, useSetGlobalData } from "~/hooks";
 
@@ -13,27 +13,27 @@ import { DefaultPage } from "~/layouts/DefaultPage";
 
 import { fetchData } from "~/lib/api";
 
-import { GlobalsQuery, InternshipsVolunteerQuery } from "~/types";
+import { GlobalsQuery, VolunteerQuery } from "~/types";
 
 interface Props extends GlobalDataProps {
-  internships: InternshipsVolunteerQuery["internships"];
+  volunteer: VolunteerQuery["volunteer"];
 }
 
-const Page: NextPage<Props> = ({ internships, seoDefault, ...rest }) => {
+const Page: NextPage<Props> = ({ volunteer, seoDefault, ...rest }) => {
   useSetGlobalData(rest);
 
   return (
     <>
-      <Seo seo={internships?.seo?.[0]} seoDefault={seoDefault} />
+      <Seo seo={volunteer?.seo?.[0]} seoDefault={seoDefault} />
 
       <DefaultPage>
-        {!!internships?.image?.length && (
-          <Hero image={internships.image} imageMobile={internships.imageMobile} text={internships.title} />
+        {!!volunteer?.image?.length && (
+          <Hero image={volunteer.image} imageMobile={volunteer.imageMobile} text={volunteer.title} />
         )}
 
-        <TextBlock bg={internships?.color} text={internships?.description} />
+        <TextBlock bg={volunteer?.color} text={volunteer?.description} />
 
-        {!!internships?.tiles?.length && <Tiles color={internships?.color} items={internships.tiles} />}
+        {!!volunteer?.tiles?.length && <Tiles color={volunteer?.color} items={volunteer.tiles} />}
       </DefaultPage>
     </>
   );
@@ -41,16 +41,12 @@ const Page: NextPage<Props> = ({ internships, seoDefault, ...rest }) => {
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const globals = await fetchData<GlobalsQuery>(GLOBALS_QUERY);
-  const { internships } = await fetchData<InternshipsVolunteerQuery>(
-    INTERNSHIPS_VOLUNTEER_QUERY,
-    undefined,
-    previewData
-  );
+  const { volunteer } = await fetchData<VolunteerQuery>(VOLUNTEER_QUERY, undefined, previewData);
 
   return {
     revalidate: 60,
     props: {
-      internships,
+      volunteer,
       ...globals,
     },
   };

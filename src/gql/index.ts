@@ -3,6 +3,7 @@ export { FACTS_STATS_QUERY } from "./FactsStats.query";
 export { GLOBALS_QUERY } from "./Globals.query";
 export { HOME_QUERY } from "./Home.query";
 export { INTERNSHIPS_VOLUNTEER_QUERY } from "./InternshipsVolunteer.query";
+export { VOLUNTEER_QUERY } from "./Volunteer.query";
 export { JOIN_QUERY } from "./Join.query";
 export { MISSION_VISION_QUERY } from "./MissionVision.query";
 export { NEWS_STORIES_QUERY } from "./NewsStories.query";
