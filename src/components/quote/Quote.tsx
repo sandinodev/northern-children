@@ -6,6 +6,7 @@ import tw, { styled } from "twin.macro";
 
 import { BaseContainer, BaseImage, BaseWrapper } from "~/components/base";
 import { MaskOpacity } from "~/components/mask";
+import { useMounted } from "~/hooks";
 
 import { QuoteFragment } from "~/types";
 
@@ -60,8 +61,10 @@ export const Quote = ({ caption, image, quote, ...rest }: QuoteFragment) => {
     st: useRef<gsap.plugins.ScrollTriggerInstance>(),
   };
 
+  const isMounted = useMounted();
+
   useIsomorphicLayoutEffect(() => {
-    if (!quote?.length || !refs.root.current || !refs.image.current) return;
+    if (!isMounted || !quote?.length || !refs.root.current || !refs.image.current) return;
 
     const t = gsap.fromTo(refs.image.current, { scale: 1.3 }, { scale: 1, duration: 0.4, ease: "none", paused: true });
 
@@ -79,7 +82,7 @@ export const Quote = ({ caption, image, quote, ...rest }: QuoteFragment) => {
       refs.st.current?.kill();
       t.kill();
     };
-  }, [quote?.length, refs.image, refs.root, refs.st]);
+  }, [isMounted, quote?.length, refs.image, refs.root, refs.st]);
 
   if (!quote?.length) return null;
 

@@ -67,7 +67,7 @@ export const PostNews = ({ bg, blocks, image, postDate, title }: PostNewsFragmen
     <>
       <BaseWrapper>
         <BaseContainer>
-          <HeroText bg={bg}>
+          <HeroText bg={bg} fullW>
             <Title>{title}</Title>
 
             <Date aria-label="Posted on" dateTime={date.long}>

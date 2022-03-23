@@ -55,7 +55,7 @@ const Subtitle = styled.h4<{ text?: string }>`
 `;
 
 const Wrapper = styled(BaseLink)<StylesExternalProps>`
-  ${tw`w-full border border-transparent`}
+  ${tw`w-full h-full border border-transparent`}
 
   transition: border-color 0.5s;
 

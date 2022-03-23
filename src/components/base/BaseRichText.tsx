@@ -16,6 +16,10 @@ const Wrapper = styled.div`
 
     margin-left: 1em;
     margin-bottom: 1.5em;
+
+    li {
+      ${tw`mb-27`}
+    }
   }
 
   ol {
