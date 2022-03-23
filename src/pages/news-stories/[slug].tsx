@@ -42,6 +42,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } = {}, pr
   const { post } = await fetchData<PostQuery>(POST_QUERY, { slug: _slug }, previewData);
 
   return {
+    notFound: !post,
     revalidate: 60,
     props: {
       post,

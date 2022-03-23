@@ -44,6 +44,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } = {}, pr
   const { person } = await fetchData<PersonQuery>(PERSON_QUERY, { slug: _slug }, previewData);
 
   return {
+    notFound: !person,
     revalidate: 60,
     props: {
       person,

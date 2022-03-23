@@ -52,6 +52,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } = {}, pr
   const { service } = await fetchData<ServiceQuery>(SERVICE_QUERY, { slug: _slug }, previewData);
 
   return {
+    notFound: !service,
     revalidate: 60,
     props: {
       service,

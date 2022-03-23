@@ -26,7 +26,7 @@ module.exports = {
       zIndex: {
         "-1": -1,
         1: 1,
-        footer: 800,
+        footer: 20,
         donate: 900,
         menu: 999,
         header: 1000,
