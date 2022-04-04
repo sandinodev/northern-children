@@ -11,6 +11,9 @@ export const PEOPLE_PERSON_FRAGMENT = gql`
     name: title
     role: textAdditional
     slug
+    thumbnail {
+      ...Asset
+    }
   }
 
   ${ASSET_FRAGMENT}

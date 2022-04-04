@@ -16,6 +16,7 @@ interface Props extends StylesExternalProps {
   href?: string;
   image?: AssetFragment[];
   subtitle?: string;
+  thumbnail?: AssetFragment[];
   title?: string;
 }
 
@@ -105,7 +106,8 @@ const Wrapper = styled(BaseLink)<StylesExternalProps>`
         `}
 `;
 
-export const BaseCard = ({ image, subtitle, title, ...rest }: Props) => {
+export const BaseCard = ({ image, subtitle, thumbnail, title, ...rest }: Props) => {
+  const _image = useMemo(() => (thumbnail?.length ? thumbnail : image), [image, thumbnail]);
   const _subtitle = useMemo(() => upperFirst(subtitle), [subtitle]);
 
   return (
@@ -113,7 +115,7 @@ export const BaseCard = ({ image, subtitle, title, ...rest }: Props) => {
       <StyledMaskOpacity duration={0.6} noY>
         {!!image?.length && (
           <Image>
-            <BaseImage absolute fullW fullH {...image[0]} />
+            <BaseImage sizes="25vw" absolute fullW fullH {..._image?.[0]} />
           </Image>
         )}
 
