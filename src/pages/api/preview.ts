@@ -11,3 +11,6 @@ const _: NextApiHandler = async (req, res) => {
   res.writeHead(307, { Location: location });
   res.end();
 };
+
+// eslint-disable-next-line import/no-default-export
+export default _;
