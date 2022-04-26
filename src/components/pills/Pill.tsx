@@ -12,7 +12,7 @@ const Content = styled.div`
 `;
 
 const Title = styled(Content)`
-  ${tw`absolute text-max font-athletics uppercase`}
+  ${tw`absolute px-20 text-max text-center font-athletics uppercase`}
 
   transition: all 0.2s 0.2s ${eases.sine.inOut};
 `;
