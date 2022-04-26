@@ -56,7 +56,7 @@ const Subtitle = styled.h4<{ text?: string }>`
 `;
 
 const Wrapper = styled(BaseLink)<StylesExternalProps>`
-  ${tw`w-full h-full border border-transparent`}
+  ${tw`w-full h-full border border-transparent overflow-hidden`}
 
   transition: border-color 0.5s;
 
@@ -112,7 +112,7 @@ export const BaseCard = ({ image, subtitle, thumbnail, title, ...rest }: Props) 
 
   return (
     <Wrapper {...rest}>
-      <StyledMaskOpacity duration={0.6} noY>
+      <StyledMaskOpacity duration={0.6} start="top center+=40%" noY>
         {!!image?.length && (
           <Image>
             <BaseImage sizes="25vw" absolute fullW fullH {..._image?.[0]} />
