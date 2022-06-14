@@ -36,7 +36,7 @@ const CustomStyles = createGlobalStyle`
   }
 
   @media (max-width: 767px) {
-    #__next section:nth-child(2) {
+    #__next > section:nth-child(2) {
       height: 100vh; 
     }
   } 
