@@ -7,7 +7,7 @@ export const LINKS_GROUPS = [
   {
     title: "Who are we",
     links: [
-      { href: "/mission-vision", text: "Mission & Vision" },
+      { href: "/mission-vision", text: "Mission & Values" },
       { href: "/team", text: "Our Team" },
     ],
   },
