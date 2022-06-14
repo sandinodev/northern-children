@@ -199,7 +199,9 @@ export const Header = () => {
               <Links>
                 {links.map(({ href, text }, j) => (
                   <Link key={j}>
-                    <StyledBaseLink href={href}>{text}</StyledBaseLink>
+                    <StyledBaseLink href={href}>
+                      {text == "Mission & Vision" ? "Mission & Values" : text}
+                    </StyledBaseLink>
                   </Link>
                 ))}
               </Links>

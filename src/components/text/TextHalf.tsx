@@ -16,6 +16,9 @@ export const TextHalf = ({ text }: Props) => {
   return (
     <Wrapper>
       <BaseContainer>
+        <div className="BaseSection__Title-sc-2mfa5o-0 fXORvl">
+          <div className="MaskOpacity__Wrapper-pe5v27-0 fDCtjV mask mask--is-visible">Our Vision</div>
+        </div>
         <StyledBaseText text={text} />
       </BaseContainer>
     </Wrapper>

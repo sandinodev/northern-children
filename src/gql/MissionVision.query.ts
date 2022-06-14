@@ -23,6 +23,7 @@ export const MISSION_VISION_QUERY = gql`
             text
           }
         }
+        header
         historyTitle
         message {
           ...TextMessage
