@@ -34,6 +34,12 @@ const CustomStyles = createGlobalStyle`
   p {
     margin-bottom: 1.5em;
   }
+
+  @media (max-width: 767px) {
+    #__next section:nth-child(2) {
+      height: 100vh; 
+    }
+  } 
 `;
 
 export const GlobalStyles = () => (
