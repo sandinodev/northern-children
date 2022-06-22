@@ -70,6 +70,9 @@ export const Footer = () => {
             <SocialLink href={socials?.facebook} aria-label="Facebook" block>
               <FacebookSVG />
             </SocialLink>
+            <SocialLink href={socials?.linkedin} aria-label="LinkedIn" block>
+              <FacebookSVG />
+            </SocialLink>
           </Socials>
 
           <Credit>
