@@ -19,7 +19,7 @@ const Wrapper = styled(BaseWrapper)<{ i: number }>`
     ${tw`absolute top-full left-0 w-full bg-white-greenish -z-1`}
 
     content: "";
-    height: 8.8rem;
+    height: 13.8rem;
     transform: scaleY(0);
     transform-origin: top left;
     transition: all 0.4s 0.3s;
