@@ -4,6 +4,7 @@ import tw, { styled } from "twin.macro";
 
 import FacebookSVG from "~/assets/svg/icons/socials/facebook.svg";
 import InstagramSVG from "~/assets/svg/icons/socials/instagram.svg";
+import LinkedInSVG from "~/assets/svg/icons/socials/linkedin.svg";
 
 import { BaseContainer, BaseLink, BaseWrapper } from "~/components/base";
 import { Cta } from "~/components/cta";
@@ -71,7 +72,7 @@ export const Footer = () => {
               <FacebookSVG />
             </SocialLink>
             <SocialLink href={socials?.linkedin} aria-label="LinkedIn" block>
-              <FacebookSVG />
+              <LinkedInSVG />
             </SocialLink>
           </Socials>
 
