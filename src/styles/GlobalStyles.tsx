@@ -38,7 +38,7 @@ const CustomStyles = createGlobalStyle`
   @media (min-width: 1025px) {
     #header ul li button,
     #header ul li a,
-    #header button a {
+    #header nav > a {
       font-weight: 700;
     }
   }
