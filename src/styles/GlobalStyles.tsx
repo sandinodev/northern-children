@@ -35,6 +35,13 @@ const CustomStyles = createGlobalStyle`
     margin-bottom: 1.5em;
   }
 
+  @media (min-width: 1025px) {
+    #header ul li button,
+    #header ul li a {
+      font-weight: 700;
+    }
+  }
+
   @media (max-width: 767px) {
     #__next > section:nth-child(2) {
       height: 100vh; 
