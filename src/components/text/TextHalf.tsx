@@ -15,7 +15,7 @@ export const TextHalf = ({ text }: Props) => {
 
   return (
     <Wrapper>
-      <BaseSection title="Our Vision">
+      <BaseSection title="Our Culture">
         <StyledBaseText text={text} />
       </BaseSection>
     </Wrapper>
