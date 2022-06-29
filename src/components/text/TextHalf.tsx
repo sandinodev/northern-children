@@ -1,6 +1,6 @@
 import tw from "twin.macro";
 
-import { BaseSection, BaseText, BaseWrapper } from "~/components/base";
+import { BaseContainer, BaseText, BaseWrapper } from "~/components/base";
 
 interface Props {
   text?: string;
@@ -8,16 +8,16 @@ interface Props {
 
 const Wrapper = tw(BaseWrapper)`py-60 lg:py-80`;
 
-const StyledBaseText = tw(BaseText)`col-span-full lg:col-span-6 text-md mb-100`;
+const StyledBaseText = tw(BaseText)`col-span-full lg:col-span-6 lg:text-md`;
 
 export const TextHalf = ({ text }: Props) => {
   if (!text?.length) return null;
 
   return (
     <Wrapper>
-      <BaseSection title="Our Culture">
+      <BaseContainer>
         <StyledBaseText text={text} />
-      </BaseSection>
+      </BaseContainer>
     </Wrapper>
   );
 };

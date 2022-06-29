@@ -5,7 +5,7 @@ import { History } from "~/components/history";
 import { Quote } from "~/components/quote";
 import { Seo } from "~/components/seo";
 import { TeamEffort } from "~/components/teamEffort";
-import { TextHalf, TextMessage } from "~/components/text";
+import { TextHalf2, TextMessage } from "~/components/text";
 
 import { GLOBALS_QUERY, MISSION_VISION_QUERY } from "~/gql";
 
@@ -31,7 +31,7 @@ const Page: NextPage<Props> = ({ mission, seoDefault, ...rest }) => {
       <DefaultPage>
         {!!mission?.hero?.length && <HeroSplit bg="turquoise" {...mission.hero[0]} />}
 
-        {!!mission?.text?.length && <TextHalf text={mission.text} />}
+        {!!mission?.text?.length && <TextHalf2 text={mission.text} />}
 
         {!!mission?.quote?.length && <Quote {...mission.quote[0]} />}
 
