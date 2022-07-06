@@ -30,7 +30,7 @@ const ImageMobile = tw.div`lg:hidden w-full mb-40`;
 
 const Description = tw.div`mb-60`;
 
-const Image = tw.div`hidden lg:block col-span-5 col-start-8 self-center`;
+const Image = tw.div`hidden lg:block col-span-5 col-start-8`;
 
 export const Tile = ({ item, richText }: TileProps) => {
   if (!item) return null;
