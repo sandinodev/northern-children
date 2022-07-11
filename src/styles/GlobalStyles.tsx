@@ -47,6 +47,11 @@ const CustomStyles = createGlobalStyle`
     #__next > section:nth-child(2) {
       height: 100vh; 
     }
+
+    main > section:first-child {
+      height: auto;
+      padding-bottom: 50px;
+    }
   } 
 `;
 

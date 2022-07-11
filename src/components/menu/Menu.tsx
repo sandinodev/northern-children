@@ -69,25 +69,24 @@ export const Menu = () => {
   }, []);
 
   const onButtonClick = (i: number) => {
-    if (isLoading === false) {
-      if (window.location.href.indexOf("#") !== -1) {
-        const _hash = window.location.hash;
-        const _messageSection = document.querySelectorAll("main section")[4] as HTMLElement;
-        const _historySection = document.querySelectorAll("main section")[6] as HTMLElement;
-        if (_hash === "#message" && _messageSection !== undefined) {
-          window.scrollTo({ top: _messageSection.offsetTop, left: 0, behavior: "smooth" });
-        } else if (_hash === "#history" && _historySection !== undefined) {
-          window.scrollTo({ top: _historySection.offsetTop, left: 0, behavior: "smooth" });
+    return () => {
+      if (isLoading === false) {
+        if (window.location.href.indexOf("#") !== -1) {
+          const _hash = window.location.hash;
+          const _messageSection = document.querySelectorAll("main section")[4] as HTMLElement;
+          const _historySection = document.querySelectorAll("main section")[6] as HTMLElement;
+          if (_hash === "#message" && _messageSection !== undefined) {
+            window.scrollTo({ top: _messageSection.offsetTop, left: 0, behavior: "smooth" });
+          } else if (_hash === "#history" && _historySection !== undefined) {
+            window.scrollTo({ top: _historySection.offsetTop, left: 0, behavior: "smooth" });
+          }
         }
       }
-    }
-    return () => {
-      setCurrI(i === currI && isLoading === false ? -1 : i);
+      setCurrI(i === currI ? -1 : i);
     };
   };
 
   const onLinkClick = () => {
-    console.log("hey");
     setCurrI(-1);
     setIsMenuOpen(false);
   };

@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { HeroSplit } from "~/components/hero";
 import { History } from "~/components/history";
