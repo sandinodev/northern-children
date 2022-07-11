@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AnimateHeight from "react-animate-height";
 import tw, { css, styled } from "twin.macro";
 
@@ -57,14 +57,30 @@ const storeSelector = ({ isMenuOpen, setIsMenuOpen }: Store) => ({ isMenuOpen, s
 
 export const Menu = () => {
   const { isMenuOpen, setIsMenuOpen } = useStore(storeSelector);
-
+  const [isLoading, setIsLoading] = useState(true);
   const refs = {
     root: useRef<HTMLDivElement>(null),
   };
 
   const [currI, setCurrI] = useState(-1);
 
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
   const onButtonClick = (i: number) => {
+    if (isLoading === false) {
+      if (window.location.href.indexOf("#") !== -1) {
+        const _hash = window.location.hash;
+        const _messageSection = document.querySelectorAll("main section")[4] as HTMLElement;
+        const _historySection = document.querySelectorAll("main section")[6] as HTMLElement;
+        if (_hash === "#message" && _messageSection !== undefined) {
+          window.scrollTo({ top: _messageSection.offsetTop, left: 0, behavior: "smooth" });
+        } else if (_hash === "#history" && _historySection !== undefined) {
+          window.scrollTo({ top: _historySection.offsetTop, left: 0, behavior: "smooth" });
+        }
+      }
+    }
     return () => {
       setCurrI(i === currI ? -1 : i);
     };
