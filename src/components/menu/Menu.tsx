@@ -65,7 +65,7 @@ export const Menu = () => {
   const [currI, setCurrI] = useState(-1);
 
   useEffect(() => {
-    setIsLoading(false);
+    return () => setIsLoading(false);
   }, []);
 
   const onButtonClick = (i: number) => {
@@ -82,11 +82,12 @@ export const Menu = () => {
       }
     }
     return () => {
-      setCurrI(i === currI ? -1 : i);
+      setCurrI(i === currI && isLoading === false ? -1 : i);
     };
   };
 
   const onLinkClick = () => {
+    console.log("hey");
     setCurrI(-1);
     setIsMenuOpen(false);
   };

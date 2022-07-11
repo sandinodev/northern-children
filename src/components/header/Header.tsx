@@ -198,13 +198,7 @@ export const Header = () => {
 
               <Links>
                 {links.map(({ href, text }, j) => (
-                  <Link
-                    onClick={(e) => {
-                      e.preventDefault();
-                      console.log("dsf");
-                    }}
-                    key={j}
-                  >
+                  <Link key={j}>
                     <StyledBaseLink href={href}>{text}</StyledBaseLink>
                   </Link>
                 ))}
