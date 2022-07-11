@@ -52,6 +52,10 @@ const CustomStyles = createGlobalStyle`
       height: auto;
       padding-bottom: 50px;
     }
+
+    main > section:nth-child(6) >  section:nth-child(2) >  section:first-child  h3 {
+      margin-top: 0rem;
+    }
   } 
 `;
 
