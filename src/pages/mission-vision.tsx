@@ -28,12 +28,12 @@ const Page: NextPage<Props> = ({ mission, seoDefault, ...rest }) => {
   useEffect(() => {
     if (window.location.href.indexOf("#") !== -1) {
       const _hash = window.location.hash;
-      const _messageSection = document.querySelectorAll("main section")[4];
-      const _historySection = document.querySelectorAll("main section")[6];
-      if (_hash === "#message") {
-        window.scrollTo(0, _messageSection?.offsetTop);
-      } else if (_hash === "#history") {
-        window.scrollTo(0, _historySection?.offsetTop);
+      const _messageSection = document.querySelectorAll("main section")[4] as HTMLElement;
+      const _historySection = document.querySelectorAll("main section")[6] as HTMLElement;
+      if (_hash === "#message" && _messageSection !== undefined) {
+        window.scrollTo(0, _messageSection.offsetTop);
+      } else if (_hash === "#history" && _historySection !== undefined) {
+        window.scrollTo(0, _historySection.offsetTop);
       }
     }
   }, []);
