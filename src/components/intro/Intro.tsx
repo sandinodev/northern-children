@@ -80,7 +80,7 @@ export const Intro = () => {
     <Wrapper ref={refs.root}>
       {selectedImages.map(({ src, ...rest }, i) => (
         <Image key={i} isVisible={i === currI}>
-          <img alt="" src={`https://${src?.replace("http://", "")}`} {...rest} />
+          <img alt="" src={rewriteImageSrc(src)} {...rest} />
         </Image>
       ))}
     </Wrapper>
