@@ -75,12 +75,12 @@ export const Intro = () => {
   }, [hasImages, refs.root, setIsIntro]);
 
   useBodyScrollLock({ isLocked: isVisible, target: refs.root });
-
+  console.log(selectedImages);
   return (
     <Wrapper ref={refs.root}>
       {selectedImages.map(({ src, ...rest }, i) => (
         <Image key={i} isVisible={i === currI}>
-          <img alt="" src={rewriteImageSrc(src)} {...rest} />
+          <img alt="" src={rewriteImageSrc(src?.replace("https", "http"))} {...rest} />
         </Image>
       ))}
     </Wrapper>
