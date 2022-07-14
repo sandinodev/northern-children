@@ -55,7 +55,7 @@ export const Cta = ({ links, text, turquoise, ...rest }: Props) => {
                   <BaseButton
                     key={i}
                     ariaLabel={ariaLabel}
-                    href={parsePublicToLocalHref(link?.url)}
+                    href={link?.text === "Contact us" ? "/contact" : parsePublicToLocalHref(link?.url)}
                     turquoise={turquoise}
                   >
                     {link?.text}
