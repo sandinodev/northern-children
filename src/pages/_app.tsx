@@ -10,7 +10,7 @@ import { Menu } from "~/components/menu";
 import { TransitionPages } from "~/components/transition";
 
 import { Store, useStore } from "~/store";
-import { GTMPageView } from "~/utils/index";
+import { GTMPageView } from "~/utils";
 import { GlobalStyles } from "~/styles/GlobalStyles";
 import "~/styles/fonts.css";
 
