@@ -56,7 +56,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [router.events]);
 
   return (
     <>
