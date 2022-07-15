@@ -27,3 +27,10 @@ export const parsePublicToLocalHref = (href?: string) => {
 
 export const rewriteImageSrc = (src?: string) =>
   src?.replace("northern-children-dev.fforward", "northern-children-dev.fforward").replace("https://", "https://");
+
+export const GTMPageView = (url: string) => {
+  //@ts-ignore
+  window?.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
+    page_path: url,
+  });
+};

@@ -10,7 +10,7 @@ import { Menu } from "~/components/menu";
 import { TransitionPages } from "~/components/transition";
 
 import { Store, useStore } from "~/store";
-
+import { GTMPageView } from "~/utils/index";
 import { GlobalStyles } from "~/styles/GlobalStyles";
 import "~/styles/fonts.css";
 
@@ -47,8 +47,13 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     window.addEventListener("resize", debouncedSet);
     set();
 
+    const handleRouteChange = (url: string) => GTMPageView(url);
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
     return () => {
       window.removeEventListener("resize", debouncedSet);
+      router.events.off("routeChangeComplete", handleRouteChange);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
