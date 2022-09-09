@@ -18,7 +18,12 @@ let nextConfig = {
   webpack5: true,
 
   images: {
-    domains: [process.env.ASSETS_DOMAIN, "c0083.paas1.tff.modxcloud.com"],
+    domains: [
+      process.env.ASSETS_DOMAIN,
+      "c0083.paas1.tff.modxcloud.com",
+      "ncs-admin.com",
+      "northern-children-dev.fforward.modxcloud.com",
+    ],
     minimumCacheTTL: 31536000,
   },
 
