@@ -35,6 +35,10 @@ const CustomStyles = createGlobalStyle`
     margin-bottom: 1.5em;
   }
 
+  iframe {
+    width: 100%;
+  }
+
   @media (min-width: 1025px) {
     #header ul li button,
     #header ul li a,
