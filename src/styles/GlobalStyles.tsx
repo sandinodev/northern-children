@@ -47,6 +47,7 @@ const CustomStyles = createGlobalStyle`
     column-gap: 50px;
     width: 100%;
     justify-content: center;
+    opacity: 1;
   }
 
   @media (min-width: 1025px) {
