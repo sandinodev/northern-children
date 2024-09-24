@@ -33,6 +33,7 @@ const Image = styled.div<{ isVisible: boolean }>`
 
   img {
     min-width: 20rem;
+    opacity: 0;
   }
 `;
 
@@ -75,7 +76,7 @@ export const Intro = () => {
   }, [hasImages, refs.root, setIsIntro]);
 
   useBodyScrollLock({ isLocked: isVisible, target: refs.root });
-  console.log(selectedImages);
+  // console.log(selectedImages);
   return (
     <Wrapper ref={refs.root}>
       {selectedImages.map(({ src, ...rest }, i) => (

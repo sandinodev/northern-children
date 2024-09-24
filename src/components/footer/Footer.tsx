@@ -1,10 +1,13 @@
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 import tw, { styled } from "twin.macro";
+import Image from "next/image";
 
 import FacebookSVG from "~/assets/svg/icons/socials/facebook.svg";
 import InstagramSVG from "~/assets/svg/icons/socials/instagram.svg";
 import LinkedInSVG from "~/assets/svg/icons/socials/linkedin.svg";
+import FooterLogo1 from "~/assets/logos/candid-seal-platinum-2024.jpg";
+import FooterLogo2 from "~/assets/logos/Top Workplaces Certification Badge.pdf.jpg";
 
 import { BaseContainer, BaseLink, BaseWrapper } from "~/components/base";
 import { Cta } from "~/components/cta";
@@ -23,6 +26,10 @@ const Main = styled(BaseWrapper)`
     &:hover {
       ${tw`opacity-50`}
     }
+  }
+
+  .two-col-logo {
+    text-align: center;
   }
 `;
 
@@ -52,7 +59,10 @@ export const Footer = () => {
   return (
     <Wrapper id="footer">
       {hasFooterCTA && <Cta turquoise {...footer?.cta?.[0]} />}
-
+      <div className="two-col-logo">
+        <Image src={FooterLogo1} width={150} height={150} alt="Candid Seal Platinum" />
+        <Image src={FooterLogo2} width={150} height={150} alt="Top Workplaces Certification" />
+      </div>
       <Main>
         <MainContainer fullW>
           <Address>

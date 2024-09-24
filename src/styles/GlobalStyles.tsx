@@ -39,6 +39,16 @@ const CustomStyles = createGlobalStyle`
     width: 100%;
   }
 
+  .two-col-logo {
+    text-align: center;
+    padding: 50px 0;
+    border-bottom: 1px solid rgb(38 38 38);
+    display: flex;
+    column-gap: 50px;
+    width: 100%;
+    justify-content: center;
+  }
+
   @media (min-width: 1025px) {
     #header ul li button,
     #header ul li a,
