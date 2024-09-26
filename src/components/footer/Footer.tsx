@@ -60,7 +60,9 @@ export const Footer = () => {
     <Wrapper id="footer">
       {hasFooterCTA && <Cta turquoise {...footer?.cta?.[0]} />}
       <div className="two-col-logo">
-        <Image src={FooterLogo1} width={150} height={150} alt="Candid Seal Platinum" />
+        <a href="https://www.guidestar.org/Profile/23-1396803" target="_blank" rel="noreferrer">
+          <Image src={FooterLogo1} width={150} height={150} alt="Candid Seal Platinum" />
+        </a>
         <Image src={FooterLogo2} width={150} height={150} alt="Top Workplaces Certification" />
       </div>
       <Main>
